@@ -1,0 +1,656 @@
+---
+default_templates:
+  title_card_template: &title_card_template
+    type: "custom:button-card"
+    styles:
+      card:
+        - background: "none"
+        - padding: "16px 0"
+        - "--mdc-ripple-press-opacity": 0
+        - height: "36px"
+      name:
+        - font-size: "32px"
+        - color: "var(--contrast20)"
+    tap_action:
+      action: "navigate"
+      navigation_path: "/lovelace-rounded/default_view"
+      haptic: "medium"
+  scene_card_template: &scene_card_template
+    type: custom:button-card
+    show_name: false
+    aspect_ratio: 1/1
+    tap_action:
+      action: call-service
+      service: scene.turn_on
+      haptic: medium
+      service_data:
+        entity_id: "[[[ return entity.entity_id ]]]"
+    styles:
+      card:
+        - border-radius: 24px
+        - background-color: "[[[ return variables.color ]]]"
+      icon:
+        - color: var(--black)
+  sensor_line_graph_card_template: &sensor_line_graph_card_template
+    type: "sensor"
+    hours_to_show: 24
+    detail: 1
+    graph: "line"
+    icon: "none"
+    card_mod:
+      class: "graph"
+  sensor_swipe_card_template: &sensor_swipe_card_template
+    type: "custom:swipe-card"
+    card_width: "calc(100% - 48px)"
+    start_card: 0
+    reset_after: 15
+    parameters:
+      centeredSlides: true
+      slidesPerView: "auto"
+      spaceBetween: 16
+      initialSlide: 0
+  navigation_button_template: &navigation_button_template
+    type: "custom:button-card"
+    show_label: true
+    hold_action:
+      action: "more-info"
+      haptic: "medium"
+    custom_fields:
+      light:
+        card:
+          type: "custom:button-card"
+          entity: "[[[ return entity.entity_id ]]]"
+          show_name: false
+          show_label: false
+          state:
+            - value: "on"
+              icon: "mdi:lightbulb"
+            - value: "off"
+              icon: "mdi:lightbulb-off"
+            - value: "unavailable"
+              icon: "mdi:lightbulb-question"
+              styles:
+                icon:
+                  - color: "var(--contrast6)"
+            - value: "unknown"
+              icon: "mdi:lightbulb-question"
+              styles:
+                icon:
+                  - color: "var(--contrast6)"
+          styles:
+            icon:
+              - width: "24px"
+              - height: "24px"
+    styles:
+      grid:
+        - grid-template-areas: "'i light' 'n n' 'l l'"
+        - grid-template-columns: "1fr 1fr"
+        - grid-template-rows: "min-content"
+      card:
+        - background: "var(--contrast2)"
+        - padding: "16px"
+        - "--mdc-ripple-press-opacity": 0
+        - height: "100px"
+      img_cell:
+        - justify-self: "start"
+        - width: "24px"
+      icon:
+        - width: "24px"
+        - height: "24px"
+        - color: "var(--contrast8)"
+      label:
+        - justify-self: "start"
+        - align-self: "start"
+        - font-size: "12px"
+        - filter: "opacity(40%)"
+        - margin: "4px 0 3px 0"
+        - max-width: "100%"
+        - color: "var(--contrast8)"
+      name:
+        - justify-self: "start"
+        - font-size: "14px"
+        - margin: "4px 0 12px 0"
+        - color: "var(--contrast8)"
+    state:
+      - value: "on"
+        styles:
+          card:
+            - background: "var(--yellow)"
+          icon:
+            - color: "var(--black)"
+          label:
+            - color: "var(--black)"
+          name:
+            - color: "var(--black)"
+      - value: "off"
+        styles:
+          icon:
+            - color: "var(--contrast20)"
+          label:
+            - color: "var(--contrast20)"
+          name:
+            - color: "var(--contrast20)"
+  navigation_button_template_cellar: &navigation_button_template_cellar
+    type: "custom:button-card"
+    show_label: true
+    styles:
+      grid:
+        - grid-template-areas: "'i' 'n n' 'l l'"
+        - grid-template-columns: "1fr 1fr"
+        - grid-template-rows: "min-content"
+      card:
+        - background: "var(--contrast2)"
+        - padding: "16px"
+        - "--mdc-ripple-press-opacity": 0
+        - height: "100px"
+      img_cell:
+        - justify-self: "start"
+        - width: "24px"
+      icon:
+        - width: "24px"
+        - height: "24px"
+        - color: "var(--contrast8)"
+      label:
+        - justify-self: "start"
+        - align-self: "start"
+        - font-size: "12px"
+        - filter: "opacity(40%)"
+        - margin: "4px 0 3px 0"
+        - max-width: "100%"
+        - color: "var(--contrast8)"
+      name:
+        - justify-self: "start"
+        - font-size: "14px"
+        - margin: "4px 0 12px 0"
+        - color: "var(--contrast8)"
+    state:
+      - value: "on"
+        styles:
+          card:
+            - background: "var(--yellow)"
+          icon:
+            - color: "var(--black)"
+          label:
+            - color: "var(--black)"
+          name:
+            - color: "var(--black)"
+      - value: "off"
+        styles:
+          icon:
+            - color: "var(--contrast20)"
+          label:
+            - color: "var(--contrast20)"
+          name:
+            - color: "var(--contrast20)"
+  cover_button_template: &cover_button_template
+    type: "custom:button-card"
+    tap_action:
+      action: "toggle"
+      haptic: "medium"
+    hold_action:
+      action: "more-info"
+      haptic: "medium"
+    custom_fields:
+      slider:
+        card:
+          type: "custom:my-slider-v2"
+          entity: "[[[ return entity.entity_id ]]]"
+          coverMode: "position"
+          styles:
+            container:
+              - background: "none"
+              - border-radius: "100px"
+              - overflow: "visible"
+            card:
+              - padding: "8 0px"
+              - width: "16px"
+              - height: "69px"
+              - background: |
+                  [[[
+                    if (entity.state == "open" || entity.state == "opening" || entity.state == "closing") return "linear-gradient(0deg, rgba(255,255,255, 0.3) 0%, rgba(255,255,255, 1) 100%)";
+                    else return "var(--contrast4)";
+                  ]]]
+            track:
+              - overflow: "visible"
+              - background: "none"
+            progress:
+              - background: "none"
+            thumb:
+              - background: |
+                  [[[
+                    if (entity.state == "open" || entity.state == "opening" || entity.state == "closing") return "var(--black)";
+                    if (entity.state == "closed") return "var(--contrast20)";
+                    else return "var(--contrast8)";
+                  ]]]
+              - bottom: "-6px"
+              - left: "2px"
+              - height: "12px"
+              - width: "12px"
+              - border-radius: "100px"
+    styles:
+      grid:
+        - grid-template-areas: "'i slider' 'n slider'"
+        - grid-template-columns: "1fr min-content"
+        - grid-template-rows: "1fr min-content"
+      card:
+        - background: "var(--contrast2)"
+        - padding: "16px"
+        - "--mdc-ripple-press-opacity": 0
+        - height: "100px"
+      img_cell:
+        - justify-self: "start"
+        - width: "24px"
+      icon:
+        - width: "24px"
+        - height: "24px"
+        - color: "var(--contrast8)"
+      name:
+        - justify-self: "start"
+        - font-size: "14px"
+        - margin: "4px 0 12px 0"
+        - color: "var(--contrast8)"
+    state:
+      - value: "open"
+        styles:
+          card:
+            - background: "var(--blue)"
+          icon:
+            - color: "var(--black)"
+          name:
+            - color: "var(--black)"
+      - value: "closed"
+        styles:
+          icon:
+            - color: "var(--contrast20)"
+          name:
+            - color: "var(--contrast20)"
+  light_button_template: &light_button_template
+    type: "custom:button-card"
+    tap_action:
+      action: "toggle"
+      haptic: "medium"
+    hold_action:
+      action: "more-info"
+      haptic: "medium"
+    styles:
+      grid:
+        - grid-template-areas: "'i' 'n'"
+        - grid-template-columns: "1fr"
+        - grid-template-rows: "1fr min-content min-content"
+      card:
+        - background: "var(--contrast2)"
+        - padding: "16px"
+        - "--mdc-ripple-press-opacity": 0
+        - height: "100px"
+      img_cell:
+        - justify-self: "start"
+        - width: "24px"
+      icon:
+        - width: "24px"
+        - height: "24px"
+        - color: "var(--contrast8)"
+      name:
+        - justify-self: "start"
+        - font-size: "14px"
+        - margin: "4px 0 12px 0"
+        - color: "var(--contrast8)"
+    state:
+      - value: "on"
+        styles:
+          card:
+            - background: "var(--yellow)"
+          icon:
+            - color: "var(--black)"
+          name:
+            - color: "var(--black)"
+      - value: "off"
+        styles:
+          icon:
+            - color: "var(--contrast20)"
+          name:
+            - color: "var(--contrast20)"
+
+title: "Los Palmos"
+views:
+  - icon: "mdi:home"
+    path: "default_view"
+    title: "HOME"
+    theme: "Rounded"
+    type: "masonry"
+    badges: []
+    cards:
+      - name: "Los Palmos"
+        <<: *title_card_template
+      - <<: *sensor_swipe_card_template
+        cards:
+          - name: "Température"
+            entity: "sensor.ht_salon_temperature"
+            <<: *sensor_line_graph_card_template
+          - name: "Humidité"
+            entity: "sensor.ht_salon_humidity"
+            <<: *sensor_line_graph_card_template
+      - columns: 4
+        type: grid
+        cards:
+          - <<: *scene_card_template
+            entity: "scene.reveil"
+            variables:
+              color: "var(--green)"
+          - <<: *scene_card_template
+            entity: "scene.soiree"
+            variables:
+              color: "var(--red)"
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Chambre R+1"
+            entity: "light.chambre_r_1_3"
+            icon: "mdi:bed-king-outline"
+            label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
+            tap_action:
+              action: "navigate"
+              navigation_path: "/lovelace-rounded/bedroom-up"
+              haptic: "medium"
+            <<: *navigation_button_template
+          - name: "Bibliothèque"
+            entity: "light.bibliotheque"
+            icon: "mdi:library-shelves"
+            label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
+            tap_action:
+              action: "navigate"
+              navigation_path: "/lovelace-rounded/reading-room"
+              haptic: "medium"
+            <<: *navigation_button_template
+          - name: "Salon"
+            entity: "light.salon"
+            icon: "mdi:sofa"
+            label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
+            tap_action:
+              action: "navigate"
+              navigation_path: "/lovelace-rounded/living_room"
+              haptic: "medium"
+            <<: *navigation_button_template
+          - name: "Cuisine"
+            entity: "light.cuisine"
+            icon: "mdi:silverware-fork-knife"
+            label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
+            tap_action:
+              action: "navigate"
+              navigation_path: "/lovelace-rounded/kitchen"
+              haptic: "medium"
+            <<: *navigation_button_template
+          - name: "Couloir R-1"
+            entity: "light.couloir_r_1"
+            icon: "mdi:foot-print"
+            label: "[[[ return states['sensor.ht_chambre_r_1_temperature'].state + ' °C' ]]]"
+            tap_action:
+              action: "navigate"
+              navigation_path: "/lovelace-rounded/corridor"
+              haptic: "medium"
+            <<: *navigation_button_template
+          - name: "Chambre R-1"
+            entity: "light.chambre_r_1_2"
+            icon: "mdi:bed-single-outline"
+            label: "[[[ return states['sensor.ht_chambre_r_1_temperature'].state + ' °C' ]]]"
+            tap_action:
+              action: "navigate"
+              navigation_path: "/lovelace-rounded/bedroom-down"
+              haptic: "medium"
+            <<: *navigation_button_template
+          - name: "Cabinet"
+            entity: "light.cabinet"
+            icon: "mdi:account-heart"
+            label: "[[[ return states['sensor.ht_cabinet_temperature'].state + ' °C' ]]]"
+            tap_action:
+              action: "navigate"
+              navigation_path: "/lovelace-rounded/cabinet"
+              haptic: "medium"
+            <<: *navigation_button_template
+          - name: "Extérieur"
+            entity: "light.exterieur"
+            icon: "mdi:forest"
+            label: "[[[ return states['weather.forecast_home'].attributes.temperature + ' °C' ]]]"
+            tap_action:
+              action: "navigate"
+              navigation_path: "/lovelace-rounded/outdoor"
+              haptic: "medium"
+            <<: *navigation_button_template
+  - icon: "mdi:bed-king-outline"
+    path: "bedroom-up"
+    title: "Chambre R+1"
+    theme: "Rounded"
+    type: "masonry"
+    badges: []
+    cards:
+      - name: "Chambre R+1"
+        <<: *title_card_template
+      - <<: *sensor_swipe_card_template
+        cards:
+          - name: "Température"
+            entity: "sensor.ht_salon_temperature"
+            <<: *sensor_line_graph_card_template
+          - name: "Humidité"
+            entity: "sensor.ht_salon_humidity"
+            <<: *sensor_line_graph_card_template
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Cathédrale"
+            entity: "light.chambre_r_1"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+  - icon: "mdi:library-shelves"
+    path: "reading-room"
+    title: "Bibliothèque"
+    theme: "Rounded"
+    type: "masonry"
+    badges: []
+    cards:
+      - name: "Bibliothèque"
+        <<: *title_card_template
+      - <<: *sensor_swipe_card_template
+        cards:
+          - name: "Température"
+            entity: "sensor.ht_salon_temperature"
+            <<: *sensor_line_graph_card_template
+          - name: "Humidité"
+            entity: "sensor.ht_salon_humidity"
+            <<: *sensor_line_graph_card_template
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Cathédrale"
+            entity: "light.bibliotheque_cathedrale"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+          - name: "Spots"
+            entity: "light.bibliotheque_spots"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+          - name: "Cabane"
+            entity: "light.cabane_r_1_2"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+  - icon: "mdi:sofa"
+    path: "living_room"
+    title: "Salon"
+    theme: "Rounded"
+    type: "masonry"
+    badges: []
+    cards:
+      - name: "Salon"
+        <<: *title_card_template
+      - <<: *sensor_swipe_card_template
+        cards:
+          - name: "Température"
+            entity: "sensor.ht_salon_temperature"
+            <<: *sensor_line_graph_card_template
+          - name: "Humidité"
+            entity: "sensor.ht_salon_humidity"
+            <<: *sensor_line_graph_card_template
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Spots"
+            entity: "light.salon_spots"
+            icon: "mdi:globe-light"
+            <<: *light_button_template
+          - name: "Applique"
+            entity: "light.salon_applique"
+            icon: "mdi:led-strip-variant"
+            <<: *light_button_template
+          - name: "Entrée"
+            entity: "light.entree"
+            icon: "mdi:led-strip-variant"
+            <<: *light_button_template
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Translation Gauche"
+            entity: "cover.translation_gauche"
+            icon: "mdi:window-shutter"
+            <<: *cover_button_template
+  - icon: "mdi:silverware-fork-knife"
+    path: "kitchen"
+    title: "Cuisine"
+    theme: "Rounded"
+    type: "masonry"
+    badges: []
+    cards:
+      - name: "Cuisine"
+        <<: *title_card_template
+      - <<: *sensor_swipe_card_template
+        cards:
+          - name: "Température"
+            entity: "sensor.ht_salon_temperature"
+            <<: *sensor_line_graph_card_template
+          - name: "Humidité"
+            entity: "sensor.ht_salon_humidity"
+            <<: *sensor_line_graph_card_template
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Cuisine"
+            entity: "light.cuisine_spots"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+          - name: "Table à manger"
+            entity: "light.table_a_manger_spot"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+          - name: "Cellier"
+            entity: "light.cellier_spot"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+  - icon: "mdi:foot-print"
+    path: "corridor"
+    title: "Couloir R-1"
+    theme: "Rounded"
+    type: "masonry"
+    badges: []
+    cards:
+      - name: "Couloir R-1"
+        <<: *title_card_template
+      - <<: *sensor_swipe_card_template
+        cards:
+          - name: "Température"
+            entity: "sensor.ht_chambre_r_1_temperature"
+            <<: *sensor_line_graph_card_template
+          - name: "Humidité"
+            entity: "sensor.ht_chambre_r_1_humidity"
+            <<: *sensor_line_graph_card_template
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Spots"
+            entity: "light.couloir_r_1_spots"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+  - icon: "mdi:bed-single-outline"
+    path: "bedroom-down"
+    title: "Chambre R-1"
+    theme: "Rounded"
+    type: "masonry"
+    badges: []
+    cards:
+      - name: "Chambre R-1"
+        <<: *title_card_template
+      - <<: *sensor_swipe_card_template
+        cards:
+          - name: "Température"
+            entity: "sensor.ht_chambre_r_1_temperature"
+            <<: *sensor_line_graph_card_template
+          - name: "Humidité"
+            entity: "sensor.ht_chambre_r_1_humidity"
+            <<: *sensor_line_graph_card_template
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Spots"
+            entity: "light.chambre_r_1_spots_ouest"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+          - name: "Cabane"
+            entity: "light.cabane_r_1_spot"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+  - icon: "mdi:account-heart"
+    path: "cabinet"
+    title: "Cabinet"
+    theme: "Rounded"
+    type: "masonry"
+    badges: []
+    cards:
+      - name: "Cabinet"
+        <<: *title_card_template
+      - <<: *sensor_swipe_card_template
+        cards:
+          - name: "Température"
+            entity: "sensor.ht_cabinet_temperature"
+            <<: *sensor_line_graph_card_template
+          - name: "Humidité"
+            entity: "sensor.ht_cabinet_humidity"
+            <<: *sensor_line_graph_card_template
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Spots"
+            entity: "light.cabinet_emilie_spots"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+  - icon: "mdi:forest"
+    path: "outdoor"
+    title: "Extérieur"
+    theme: "Rounded"
+    type: "masonry"
+    badges: []
+    cards:
+      - name: "Extérieur"
+        <<: *title_card_template
+      - type: "weather-forecast"
+        entity: "weather.forecast_home"
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - name: "Appentis"
+            entity: "light.appentis"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+          - name: "Spots Sud Est"
+            entity: "light.exterieur_se"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template
+          - name: "Terrasse"
+            entity: "light.terrasse_spots"
+            icon: "mdi:ceiling-light"
+            <<: *light_button_template

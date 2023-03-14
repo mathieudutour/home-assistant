@@ -1,0 +1,246 @@
+- id: "1678565651924"
+  name: Soirée
+  entities:
+    cover.bibliotheque_est:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Bibliothèque Est
+      supported_features: 15
+      state: closed
+    cover.cuisine:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Cuisine
+      supported_features: 15
+      state: closed
+    cover.entree_1:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Entrée 1
+      supported_features: 15
+      state: closed
+    cover.cabane_r_1:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Cabane R+1
+      supported_features: 15
+      state: closed
+    cover.chambre_r_1_ouest:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Chambre R+1 Ouest
+      supported_features: 15
+      state: closed
+    cover.entree_2:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Entrée 2
+      supported_features: 15
+      state: closed
+    cover.panoramique_droite:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Panoramique droite
+      supported_features: 15
+      state: closed
+    cover.salon_est:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Salon Est
+      supported_features: 15
+      state: closed
+    cover.panoramique_milieu:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Panoramique milieu
+      supported_features: 15
+      state: closed
+    cover.translation_droite:
+      current_position: 31
+      current_tilt_position: 0
+      device_class: blind
+      friendly_name: Translation droite
+      supported_features: 143
+      state: closing
+    cover.velux_bibliotheque_droit:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Velux Bibliothèque droit
+      supported_features: 15
+      state: closed
+    cover.velux_bibliotheque_gauche:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Velux bibliothèque gauche
+      supported_features: 15
+      state: closed
+    cover.velux_chambre_droit:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Velux Chambre droit
+      supported_features: 15
+      state: closed
+    cover.velux_chambre_gauche:
+      current_position: 0
+      device_class: shutter
+      friendly_name: "Velux Chambre gauche "
+      supported_features: 15
+      state: closed
+    cover.velux_salle_de_bain:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Velux Salle de bain
+      supported_features: 15
+      state: closed
+    cover.wc_r0:
+      current_position: 0
+      device_class: shutter
+      friendly_name: WC R0
+      supported_features: 15
+      state: closed
+  metadata:
+    cover.bibliotheque_est:
+      entity_only: true
+    cover.cuisine:
+      entity_only: true
+    cover.entree_1:
+      entity_only: true
+    cover.cabane_r_1:
+      entity_only: true
+    cover.chambre_r_1_ouest:
+      entity_only: true
+    cover.entree_2:
+      entity_only: true
+    cover.panoramique_droite:
+      entity_only: true
+    cover.salon_est:
+      entity_only: true
+    cover.panoramique_milieu:
+      entity_only: true
+    cover.translation_droite:
+      entity_only: true
+    cover.velux_bibliotheque_droit:
+      entity_only: true
+    cover.velux_bibliotheque_gauche:
+      entity_only: true
+    cover.velux_chambre_droit:
+      entity_only: true
+    cover.velux_chambre_gauche:
+      entity_only: true
+    cover.velux_salle_de_bain:
+      entity_only: true
+    cover.wc_r0:
+      entity_only: true
+  icon: mdi:weather-sunset-down
+- id: "1678602114047"
+  name: Réveil
+  entities:
+    cover.bibliotheque_est:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Bibliothèque Est
+      supported_features: 15
+      state: open
+    cover.cuisine:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Cuisine
+      supported_features: 15
+      state: open
+    cover.entree_1:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Entrée 1
+      supported_features: 15
+      state: open
+    cover.entree_2:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Entrée 2
+      supported_features: 15
+      state: open
+    cover.panoramique_milieu:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Panoramique milieu
+      supported_features: 15
+      state: open
+    cover.salon_est:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Salon Est
+      supported_features: 15
+      state: open
+    cover.translation_droite:
+      current_position: 100
+      current_tilt_position: 100
+      device_class: blind
+      friendly_name: Translation droite
+      supported_features: 143
+      state: open
+    cover.translation_gauche:
+      current_position: 100
+      current_tilt_position: 100
+      device_class: blind
+      friendly_name: Translation gauche
+      supported_features: 143
+      state: open
+    cover.translation_milieu:
+      current_position: 100
+      current_tilt_position: 100
+      device_class: blind
+      friendly_name: Translation milieu
+      supported_features: 143
+      state: open
+    cover.velux_bibliotheque_droit:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Velux Bibliothèque droit
+      supported_features: 15
+      state: open
+    cover.velux_bibliotheque_gauche:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Velux bibliothèque gauche
+      supported_features: 15
+      state: open
+    cover.velux_salle_de_bain:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Velux Salle de bain
+      supported_features: 15
+      state: open
+    cover.wc_r0:
+      current_position: 100
+      device_class: shutter
+      friendly_name: WC R0
+      supported_features: 15
+      state: open
+  icon: mdi:weather-sunset-up
+  metadata:
+    cover.bibliotheque_est:
+      entity_only: true
+    cover.cuisine:
+      entity_only: true
+    cover.entree_1:
+      entity_only: true
+    cover.entree_2:
+      entity_only: true
+    cover.panoramique_milieu:
+      entity_only: true
+    cover.salon_est:
+      entity_only: true
+    cover.translation_droite:
+      entity_only: true
+    cover.translation_gauche:
+      entity_only: true
+    cover.translation_milieu:
+      entity_only: true
+    cover.velux_bibliotheque_droit:
+      entity_only: true
+    cover.velux_bibliotheque_gauche:
+      entity_only: true
+    cover.velux_salle_de_bain:
+      entity_only: true
+    cover.wc_r0:
+      entity_only: true
