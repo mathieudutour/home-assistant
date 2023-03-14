@@ -18,6 +18,7 @@ plex.conf
 pyozw.sqlite
 secrets.yaml
 tradfri.conf
+.storage
 
 # Temporary files
 *.db-journal
@@ -31,6 +32,7 @@ www
 
 # Log files
 home-assistant.log
+home-assistant.log.*
 ozw_log.txt
 
 # Development files
