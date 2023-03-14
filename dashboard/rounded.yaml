@@ -1,4 +1,4 @@
-button_card_templates: !include_dir_merge_named button_card_templates
+button_card_templates: !include_dir_merge_named ../button_card_templates
 
 default_templates:
   sensor_line_graph_card_template: &sensor_line_graph_card_template
