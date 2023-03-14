@@ -1,4 +1,4 @@
-cover-card:
+cover_card:
   tap_action:
     action: "toggle"
     haptic: "medium"

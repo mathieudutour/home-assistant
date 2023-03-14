@@ -1,5 +1,4 @@
-title-card:
-  template:
+title_card:
   styles:
     card:
       - background: "none"

@@ -1,4 +1,4 @@
-button_card_templates: !include_dir_merge_named button-card-templates
+button_card_templates: !include_dir_merge_named button_card_templates
 
 default_templates:
   sensor_line_graph_card_template: &sensor_line_graph_card_template
@@ -30,7 +30,7 @@ views:
     badges: []
     cards:
       - type: custom:button-card
-        template: title-card
+        template: title_card
         name: "Los Palmos"
       - <<: *sensor_swipe_card_template
         cards:
@@ -44,12 +44,12 @@ views:
         type: grid
         cards:
           - type: custom:button-card
-            template: scene-card
+            template: scene_card
             entity: "scene.reveil"
             variables:
               color: "var(--green)"
           - type: custom:button-card
-            template: scene-card
+            template: scene_card
             entity: "scene.soiree"
             variables:
               color: "var(--red)"
@@ -58,7 +58,7 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: room-card
+            template: room_card
             name: "Chambre R+1"
             entity: "light.chambre_r_1_3"
             icon: "mdi:bed-king-outline"
@@ -68,7 +68,7 @@ views:
               navigation_path: "/lovelace-rounded/bedroom-up"
               haptic: "medium"
           - type: custom:button-card
-            template: room-card
+            template: room_card
             name: "Bibliothèque"
             entity: "light.bibliotheque"
             icon: "mdi:library-shelves"
@@ -78,7 +78,7 @@ views:
               navigation_path: "/lovelace-rounded/reading-room"
               haptic: "medium"
           - type: custom:button-card
-            template: room-card
+            template: room_card
             name: "Salon"
             entity: "light.salon"
             icon: "mdi:sofa"
@@ -88,7 +88,7 @@ views:
               navigation_path: "/lovelace-rounded/living_room"
               haptic: "medium"
           - type: custom:button-card
-            template: room-card
+            template: room_card
             name: "Cuisine"
             entity: "light.cuisine"
             icon: "mdi:silverware-fork-knife"
@@ -98,7 +98,7 @@ views:
               navigation_path: "/lovelace-rounded/kitchen"
               haptic: "medium"
           - type: custom:button-card
-            template: room-card
+            template: room_card
             name: "Couloir R-1"
             entity: "light.couloir_r_1"
             icon: "mdi:foot-print"
@@ -108,7 +108,7 @@ views:
               navigation_path: "/lovelace-rounded/corridor"
               haptic: "medium"
           - type: custom:button-card
-            template: room-card
+            template: room_card
             name: "Chambre R-1"
             entity: "light.chambre_r_1_2"
             icon: "mdi:bed-single-outline"
@@ -118,7 +118,7 @@ views:
               navigation_path: "/lovelace-rounded/bedroom-down"
               haptic: "medium"
           - type: custom:button-card
-            template: room-card
+            template: room_card
             name: "Cabinet"
             entity: "light.cabinet"
             icon: "mdi:account-heart"
@@ -128,7 +128,7 @@ views:
               navigation_path: "/lovelace-rounded/cabinet"
               haptic: "medium"
           - type: custom:button-card
-            template: room-card
+            template: room_card
             name: "Extérieur"
             entity: "light.exterieur"
             icon: "mdi:forest"
@@ -145,7 +145,7 @@ views:
     badges: []
     cards:
       - type: custom:button-card
-        template: title-card
+        template: title_card
         name: "Chambre R+1"
       - <<: *sensor_swipe_card_template
         cards:
@@ -160,7 +160,7 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Cathédrale"
             entity: "light.chambre_r_1"
             icon: "mdi:ceiling-light"
@@ -172,7 +172,7 @@ views:
     badges: []
     cards:
       - type: custom:button-card
-        template: title-card
+        template: title_card
         name: "Bibliothèque"
       - <<: *sensor_swipe_card_template
         cards:
@@ -187,17 +187,17 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Cathédrale"
             entity: "light.bibliotheque_cathedrale"
             icon: "mdi:ceiling-light"
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Spots"
             entity: "light.bibliotheque_spots"
             icon: "mdi:ceiling-light"
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Cabane"
             entity: "light.cabane_r_1_2"
             icon: "mdi:ceiling-light"
@@ -209,7 +209,7 @@ views:
     badges: []
     cards:
       - type: custom:button-card
-        template: title-card
+        template: title_card
         name: "Salon"
       - <<: *sensor_swipe_card_template
         cards:
@@ -224,17 +224,17 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Spots"
             entity: "light.salon_spots"
             icon: "mdi:globe-light"
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Applique"
             entity: "light.salon_applique"
             icon: "mdi:led-strip-variant"
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Entrée"
             entity: "light.entree"
             icon: "mdi:led-strip-variant"
@@ -243,7 +243,7 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: cover-card
+            template: cover_card
             name: "Translation Gauche"
             entity: "cover.translation_gauche"
             icon: "mdi:window-shutter"
@@ -255,7 +255,7 @@ views:
     badges: []
     cards:
       - type: custom:button-card
-        template: title-card
+        template: title_card
         name: "Cuisine"
       - <<: *sensor_swipe_card_template
         cards:
@@ -270,17 +270,17 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Cuisine"
             entity: "light.cuisine_spots"
             icon: "mdi:ceiling-light"
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Table à manger"
             entity: "light.table_a_manger_spot"
             icon: "mdi:ceiling-light"
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Cellier"
             entity: "light.cellier_spot"
             icon: "mdi:ceiling-light"
@@ -292,7 +292,7 @@ views:
     badges: []
     cards:
       - type: custom:button-card
-        template: title-card
+        template: title_card
         name: "Couloir R-1"
       - <<: *sensor_swipe_card_template
         cards:
@@ -307,7 +307,7 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Spots"
             entity: "light.couloir_r_1_spots"
             icon: "mdi:ceiling-light"
@@ -319,7 +319,7 @@ views:
     badges: []
     cards:
       - type: custom:button-card
-        template: title-card
+        template: title_card
         name: "Chambre R-1"
       - <<: *sensor_swipe_card_template
         cards:
@@ -334,12 +334,12 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Spots"
             entity: "light.chambre_r_1_spots_ouest"
             icon: "mdi:ceiling-light"
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Cabane"
             entity: "light.cabane_r_1_spot"
             icon: "mdi:ceiling-light"
@@ -351,7 +351,7 @@ views:
     badges: []
     cards:
       - type: custom:button-card
-        template: title-card
+        template: title_card
         name: "Cabinet"
       - <<: *sensor_swipe_card_template
         cards:
@@ -366,7 +366,7 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Spots"
             entity: "light.cabinet_emilie_spots"
             icon: "mdi:ceiling-light"
@@ -378,7 +378,7 @@ views:
     badges: []
     cards:
       - type: custom:button-card
-        template: title-card
+        template: title_card
         name: "Extérieur"
       - type: "weather-forecast"
         entity: "weather.forecast_home"
@@ -387,17 +387,17 @@ views:
         square: false
         cards:
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Appentis"
             entity: "light.appentis"
             icon: "mdi:ceiling-light"
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Spots Sud Est"
             entity: "light.exterieur_se"
             icon: "mdi:ceiling-light"
           - type: custom:button-card
-            template: light-card
+            template: light_card
             name: "Terrasse"
             entity: "light.terrasse_spots"
             icon: "mdi:ceiling-light"

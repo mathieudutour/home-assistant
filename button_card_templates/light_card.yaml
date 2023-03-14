@@ -1,4 +1,4 @@
-light-card:
+light_card:
   tap_action:
     action: "toggle"
     haptic: "medium"

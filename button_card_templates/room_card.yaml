@@ -1,4 +1,4 @@
-room-card:
+room_card:
   show_label: true
   hold_action:
     action: "more-info"

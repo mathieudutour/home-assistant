@@ -1,5 +1,4 @@
-scene-card:
-  template:
+scene_card:
   show_name: false
   aspect_ratio: 1/1
   variables:
