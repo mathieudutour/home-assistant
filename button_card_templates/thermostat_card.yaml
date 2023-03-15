@@ -1,4 +1,4 @@
-light_card:
+thermostat_card:
   tap_action:
     action: "toggle"
     haptic: "medium"
