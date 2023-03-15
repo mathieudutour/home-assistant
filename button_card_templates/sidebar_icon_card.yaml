@@ -3,7 +3,7 @@ sidebar_icon_card:
   aspect_ratio: 1/1
   tap_action:
     action: nothing
-    scroll_to: "[[[ repl.querySelectorAllDeep('button-card #name').find(x => x.innerText === variables.title)?.scrollIntoView() ]]]"
+    scroll_to: "[[[ querySelectorAllDeep('button-card #name').find(x => x.innerText === variables.title)?.scrollIntoView() ]]]"
     haptic: "medium"
   styles:
     card:
