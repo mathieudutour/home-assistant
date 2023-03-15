@@ -69,13 +69,13 @@ views:
       #################################################
 
       - type: custom:layout-card
-        layout_type: custom:vertical-layout
+        layout_type: custom:grid-layout
         view_layout:
           grid-area: sidebar
         layout:
           max_cols: 1
           width: 30px
-          column_widths: 30
+          column_widths: 30px
           margin: 0
         cards:
           - type: custom:button-card
