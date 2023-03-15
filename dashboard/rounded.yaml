@@ -73,6 +73,7 @@ views:
         view_layout:
           grid-area: sidebar
         layout:
+          width: 30px
           margin: 0
         cards:
           - type: custom:button-card
