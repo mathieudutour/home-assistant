@@ -1,5 +1,7 @@
-type: custom:layout-card
-layout_type: custom:grid-layout
+type: "grid"
+columns: 1
+card_mod:
+  class: "home-sidebar"
 view_layout:
   grid-area: sidebar
 layout:

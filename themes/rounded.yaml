@@ -299,6 +299,18 @@ Rounded:
         z-index: 1;
       }
 
+      /* Sidebar */
+
+      .home-sidebar {
+        width: 30px;
+      }
+
+      /* Home */
+
+      .home-content {
+        padding: 0 30px;
+      }
+
   card-mod-root: |
 
     /* ___________ Bottom tabbar ___________  */
