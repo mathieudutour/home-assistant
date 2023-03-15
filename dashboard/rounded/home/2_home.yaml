@@ -1,3 +1,23 @@
+default_templates:
+  sensor_line_graph_card_template: &sensor_line_graph_card_template
+    type: "sensor"
+    hours_to_show: 24
+    detail: 1
+    graph: "line"
+    icon: "none"
+    card_mod:
+      class: "graph"
+  sensor_swipe_card_template: &sensor_swipe_card_template
+    type: "custom:swipe-card"
+    card_width: "calc(100% - 48px)"
+    start_card: 0
+    reset_after: 15
+    parameters:
+      centeredSlides: true
+      slidesPerView: "auto"
+      spaceBetween: 16
+      initialSlide: 0
+
 type: vertical-stack
 view_layout:
   grid-area: home
