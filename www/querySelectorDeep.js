@@ -29,7 +29,6 @@ window.querySelectorDeep = function querySelectorDeep(
 };
 
 function _querySelectorDeep(selector, findMany, root, allElements = null) {
-  selector = normalizeSelector(selector);
   let lightElement = root.querySelector(selector);
 
   if (document.head.createShadowRoot || document.head.attachShadow) {
