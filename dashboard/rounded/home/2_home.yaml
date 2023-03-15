@@ -117,7 +117,7 @@ cards:
         tap_action:
           action: "navigate"
           navigation_path: "/lovelace-rounded/outdoor"
-          haptic: "medium"
+          scroll_to: ""
 
   - type: custom:button-card
     template: title_card
