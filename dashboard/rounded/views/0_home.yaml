@@ -1,0 +1,15 @@
+icon: "mdi:home"
+path: "default_view"
+title: "HOME"
+type: "custom:grid-layout"
+badges: []
+layout:
+  #default
+  margin: 0
+  grid-gap: 0
+  card_margin: 0 3.3vw
+  grid-template-columns: 0 1fr
+  grid-template-rows: 1fr
+  grid-template-areas: |
+    "sidebar  home"
+cards: !include_dir_list ../home

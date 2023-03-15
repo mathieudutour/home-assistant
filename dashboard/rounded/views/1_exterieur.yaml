@@ -1,0 +1,27 @@
+icon: "mdi:forest"
+path: "outdoor"
+title: "Extérieur"
+type: "masonry"
+badges: []
+cards:
+  - type: custom:button-card
+    template: title_card
+    name: "Extérieur"
+  - type: "weather-forecast"
+    entity: "weather.forecast_home"
+  - type: "grid"
+    columns: 2
+    square: false
+    cards:
+      - type: custom:button-card
+        template: light_card
+        name: "Appentis"
+        entity: "light.appentis"
+      - type: custom:button-card
+        template: light_card
+        name: "Spots Sud Est"
+        entity: "light.exterieur_se"
+      - type: custom:button-card
+        template: light_card
+        name: "Terrasse"
+        entity: "light.terrasse_spots"

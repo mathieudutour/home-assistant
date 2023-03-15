@@ -1,0 +1,46 @@
+type: custom:layout-card
+layout_type: custom:grid-layout
+view_layout:
+  grid-area: sidebar
+layout:
+  max_cols: 1
+  width: 30px
+  column_widths: 30px
+  card_margin: 0
+  margin: 0
+cards:
+  - type: custom:button-card
+    icon: "mdi:bed-king-outline"
+    template: sidebar_icon_card
+    variables:
+      title: "Chambre R+1"
+  - type: custom:button-card
+    icon: "mdi:library-shelves"
+    template: sidebar_icon_card
+    variables:
+      title: "Bibliothèque"
+  - type: custom:button-card
+    icon: "mdi:sofa"
+    template: sidebar_icon_card
+    variables:
+      title: "Salon"
+  - type: custom:button-card
+    icon: "mdi:silverware-fork-knife"
+    template: sidebar_icon_card
+    variables:
+      title: "Cuisine"
+  - type: custom:button-card
+    icon: "mdi:foot-print"
+    template: sidebar_icon_card
+    variables:
+      title: "Couloir R-1"
+  - type: custom:button-card
+    icon: "mdi:bed-single-outline"
+    template: sidebar_icon_card
+    variables:
+      title: "Chambre R-1"
+  - type: custom:button-card
+    icon: "mdi:account-heart"
+    template: sidebar_icon_card
+    variables:
+      title: "Cabinet"
