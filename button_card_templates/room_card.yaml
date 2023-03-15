@@ -2,7 +2,7 @@ room_card:
   show_label: true
   tap_action:
     action: nothing
-    scroll_to: "[[[ querySelectorAllDeep('button-card #name').find(x => x.innerText === variables.title)?.scrollIntoView(true) ]]]"
+    scroll_to: "[[[ querySelectorAllDeep('button-card #name').find(x => x.innerText === variables.title)?.scrollIntoView({ behavior: 'smooth', block: 'start' }) ]]]"
     haptic: "medium"
   hold_action:
     action: "more-info"
