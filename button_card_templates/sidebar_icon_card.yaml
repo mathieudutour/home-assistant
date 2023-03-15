@@ -5,6 +5,9 @@ sidebar_icon_card:
     action: nothing
     log_me: "[[[ console.log(variables.title) ]]]"
   styles:
+    card:
+      - width: 30px
+        margin: 0
     icon:
       - color: var(--contrast20)
         width: 100%
