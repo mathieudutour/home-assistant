@@ -254,6 +254,26 @@ views:
                 template: light_card
                 name: "Cathédrale"
                 entity: "light.chambre_r_1"
+          - type: "grid"
+            columns: 2
+            square: false
+            cards:
+              - type: custom:button-card
+                template: cover_card
+                name: "Panoramique"
+                entity: "cover.panoramique_droite"
+              - type: custom:button-card
+                template: cover_card
+                name: "Fenêtre"
+                entity: "cover.chambre_r_1_ouest"
+              - type: custom:button-card
+                template: cover_card
+                name: "Velux Gauche"
+                entity: "cover.velux_chambre_gauche"
+              - type: custom:button-card
+                template: cover_card
+                name: "Velux Droit"
+                entity: "cover.velux_chambre_droit"
 
           - type: custom:button-card
             template: title_card
@@ -282,6 +302,30 @@ views:
                 template: light_card
                 name: "Cabane"
                 entity: "light.cabane_r_1_2"
+          - type: "grid"
+            columns: 2
+            square: false
+            cards:
+              - type: custom:button-card
+                template: cover_card
+                name: "Cabane"
+                entity: "cover.cabane_r_1"
+              - type: custom:button-card
+                template: cover_card
+                name: "Panoramique  Milieu"
+                entity: "cover.panoramique_milieu"
+              - type: custom:button-card
+                template: cover_card
+                name: "Fenêtre"
+                entity: "cover.bibliotheque_est"
+              - type: custom:button-card
+                template: cover_card
+                name: "Velux Gauche"
+                entity: "cover.velux_bibliotheque_gauche"
+              - type: custom:button-card
+                template: cover_card
+                name: "Velux Droit"
+                entity: "cover.velux_bibliotheque_droit"
 
           - type: custom:button-card
             template: title_card
@@ -318,6 +362,22 @@ views:
                 template: cover_card
                 name: "Translation Gauche"
                 entity: "cover.translation_gauche"
+              - type: custom:button-card
+                template: cover_card
+                name: "Translation Milieu"
+                entity: "cover.translation_milieu"
+              - type: custom:button-card
+                template: cover_card
+                name: "Fenêtre"
+                entity: "cover.salon_est"
+              - type: custom:button-card
+                template: cover_card
+                name: "Entrée 1"
+                entity: "cover.entree_1"
+              - type: custom:button-card
+                template: cover_card
+                name: "Entrée 2"
+                entity: "cover.entree_2"
 
           - type: custom:button-card
             template: title_card
@@ -346,6 +406,18 @@ views:
                 template: light_card
                 name: "Cellier"
                 entity: "light.cellier_spot"
+          - type: "grid"
+            columns: 2
+            square: false
+            cards:
+              - type: custom:button-card
+                template: cover_card
+                name: "Translation"
+                entity: "cover.translation_droite"
+              - type: custom:button-card
+                template: cover_card
+                name: "Fenêtre"
+                entity: "cover.cuisine_ouest"
 
           - type: custom:button-card
             template: title_card
