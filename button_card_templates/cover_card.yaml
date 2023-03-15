@@ -17,7 +17,8 @@ cover_card:
             - border-radius: "100px"
             - overflow: "visible"
           card:
-            - padding: "8px 0"
+            - padding-top: "8px"
+            - padding-bottom: "8px"
             - width: "16px"
             - height: "69px"
             - background: |
@@ -66,6 +67,22 @@ cover_card:
       - color: "var(--contrast8)"
   state:
     - value: "open"
+      styles:
+        card:
+          - background: "var(--blue)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - value: "opening"
+      styles:
+        card:
+          - background: "var(--blue)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - value: "closing"
       styles:
         card:
           - background: "var(--blue)"
