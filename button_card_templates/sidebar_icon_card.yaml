@@ -10,7 +10,6 @@ sidebar_icon_card:
       - width: 30px
       - height: 30px
       - margin: 0
-      - left: -15px
     icon:
       - color: var(--contrast20)
       - width: 100%

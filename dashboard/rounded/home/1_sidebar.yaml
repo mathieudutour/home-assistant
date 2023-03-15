@@ -1,6 +1,10 @@
 type: custom:mod-card
 card_mod:
-  class: "home-sidebar"
+  style: |
+    ha-card {
+      width: 30px;
+      margin-left: -20px;
+    }
 view_layout:
   grid-area: sidebar
 card:
