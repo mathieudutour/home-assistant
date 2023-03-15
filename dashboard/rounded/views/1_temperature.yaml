@@ -68,5 +68,5 @@ cards:
     cards:
       - type: custom:button-card
         template: thermostat_card
-        name: "Salon"
+        name: "Cabinet"
         entity: "switch.thermostat_cabinet"

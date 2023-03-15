@@ -1,4 +1,5 @@
 thermostat_card:
+  icon: "mdi:thermometer"
   tap_action:
     action: "toggle"
     haptic: "medium"
