@@ -56,70 +56,56 @@ cards:
         entity: "light.chambre_r_1_3"
         icon: "mdi:bed-king-outline"
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
-        tap_action:
-          action: "navigate"
-          navigation_path: "/lovelace-rounded/bedroom-up"
-          haptic: "medium"
+        variables:
+          name: "Chambre R+1"
       - type: custom:button-card
         template: room_card
         name: "Bibliothèque"
         entity: "light.bibliotheque"
         icon: "mdi:library-shelves"
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
-        tap_action:
-          action: "navigate"
-          navigation_path: "/lovelace-rounded/reading-room"
-          haptic: "medium"
+        variables:
+          name: "Bibliothèque"
       - type: custom:button-card
         template: room_card
         name: "Salon"
         entity: "light.salon"
         icon: "mdi:sofa"
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
-        tap_action:
-          action: "navigate"
-          navigation_path: "/lovelace-rounded/living_room"
-          haptic: "medium"
+        variables:
+          name: "Salon"
       - type: custom:button-card
         template: room_card
         name: "Cuisine"
         entity: "light.cuisine"
         icon: "mdi:silverware-fork-knife"
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
-        tap_action:
-          action: "navigate"
-          navigation_path: "/lovelace-rounded/kitchen"
-          haptic: "medium"
+        variables:
+          name: "Cuisine"
       - type: custom:button-card
         template: room_card
         name: "Couloir R-1"
         entity: "light.couloir_r_1"
         icon: "mdi:foot-print"
         label: "[[[ return states['sensor.ht_chambre_r_1_temperature'].state + ' °C' ]]]"
-        tap_action:
-          action: "navigate"
-          navigation_path: "/lovelace-rounded/corridor"
-          haptic: "medium"
+        variables:
+          name: "Couloir R-1"
       - type: custom:button-card
         template: room_card
         name: "Chambre R-1"
         entity: "light.chambre_r_1_2"
         icon: "mdi:bed-single-outline"
         label: "[[[ return states['sensor.ht_chambre_r_1_temperature'].state + ' °C' ]]]"
-        tap_action:
-          action: "navigate"
-          navigation_path: "/lovelace-rounded/bedroom-down"
-          haptic: "medium"
+        variables:
+          name: "Chambre R-1"
       - type: custom:button-card
         template: room_card
         name: "Cabinet"
         entity: "light.cabinet"
         icon: "mdi:account-heart"
         label: "[[[ return states['sensor.ht_cabinet_temperature'].state + ' °C' ]]]"
-        tap_action:
-          action: "navigate"
-          navigation_path: "/lovelace-rounded/cabinet"
-          haptic: "medium"
+        variables:
+          name: "Cabinet"
       - type: custom:button-card
         template: room_card
         name: "Extérieur"
