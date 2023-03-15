@@ -59,7 +59,7 @@ cards:
         icon: "mdi:bed-king-outline"
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
         variables:
-          name: "Chambre R+1"
+          title: "Chambre R+1"
       - type: custom:button-card
         template: room_card
         name: "Bibliothèque"
@@ -67,7 +67,7 @@ cards:
         icon: "mdi:library-shelves"
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
         variables:
-          name: "Bibliothèque"
+          title: "Bibliothèque"
       - type: custom:button-card
         template: room_card
         name: "Salon"
@@ -75,7 +75,7 @@ cards:
         icon: "mdi:sofa"
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
         variables:
-          name: "Salon"
+          title: "Salon"
       - type: custom:button-card
         template: room_card
         name: "Cuisine"
@@ -83,7 +83,7 @@ cards:
         icon: "mdi:silverware-fork-knife"
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
         variables:
-          name: "Cuisine"
+          title: "Cuisine"
       - type: custom:button-card
         template: room_card
         name: "Couloir R-1"
@@ -91,7 +91,7 @@ cards:
         icon: "mdi:foot-print"
         label: "[[[ return states['sensor.ht_chambre_r_1_temperature'].state + ' °C' ]]]"
         variables:
-          name: "Couloir R-1"
+          title: "Couloir R-1"
       - type: custom:button-card
         template: room_card
         name: "Chambre R-1"
@@ -99,7 +99,7 @@ cards:
         icon: "mdi:bed-single-outline"
         label: "[[[ return states['sensor.ht_chambre_r_1_temperature'].state + ' °C' ]]]"
         variables:
-          name: "Chambre R-1"
+          title: "Chambre R-1"
       - type: custom:button-card
         template: room_card
         name: "Cabinet"
@@ -107,7 +107,7 @@ cards:
         icon: "mdi:account-heart"
         label: "[[[ return states['sensor.ht_cabinet_temperature'].state + ' °C' ]]]"
         variables:
-          name: "Cabinet"
+          title: "Cabinet"
       - type: custom:button-card
         template: room_card
         name: "Extérieur"
