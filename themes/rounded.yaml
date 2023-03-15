@@ -257,13 +257,7 @@ Rounded:
 
       ha-card {
         transition: none !important;
-        font-family: 'Custom font', 'Roboto', sans-serif !important;
-      }
-
-      /* Vacuum card load transition disabled */
-
-      .type-custom-xiaomi-vacuum-map-card {
-        transition: none !important;
+        font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
       }
 
       /* Graph card style */

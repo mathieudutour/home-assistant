@@ -1,0 +1,50 @@
+icon: "mdi:thermometer"
+path: "temperature"
+title: "Température"
+type: "masonry"
+badges: []
+cards:
+  - type: custom:button-card
+    template: title_card
+    name: "Température"
+  - type: "sensor"
+    name: "Salon"
+    entity: "sensor.ht_salon_temperature"
+    hours_to_show: 24
+    detail: 1
+    graph: "line"
+    icon: "none"
+    card_mod:
+      class: "graph"
+  - type: "grid"
+    columns: 3
+    square: false
+    cards:
+      - type: custom:button-card
+        template: thermostat_card
+        name: "Salon"
+        entity: "switch.thermostat_salon"
+      - type: custom:button-card
+        template: thermostat_card
+        name: "Cuisine"
+        entity: "switch.thermostat_cuisine"
+      - type: custom:button-card
+        template: thermostat_card
+        name: "Entrée"
+        entity: "switch.thermostat_entree"
+  - type: "grid"
+    columns: 3
+    square: false
+    cards:
+      - type: custom:button-card
+        template: thermostat_card
+        name: "Salon"
+        entity: "switch.thermostat_salon"
+      - type: custom:button-card
+        template: thermostat_card
+        name: "Cuisine"
+        entity: "switch.thermostat_cuisine"
+      - type: custom:button-card
+        template: thermostat_card
+        name: "Entrée"
+        entity: "switch.thermostat_entree"
