@@ -18,6 +18,8 @@ lovelace:
       type: module
     - url: /hacsfiles/my-cards/my-cards.js
       type: module
+    - url: /hacsfiles/lovelace-layout-card/layout-card.js
+      type: module
   dashboards:
     lovelace-rounded:
       mode: "yaml"

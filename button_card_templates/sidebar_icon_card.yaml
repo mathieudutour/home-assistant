@@ -1,0 +1,11 @@
+sidebar_icon_card:
+  show_name: false
+  aspect_ratio: 1/1
+  tap_action:
+    action: nothing
+    log_me: "[[[ console.log(variables.title) ]]]"
+  styles:
+    card:
+      - border-radius: 24px
+    icon:
+      - color: var(--black)
