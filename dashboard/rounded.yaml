@@ -30,8 +30,9 @@ views:
     layout:
       #default
       margin: 0
-      grid-gap: 3.3vw
-      grid-template-columns: min-content 1fr
+      grid-gap: 0
+      card_margin: 0 3.3vw
+      grid-template-columns: 0 1fr
       grid-template-rows: 1fr
       grid-template-areas: |
         "sidebar  home"
