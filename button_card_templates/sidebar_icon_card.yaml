@@ -3,7 +3,7 @@ sidebar_icon_card:
   aspect_ratio: 1/1
   tap_action:
     action: nothing
-    log_me: "[[[ console.log(variables.title) ]]]"
+    scroll_to: "[[[ repl.querySelectorAllDeep('button-card #name').find(x => x.innerText === variables.title)?.scrollIntoView() ]]]"
   styles:
     card:
       - width: 30px
