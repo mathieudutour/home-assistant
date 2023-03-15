@@ -68,9 +68,12 @@ views:
       #                                               #
       #################################################
 
-      - type: vertical-stack
+      - type: custom:layout-card
+        layout_type: custom:vertical-layout
         view_layout:
           grid-area: sidebar
+        layout:
+          margin: 0
         cards:
           - type: custom:button-card
             icon: "mdi:bed-king-outline"
