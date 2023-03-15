@@ -417,7 +417,7 @@ views:
               - type: custom:button-card
                 template: cover_card
                 name: "Fenêtre"
-                entity: "cover.cuisine_ouest"
+                entity: "cover.cuisine"
 
           - type: custom:button-card
             template: title_card
