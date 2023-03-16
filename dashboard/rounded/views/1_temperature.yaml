@@ -85,12 +85,8 @@ cards:
     card_mod:
       class: "graph"
       style: |
-        {% set state = states(card.entity.entity_id) | float %}
-        {% set target = states('input_number.temperature_salon') | float %}
         ha-card {
           border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
-          background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %};
-          --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
         }
   - type: custom:button-card
     template: temperature_card
