@@ -1,7 +1,7 @@
 icon: "mdi:forest"
 path: "outdoor"
 title: "Extérieur"
-type: "masonry"
+type: "vertical-stack"
 badges: []
 cards:
   - type: custom:button-card
