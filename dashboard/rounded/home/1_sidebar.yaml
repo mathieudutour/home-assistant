@@ -4,6 +4,7 @@ card_mod:
     ha-card {
       width: 30px;
       margin-left: -20px;
+      display: none;
     }
 view_layout:
   grid-area: sidebar
