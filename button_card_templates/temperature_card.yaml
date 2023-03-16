@@ -20,8 +20,8 @@ temperature_card:
             entity_id: "[[[ return entity.entity_id ]]]"
         styles:
           icon:
-            - width: "24px"
-            - height: "24px"
+            - width: "40px"
+            - height: "60px"
     minus:
       card:
         type: "custom:button-card"
@@ -35,23 +35,28 @@ temperature_card:
             entity_id: "[[[ return entity.entity_id ]]]"
         styles:
           icon:
-            - width: "24px"
-            - height: "24px"
+            - width: "40px"
+            - height: "60px"
   styles:
     grid:
       - grid-template-areas: "'minus n l plus'"
-      - grid-template-columns: "32px 1fr 1fr 32px"
+      - grid-template-columns: "60px 1fr 1fr 60px"
       - grid-template-rows: "min-content"
     card:
       - background: "var(--contrast2)"
-      - padding: "16px"
+      - padding: "0 16px"
       - "--mdc-ripple-press-opacity": 0
-      - height: "100px"
+      - height: "70px"
+      - margin-top: "-40px"
+      - border-radius: "0 0 var(--ha-card-border-radius) var(--ha-card-border-radius)"
     name:
       - justify-self: "end"
       - font-size: "25px"
       - color: "var(--contrast20)"
+      - align-self: "center"
     label:
       - justify-self: "start"
+      - align-self: "center"
       - font-size: "14px"
       - color: "var(--contrast8)"
+      - margin-left: "10px"

@@ -15,7 +15,7 @@ cards:
     graph: "line"
     icon: "none"
     card_mod:
-      class: "graph"
+      class: "graph with-temperature-below"
   - type: custom:button-card
     template: temperature_card
     entity: "input_number.temperature_salon"
@@ -43,7 +43,10 @@ cards:
     graph: "line"
     icon: "none"
     card_mod:
-      class: "graph"
+      class: "graph with-temperature-below"
+  - type: custom:button-card
+    template: temperature_card
+    entity: "input_number.temperature_chambre_r_1"
   - type: "grid"
     columns: 3
     square: false
@@ -64,7 +67,10 @@ cards:
     graph: "line"
     icon: "none"
     card_mod:
-      class: "graph"
+      class: "graph with-temperature-below"
+  - type: custom:button-card
+    template: temperature_card
+    entity: "input_number.temperature_cabinet"
   - type: "grid"
     columns: 3
     square: false

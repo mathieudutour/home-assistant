@@ -11,7 +11,6 @@ scene_card:
       entity_id: "[[[ return entity.entity_id ]]]"
   styles:
     card:
-      - border-radius: 24px
       - background-color: "[[[ return variables.color ]]]"
     icon:
       - color: var(--black)
