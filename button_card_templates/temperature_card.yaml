@@ -39,7 +39,7 @@ temperature_card:
   styles:
     grid:
       - grid-template-areas: "'minus l plus'"
-      - grid-template-columns: "1fr"
+      - grid-template-columns: "32px 1fr 32px"
       - grid-template-rows: "min-content"
     card:
       - background: "var(--contrast2)"
