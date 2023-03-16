@@ -1,4 +1,4 @@
-room_card:
+temperature_card:
   show_label: false
   show_icon: false
   hold_action:
