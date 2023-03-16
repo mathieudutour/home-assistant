@@ -1,5 +1,6 @@
 temperature_card:
   show_icon: false
+  show_label: true
   hold_action:
     action: "more-info"
     haptic: "medium"
