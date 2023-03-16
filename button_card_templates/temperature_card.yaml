@@ -1,10 +1,10 @@
 temperature_card:
-  show_name: false
+  show_label: false
   show_icon: false
   hold_action:
     action: "more-info"
     haptic: "medium"
-  label: "[[[ return entity.state + ' ℃' ]]]"
+  name: "[[[ return entity.state + ' ℃' ]]]"
   custom_fields:
     plus:
       card:
@@ -38,7 +38,7 @@ temperature_card:
             - height: "24px"
   styles:
     grid:
-      - grid-template-areas: "'minus l plus'"
+      - grid-template-areas: "'minus n plus'"
       - grid-template-columns: "32px 1fr 32px"
       - grid-template-rows: "min-content"
     card:
