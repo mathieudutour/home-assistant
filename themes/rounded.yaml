@@ -268,10 +268,6 @@ Rounded:
         overflow: hidden; /* Temporary fix for graph overflow bug */
       }
 
-      .graph.with-temperature-below {
-        border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
-      }
-
       .graph .name {
         font-size: 12px;
         line-height: 18px;

@@ -15,7 +15,11 @@ cards:
     graph: "line"
     icon: "none"
     card_mod:
-      class: "graph with-temperature-below"
+      class: "graph"
+      style: |
+        ha-card {
+          border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
+        }
   - type: custom:button-card
     template: temperature_card
     entity: "input_number.temperature_salon"
@@ -43,7 +47,11 @@ cards:
     graph: "line"
     icon: "none"
     card_mod:
-      class: "graph with-temperature-below"
+      class: "graph"
+      style: |
+        ha-card {
+          border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
+        }
   - type: custom:button-card
     template: temperature_card
     entity: "input_number.temperature_chambre_r_1"
@@ -67,7 +75,11 @@ cards:
     graph: "line"
     icon: "none"
     card_mod:
-      class: "graph with-temperature-below"
+      class: "graph"
+      style: |
+        ha-card {
+          border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
+        }
   - type: custom:button-card
     template: temperature_card
     entity: "input_number.temperature_cabinet"
