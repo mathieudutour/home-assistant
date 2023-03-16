@@ -5,7 +5,7 @@ title_card:
       - padding: "16px 0"
       - "--mdc-ripple-press-opacity": 0
       - height: "36px"
-      - margin-top: "[[[ console.log(this); return querySelectorDeep('button-card #container.no-icon > #name') == this ? '0' : '30vh' ]]]"
+      - margin-top: "[[[ return this.parentElement.children[0] === this ? '0' : '30vh' ]]]"
     name:
       - font-size: "32px"
       - color: "var(--contrast20)"
