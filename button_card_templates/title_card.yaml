@@ -5,10 +5,11 @@ title_card:
       - padding: "16px 0"
       - "--mdc-ripple-press-opacity": 0
       - height: "36px"
+      - margin-top: "[[[ console.log(card); return querySelectorDeep('button-card #container.no-icon > #name') == card ? '0' : '30vh' ]]]"
     name:
       - font-size: "32px"
       - color: "var(--contrast20)"
   tap_action:
-    action: "navigate"
-    navigation_path: "/lovelace-rounded/default_view"
+    action: nothing
+    scroll_to: "[[[ window.scrollTo({ top: 0, left: 0, behavior: 'smooth' }) ]]]"
     haptic: "medium"
