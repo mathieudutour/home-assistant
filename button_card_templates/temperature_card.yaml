@@ -1,0 +1,53 @@
+room_card:
+  show_label: false
+  show_icon: false
+  hold_action:
+    action: "more-info"
+    haptic: "medium"
+  name: "[[[ return entity.state + ' ℃' ]]]"
+  custom_fields:
+    plus:
+      card:
+        type: "custom:button-card"
+        show_name: false
+        show_label: false
+        icon: "mdi:plus"
+        tap_action:
+          action: "call-service"
+          service: "input_number.increment"
+          service_data:
+            entity_id: "[[[ return entity.entity_id ]]]"
+        styles:
+          icon:
+            - width: "24px"
+            - height: "24px"
+    minus:
+      card:
+        type: "custom:button-card"
+        show_name: false
+        show_label: false
+        icon: "mdi:minus"
+        tap_action:
+          action: "call-service"
+          service: "input_number.decrement"
+          service_data:
+            entity_id: "[[[ return entity.entity_id ]]]"
+        styles:
+          icon:
+            - width: "24px"
+            - height: "24px"
+  styles:
+    grid:
+      - grid-template-areas: "'minus n plus'"
+      - grid-template-columns: "1fr"
+      - grid-template-rows: "min-content"
+    card:
+      - background: "var(--contrast2)"
+      - padding: "16px"
+      - "--mdc-ripple-press-opacity": 0
+      - height: "100px"
+    name:
+      - justify-self: "start"
+      - font-size: "14px"
+      - margin: "4px 0 12px 0"
+      - color: "var(--contrast8)"

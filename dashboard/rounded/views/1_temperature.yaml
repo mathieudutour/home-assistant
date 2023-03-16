@@ -16,6 +16,10 @@ cards:
     icon: "none"
     card_mod:
       class: "graph"
+  - type: custom:button-card
+    template: temperature_card
+    name: "Salon"
+    entity: "input_number.temperature_salon"
   - type: "grid"
     columns: 3
     square: false
