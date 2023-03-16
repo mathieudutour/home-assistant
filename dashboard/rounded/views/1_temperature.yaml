@@ -1,7 +1,7 @@
 icon: "mdi:thermometer"
 path: "temperature"
 title: "Température"
-type: "stack"
+type: "masonry"
 badges: []
 cards:
   - type: custom:button-card
