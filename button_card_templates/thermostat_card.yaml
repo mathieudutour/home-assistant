@@ -30,6 +30,7 @@ thermostat_card:
       - color: "var(--contrast8)"
   state:
     - value: "on"
+      icon: "mdi:thermometer-high"
       styles:
         card:
           - background: "var(--red)"
@@ -38,6 +39,7 @@ thermostat_card:
         name:
           - color: "var(--black)"
     - value: "off"
+      icon: "mdi:thermometer-low"
       styles:
         icon:
           - color: "var(--contrast20)"
