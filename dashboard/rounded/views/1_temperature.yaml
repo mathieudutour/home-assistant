@@ -17,16 +17,12 @@ cards:
     card_mod:
       class: "graph"
       style: |
+        {% set state = states(config.entity) | float %}
+        {% set target = states('input_number.temperature_salon') | float %}
         ha-card {
           border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
-          background:
-            {% if (states(config.entity) | float) > ((states('input_number.temperature_salon') | float) + 2) %}
-              var(--red-tint) !important;
-            {% elif (states(config.entity) | float) < ((states('input_number.temperature_salon') | float) - 1) %}
-              var(--blue-tint) !important;
-            {% else %}
-              var(--green-tint) !important;
-            {% endif %}
+          background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
+          --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
         }
   - type: custom:button-card
     template: temperature_card
@@ -58,7 +54,7 @@ cards:
       class: "graph"
       style: |
         {% set state = states(config.entity) | float %}
-        {% set target = states('input_number.temperature_salon') | float %}
+        {% set target = states('input_number.temperature_chambre_r_1') | float %}
         ha-card {
           border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
           background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
@@ -89,12 +85,11 @@ cards:
     card_mod:
       class: "graph"
       style: |
-        {% set state = states(card.entity.entity_id) | float %}
+        {% set state = states(config.entity) | float %}
         {% set target = states('input_number.temperature_cabinet') | float %}
-
         ha-card {
           border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
-          background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %};
+          background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
           --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
         }
   - type: custom:button-card
