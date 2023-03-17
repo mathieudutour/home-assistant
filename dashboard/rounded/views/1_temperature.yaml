@@ -19,8 +19,6 @@ cards:
       style: |
         ha-card {
           border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
-          background: {% if (states(card.entity.entity_id) | float) > ((states('input_number.temperature_salon') | float) + 2) %}var(--red-tint){% elif (states(card.entity.entity_id) | float) < ((states('input_number.temperature_salon') | float) - 1) %}var(--blue-tint){% else %}var(--green-tint){% endif %};
-          --accent-color: {% if (states(card.entity.entity_id) | float) > ((states('input_number.temperature_salon') | float) + 2) %}var(--red){% elif (states(card.entity.entity_id) | float) < ((states('input_number.temperature_salon') | float) - 1) %}var(--blue){% else %}var(--green){% endif %};
           display: flex;
           overflow: hidden; /* Temporary fix for graph overflow bug */
         }
