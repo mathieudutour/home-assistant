@@ -54,22 +54,6 @@ cards:
     cards:
       - type: custom:button-card
         template: room_card
-        name: "Chambre R+1"
-        entity: "light.chambre_r_1_3"
-        icon: "mdi:bed-king-outline"
-        label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
-        variables:
-          title: "Chambre R+1"
-      - type: custom:button-card
-        template: room_card
-        name: "Bibliothèque"
-        entity: "light.bibliotheque"
-        icon: "mdi:library-shelves"
-        label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
-        variables:
-          title: "Bibliothèque"
-      - type: custom:button-card
-        template: room_card
         name: "Salon"
         entity: "light.salon"
         icon: "mdi:sofa"
@@ -84,6 +68,22 @@ cards:
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
         variables:
           title: "Cuisine"
+      - type: custom:button-card
+        template: room_card
+        name: "Chambre R+1"
+        entity: "light.chambre_r_1_3"
+        icon: "mdi:bed-king-outline"
+        label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
+        variables:
+          title: "Chambre R+1"
+      - type: custom:button-card
+        template: room_card
+        name: "Bibliothèque"
+        entity: "light.bibliotheque"
+        icon: "mdi:library-shelves"
+        label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
+        variables:
+          title: "Bibliothèque"
       - type: custom:button-card
         template: room_card
         name: "Couloir R-1"
@@ -118,98 +118,6 @@ cards:
           action: "navigate"
           navigation_path: "/lovelace-rounded/outdoor"
           scroll_to: ""
-
-  - type: custom:button-card
-    template: title_card
-    name: "Chambre R+1"
-  - <<: *sensor_swipe_card_template
-    cards:
-      - name: "Température"
-        entity: "sensor.ht_salon_temperature"
-        <<: *sensor_line_graph_card_template
-      - name: "Humidité"
-        entity: "sensor.ht_salon_humidity"
-        <<: *sensor_line_graph_card_template
-  - type: "grid"
-    columns: 2
-    square: false
-    cards:
-      - type: custom:button-card
-        template: light_card
-        name: "Cathédrale"
-        entity: "light.chambre_r_1"
-  - type: "grid"
-    columns: 2
-    square: false
-    cards:
-      - type: custom:button-card
-        template: cover_card
-        name: "Panoramique"
-        entity: "cover.panoramique_droite"
-      - type: custom:button-card
-        template: cover_card
-        name: "Fenêtre"
-        entity: "cover.chambre_r_1_ouest"
-      - type: custom:button-card
-        template: cover_card
-        name: "Velux Gauche"
-        entity: "cover.velux_chambre_gauche"
-      - type: custom:button-card
-        template: cover_card
-        name: "Velux Droit"
-        entity: "cover.velux_chambre_droit"
-
-  - type: custom:button-card
-    template: title_card
-    name: "Bibliothèque"
-  - <<: *sensor_swipe_card_template
-    cards:
-      - name: "Température"
-        entity: "sensor.ht_salon_temperature"
-        <<: *sensor_line_graph_card_template
-      - name: "Humidité"
-        entity: "sensor.ht_salon_humidity"
-        <<: *sensor_line_graph_card_template
-  - type: "grid"
-    columns: 2
-    square: false
-    cards:
-      - type: custom:button-card
-        template: light_card
-        name: "Cathédrale"
-        entity: "light.bibliotheque_cathedrale"
-      - type: custom:button-card
-        template: light_card
-        name: "Spots"
-        entity: "light.bibliotheque_spots"
-      - type: custom:button-card
-        template: light_card
-        name: "Cabane"
-        entity: "light.cabane_r_1_2"
-  - type: "grid"
-    columns: 2
-    square: false
-    cards:
-      - type: custom:button-card
-        template: cover_card
-        name: "Cabane"
-        entity: "cover.cabane_r_1"
-      - type: custom:button-card
-        template: cover_card
-        name: "Panoramique  Milieu"
-        entity: "cover.panoramique_milieu"
-      - type: custom:button-card
-        template: cover_card
-        name: "Fenêtre"
-        entity: "cover.bibliotheque_est"
-      - type: custom:button-card
-        template: cover_card
-        name: "Velux Gauche"
-        entity: "cover.velux_bibliotheque_gauche"
-      - type: custom:button-card
-        template: cover_card
-        name: "Velux Droit"
-        entity: "cover.velux_bibliotheque_droit"
 
   - type: custom:button-card
     template: title_card
@@ -302,6 +210,98 @@ cards:
         template: cover_card
         name: "Fenêtre"
         entity: "cover.cuisine"
+
+  - type: custom:button-card
+    template: title_card
+    name: "Chambre R+1"
+  - <<: *sensor_swipe_card_template
+    cards:
+      - name: "Température"
+        entity: "sensor.ht_salon_temperature"
+        <<: *sensor_line_graph_card_template
+      - name: "Humidité"
+        entity: "sensor.ht_salon_humidity"
+        <<: *sensor_line_graph_card_template
+  - type: "grid"
+    columns: 2
+    square: false
+    cards:
+      - type: custom:button-card
+        template: light_card
+        name: "Cathédrale"
+        entity: "light.chambre_r_1"
+  - type: "grid"
+    columns: 2
+    square: false
+    cards:
+      - type: custom:button-card
+        template: cover_card
+        name: "Panoramique"
+        entity: "cover.panoramique_droite"
+      - type: custom:button-card
+        template: cover_card
+        name: "Fenêtre"
+        entity: "cover.chambre_r_1_ouest"
+      - type: custom:button-card
+        template: cover_card
+        name: "Velux Gauche"
+        entity: "cover.velux_chambre_gauche"
+      - type: custom:button-card
+        template: cover_card
+        name: "Velux Droit"
+        entity: "cover.velux_chambre_droit"
+
+  - type: custom:button-card
+    template: title_card
+    name: "Bibliothèque"
+  - <<: *sensor_swipe_card_template
+    cards:
+      - name: "Température"
+        entity: "sensor.ht_salon_temperature"
+        <<: *sensor_line_graph_card_template
+      - name: "Humidité"
+        entity: "sensor.ht_salon_humidity"
+        <<: *sensor_line_graph_card_template
+  - type: "grid"
+    columns: 2
+    square: false
+    cards:
+      - type: custom:button-card
+        template: light_card
+        name: "Cathédrale"
+        entity: "light.bibliotheque_cathedrale"
+      - type: custom:button-card
+        template: light_card
+        name: "Spots"
+        entity: "light.bibliotheque_spots"
+      - type: custom:button-card
+        template: light_card
+        name: "Cabane"
+        entity: "light.cabane_r_1_2"
+  - type: "grid"
+    columns: 2
+    square: false
+    cards:
+      - type: custom:button-card
+        template: cover_card
+        name: "Cabane"
+        entity: "cover.cabane_r_1"
+      - type: custom:button-card
+        template: cover_card
+        name: "Panoramique  Milieu"
+        entity: "cover.panoramique_milieu"
+      - type: custom:button-card
+        template: cover_card
+        name: "Fenêtre"
+        entity: "cover.bibliotheque_est"
+      - type: custom:button-card
+        template: cover_card
+        name: "Velux Gauche"
+        entity: "cover.velux_bibliotheque_gauche"
+      - type: custom:button-card
+        template: cover_card
+        name: "Velux Droit"
+        entity: "cover.velux_bibliotheque_droit"
 
   - type: custom:button-card
     template: title_card
