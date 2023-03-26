@@ -30,6 +30,7 @@ cards:
     map_scale: 2
     floor_color: "--blue"
     floor_opacity: 0.3
+    dock_color: "--green"
     card_mod:
       style: |
         ha-card .card-header {
