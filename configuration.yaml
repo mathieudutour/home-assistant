@@ -21,13 +21,6 @@ lovelace:
       type: module
     - url: /hacsfiles/lovelace-layout-card/layout-card.js
       type: module
-  dashboards:
-    lovelace-rounded:
-      mode: "yaml"
-      title: "Rounded"
-      icon: "mdi:square-rounded-outline"
-      show_in_sidebar: true
-      filename: dashboard/rounded.yaml
 
 # Text to speech
 tts:
