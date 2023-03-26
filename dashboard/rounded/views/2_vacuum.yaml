@@ -18,8 +18,9 @@ cards:
     show_status: false
     show_no_go_areas: false
     show_virtual_walls: false
-    # segment_colors:
-    #   - "rgba(var(--blue-rgb),0.4)"
+    segment_colors:
+      - "--blue"
+    segment_opacity: 0.4
     wall_color: "--blue"
     card_mod:
       style: |
