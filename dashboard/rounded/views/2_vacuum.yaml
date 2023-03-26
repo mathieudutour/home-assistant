@@ -27,6 +27,7 @@ cards:
       - "--blue"
     segment_opacity: 0.4
     wall_color: "--blue"
+    map_scale: 2
     card_mod:
       style: |
         ha-card .card-header {
