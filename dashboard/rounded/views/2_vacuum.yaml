@@ -1,0 +1,58 @@
+icon: "mdi:robot-vacuum"
+path: "vacuum"
+title: "Aspirateur"
+type: "masonry"
+badges: []
+cards:
+  - type: custom:button-card
+    template: title_card
+    name: "Aspirateur"
+  - type: custom:valetudo-map-card
+    vacuum: valetudo_r2d2
+
+  - type: "grid"
+    columns: 3
+    square: false
+    cards:
+      - type: custom:button-card
+        template: vacuum_zone_card
+        name: "Salon"
+        icon: mdi:sofa
+        entity: "input_boolean.vacuum_selected_room_salon"
+      - type: custom:button-card
+        template: vacuum_zone_card
+        name: "Cuisine"
+        icon: mdi:sofa
+        entity: "input_boolean.vacuum_selected_room_cuisine"
+      - type: custom:button-card
+        template: vacuum_zone_card
+        name: "Cellier"
+        icon: mdi:sofa
+        entity: "input_boolean.vacuum_selected_room_cellier"
+      - type: custom:button-card
+        template: vacuum_zone_card
+        name: "Entrée"
+        icon: mdi:sofa
+        entity: "input_boolean.vacuum_selected_room_entree"
+      - type: custom:button-card
+        template: vacuum_zone_card
+        name: "WC R0"
+        icon: mdi:sofa
+        entity: "input_boolean.vacuum_selected_room_wc_r0"
+
+  - type: custom:button-card
+    name: Plus d'info
+    entity: vacuum.valetudo_r2d2
+    show_icon: false
+    styles:
+      card:
+        - background: none
+        - border-radius: 24px
+        - color: var(--contrast20)
+        - margin-top: 8px
+        - padding: 18px 0px
+        - font-size: 16px
+        - border: 2px solid var(--contrast5)
+    tap_action:
+      action: more-info
+      haptic: medium

@@ -12,16 +12,6 @@ card:
   type: vertical-stack
   cards:
     - type: custom:button-card
-      icon: "mdi:bed-king-outline"
-      template: sidebar_icon_card
-      variables:
-        title: "Chambre R+1"
-    - type: custom:button-card
-      icon: "mdi:library-shelves"
-      template: sidebar_icon_card
-      variables:
-        title: "Bibliothèque"
-    - type: custom:button-card
       icon: "mdi:sofa"
       template: sidebar_icon_card
       variables:
@@ -31,6 +21,16 @@ card:
       template: sidebar_icon_card
       variables:
         title: "Cuisine"
+    - type: custom:button-card
+      icon: "mdi:bed-king-outline"
+      template: sidebar_icon_card
+      variables:
+        title: "Chambre R+1"
+    - type: custom:button-card
+      icon: "mdi:library-shelves"
+      template: sidebar_icon_card
+      variables:
+        title: "Bibliothèque"
     - type: custom:button-card
       icon: "mdi:foot-print"
       template: sidebar_icon_card
