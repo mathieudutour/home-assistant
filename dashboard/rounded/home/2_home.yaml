@@ -73,7 +73,7 @@ cards:
         name: "Chambre R+1"
         entity: "light.chambre_r_1_3"
         icon: "mdi:bed-king-outline"
-        label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
+        label: "[[[ return states['sensor.ht_bibliotheque_temperature'].state + ' °C' ]]]"
         variables:
           title: "Chambre R+1"
       - type: custom:button-card
@@ -81,7 +81,7 @@ cards:
         name: "Bibliothèque"
         entity: "light.bibliotheque"
         icon: "mdi:library-shelves"
-        label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
+        label: "[[[ return states['sensor.ht_bibliotheque_temperature'].state + ' °C' ]]]"
         variables:
           title: "Bibliothèque"
       - type: custom:button-card
@@ -217,10 +217,10 @@ cards:
   - <<: *sensor_swipe_card_template
     cards:
       - name: "Température"
-        entity: "sensor.ht_salon_temperature"
+        entity: "sensor.ht_bibliotheque_temperature"
         <<: *sensor_line_graph_card_template
       - name: "Humidité"
-        entity: "sensor.ht_salon_humidity"
+        entity: "sensor.ht_bibliotheque_humidity"
         <<: *sensor_line_graph_card_template
   - type: "grid"
     columns: 2
@@ -257,10 +257,10 @@ cards:
   - <<: *sensor_swipe_card_template
     cards:
       - name: "Température"
-        entity: "sensor.ht_salon_temperature"
+        entity: "sensor.ht_bibliotheque_temperature"
         <<: *sensor_line_graph_card_template
       - name: "Humidité"
-        entity: "sensor.ht_salon_humidity"
+        entity: "sensor.ht_bibliotheque_humidity"
         <<: *sensor_line_graph_card_template
   - type: "grid"
     columns: 2
