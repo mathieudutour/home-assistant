@@ -18,9 +18,9 @@ cards:
     show_status: false
     show_no_go_areas: false
     show_virtual_walls: false
-    segment_colors:
-      - "rgba(var(--blue-rgb),0.4)"
-    wall_color: "var(--blue)"
+    # segment_colors:
+    #   - "rgba(var(--blue-rgb),0.4)"
+    # wall_color: "var(--blue)"
     card_mod:
       style: |
         ha-card .card-header {
