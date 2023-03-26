@@ -1,0 +1,8 @@
+vacuum_selected_rooms:
+  name: Vacuum Selected Rooms
+  entities:
+    - input_boolean.vacuum_selected_room_cuisine
+    - input_boolean.vacuum_selected_room_salon
+    - input_boolean.vacuum_selected_room_cellier
+    - input_boolean.vacuum_selected_room_entree
+    - input_boolean.vacuum_selected_room_wc_r0

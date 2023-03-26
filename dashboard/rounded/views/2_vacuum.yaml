@@ -70,6 +70,89 @@ cards:
         icon: mdi:sofa
         entity: "input_boolean.vacuum_selected_room_wc_r0"
 
+  - type: "grid"
+    columns: 3
+    square: false
+    cards:
+      - type: custom:button-card
+        entity: group.vacuum_selected_rooms
+        icon: mdi:robot-vacuum
+        name: Zones
+        label: Stofzuigen
+        show_label: true
+        tap_action:
+          action: call-service
+          service: script.vacuum_clean_segments
+          haptic: success
+        state:
+          - value: "off"
+            name: Huis
+            icon: mdi:home
+        styles:
+          icon:
+            - width: 24px
+            - color: var(--black)
+          img_cell:
+            - justify-content: flex-start
+            - margin-top: "-4px"
+          name:
+            - justify-self: start
+            - color: var(--black)
+            - font-size: 12px
+            - margin-bottom: 0px
+          card:
+            - height: 84px
+            - background-color: var(--green)
+            - box-shadow: none
+            - border-radius: 24px
+            - padding: 12px 0 12px 14px
+            - z-index: 1
+          label:
+            - justify-self: start
+            - color: var(--black)
+            - font-size: 12px
+      - type: custom:button-card
+        icon: mdi:numeric-1-box
+        entity: input_number.vacuum_iterations
+        name: Nombre de repétitions
+        state:
+          - value: "1.0"
+            icon: mdi:numeric-1-box
+          - value: "2.0"
+            icon: mdi:numeric-2-box
+          - value: "3.0"
+            icon: mdi:numeric-3-box
+        tap_action:
+          action: "call-service"
+          service: input_number.set_value
+          data_template:
+            entity_id: input_number.vacuum_iterations.entityID
+            value: "{{ ((states.input_number.vacuum_iterations.state | int ) % 3) + 1 }}"
+          haptic: medium
+        styles:
+          icon:
+            - width: 24px
+            - color: var(--contrast1)
+          img_cell:
+            - justify-content: flex-start
+            - margin-top: "-4px"
+          name:
+            - justify-self: start
+            - color: var(--contrast1)
+            - font-size: 12px
+            - margin-bottom: 0px
+          card:
+            - height: 84px
+            - background-color: var(--contrast20)
+            - box-shadow: none
+            - border-radius: 24px
+            - padding: 12px 0 12px 14px
+            - z-index: 1
+          label:
+            - justify-self: start
+            - color: var(--contrast1)
+            - font-size: 12px
+
   - type: custom:button-card
     name: Plus d'info
     entity: vacuum.valetudo_r2d2
