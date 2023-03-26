@@ -247,7 +247,7 @@ Rounded:
       hui-view {
         padding-bottom: 80px;
         margin-top: -80px;
-        max-width: 600px;
+        max-width: 600px !important;
         margin-left: auto;
         margin-right: auto;
       }
