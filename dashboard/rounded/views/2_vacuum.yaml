@@ -29,7 +29,7 @@ cards:
     wall_color: "--blue"
     map_scale: 2
     floor_color: "--blue"
-    floor_opacity: 0.3
+    floor_opacity: 0.2
     dock_color: "--green"
     card_mod:
       style: |
