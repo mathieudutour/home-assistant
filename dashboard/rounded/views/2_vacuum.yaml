@@ -20,12 +20,20 @@ cards:
     show_virtual_walls: false
     segment_colors:
       - "--blue"
+      - "--blue"
+      - "--blue"
+      - "--blue"
+      - "--blue"
+      - "--blue"
     segment_opacity: 0.4
     wall_color: "--blue"
     card_mod:
       style: |
         ha-card .card-header {
           display: none !important;
+        }
+        ha-card {
+          padding: 16px !important;
         }
 
   - type: "grid"
