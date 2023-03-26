@@ -126,7 +126,7 @@ cards:
           action: "call-service"
           service: input_number.set_value
           service_data:
-            entity_id: input_number.vacuum_iterations.entity_id
+            entity_id: "[[[ return entity.entity_id ]]]"
             value: "{{ ((states.input_number.vacuum_iterations.state | int ) % 3) + 1 }}"
           haptic: medium
         styles:
