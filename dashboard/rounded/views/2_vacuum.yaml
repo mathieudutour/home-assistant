@@ -9,6 +9,23 @@ cards:
     name: "Aspirateur"
   - type: custom:valetudo-map-card
     vacuum: valetudo_r2d2
+    show_locate_button: false
+    show_home_button: false
+    show_stop_button: false
+    show_pause_button: false
+    show_start_button: false
+    show_battery_level: false
+    show_status: false
+    show_no_go_areas: false
+    show_virtual_walls: false
+    segment_colors:
+      - "rgba(var(--blue-rgb),0.4)"
+    wall_color: "var(--blue)"
+    card_mod:
+      style: |
+        ha-card .card-header {
+          display: none !important;
+        }
 
   - type: "grid"
     columns: 3
