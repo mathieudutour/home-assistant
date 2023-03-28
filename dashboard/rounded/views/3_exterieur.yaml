@@ -29,7 +29,7 @@ cards:
     card:
       type: grid
       columns: 2
-      square: true
+      square: false
     card_param: cards
     filter:
       include:
