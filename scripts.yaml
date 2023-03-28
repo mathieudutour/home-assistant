@@ -5,7 +5,7 @@ vacuum_clean_segments:
         entity_id: script.vacuum_clean_segments_message
       data:
         variables:
-          segments: '{{expand("group.vacuum_selected_rooms") | selectattr("state","eq","on") | map(attribute="attributes.room_id") | list | to_json}}'
+          segments: "{{ state_attr('group.vacuum_selected_rooms', 'entity_id') | select('is_state', 'on') | map('state_attr', 'room_id') | list | to_json }}"
   mode: single
   alias: vacuum_clean_segments
   icon: mdi:arrow-right
