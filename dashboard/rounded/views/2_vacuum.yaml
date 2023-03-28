@@ -77,17 +77,23 @@ cards:
       - type: custom:button-card
         entity: group.vacuum_selected_rooms
         icon: mdi:robot-vacuum
-        name: Zones
-        label: Stofzuigen
+        name: Commencer Nettoyage
+        label: Zones sélectionnées
         show_label: true
         tap_action:
           action: call-service
-          service: script.vacuum_clean_segments
+          service: >-
+            [[[ return states['group.vacuum_selected_rooms'].state !== 'on' ? '' : 'script.vacuum_clean_segments' ]]]
+          service_data:
+            entity_id: "vacuum.valetudo_r2d2"
           haptic: success
+        lock:
+          enabled: >-
+            [[[return states['vacuum.valetudo_r2d2'].state !== 'docked']]]
+          exemptions: []
         state:
           - value: "off"
-            name: Huis
-            icon: mdi:home
+            name: Toutes les zones
         styles:
           icon:
             - width: 24px
