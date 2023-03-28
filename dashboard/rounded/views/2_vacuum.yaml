@@ -37,6 +37,7 @@ cards:
           display: none !important;
         }
         ha-card {
+          max-width: calc(100vw - 48px) !important;
           padding: 16px !important;
         }
 
