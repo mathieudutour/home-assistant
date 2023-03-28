@@ -25,3 +25,26 @@ cards:
         template: light_card
         name: "Terrasse"
         entity: "light.terrasse_spots"
+  - type: custom:auto-entities
+    card:
+      type: grid
+      columns: 4
+      square: true
+    card_param: cards
+    filter:
+      include:
+        - entity_id: sensor.pollens_74_*
+          options:
+            type: custom:button-card
+            template: pollen_card
+      exclude:
+        - entity_id: sensor.pollens_74_*
+          state: unknown
+        - entity_id: sensor.pollens_74_*
+          state: "0"
+        - entity_id: sensor.pollens_74_risklevel
+    sort:
+      method: state
+      reverse: true
+      ignore_case: true
+      numeric: true

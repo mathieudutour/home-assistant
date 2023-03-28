@@ -1,0 +1,73 @@
+pollen_card:
+  name: |
+    [[[ return entity.attributes.friendly_name ]]]
+  tap_action:
+    action: "none"
+    haptic: "medium"
+  hold_action:
+    action: "more-info"
+    haptic: "medium"
+  styles:
+    grid:
+      - grid-template-areas: "'i' 'n'"
+      - grid-template-columns: "1fr"
+      - grid-template-rows: "1fr min-content min-content"
+    card:
+      - background: "var(--contrast2)"
+      - padding: "16px"
+      - "--mdc-ripple-press-opacity": 0
+      - height: "100px"
+    img_cell:
+      - justify-self: "start"
+      - width: "24px"
+    icon:
+      - width: "24px"
+      - height: "24px"
+      - color: "var(--contrast8)"
+    name:
+      - justify-self: "start"
+      - font-size: "14px"
+      - margin: "4px 0 12px 0"
+      - color: "var(--contrast8)"
+  state:
+    - value: unknown
+      operator: "=="
+      styles:
+        icon:
+          - color: "var(--contrast20)"
+        name:
+          - color: "var(--contrast20)"
+    - value: "0"
+      operator: "<="
+      styles:
+        icon:
+          - color: "var(--contrast20)"
+        name:
+          - color: "var(--contrast20)"
+    - value: "1"
+      operator: "=="
+      styles:
+        card:
+          - background: "var(--green)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - value: "2"
+      operator: "=="
+      styles:
+        card:
+          - background: "var(--yellow)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - value: "3"
+      operator: ">="
+      styles:
+        card:
+          - background: "var(--red)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
