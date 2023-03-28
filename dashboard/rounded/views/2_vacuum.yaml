@@ -40,6 +40,14 @@ cards:
           max-width: calc(100vw - 48px) !important;
           padding: 16px !important;
         }
+        #lovelaceValetudoMapCard {
+          width: 100%;
+          height: auto !important;
+        }
+        #lovelaceValetudoCard canvas {
+          max-width: 100%;
+          max-height: 100%;
+        }
 
   - type: "grid"
     columns: 3
