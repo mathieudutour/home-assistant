@@ -2,9 +2,6 @@ pollen_card:
   name: |
     [[[ return entity.attributes.friendly_name ]]]
   tap_action:
-    action: "none"
-    haptic: "medium"
-  hold_action:
     action: "more-info"
     haptic: "medium"
   styles:
