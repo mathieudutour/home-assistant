@@ -322,6 +322,10 @@ cards:
         template: light_card
         name: "Spots"
         entity: "light.couloir_r_1_spots"
+      - type: custom:button-card
+        template: light_card
+        name: "Spots"
+        entity: "light.escalier_r_1_spots"
 
   - type: custom:button-card
     template: title_card

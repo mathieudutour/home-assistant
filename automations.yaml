@@ -3,13 +3,15 @@
   description: ""
   trigger:
     - platform: state
-      entity_id: binary_sensor.escalier_r_1_channel_2_input_2
-      from: off
-      to: on
+      entity_id:
+        - binary_sensor.escalier_r_1_channel_2_input_2
+      from: "on"
+      to: "off"
     - platform: state
-      entity_id: binary_sensor.escalier_r_1_channel_2_input_2
-      from: on
-      to: off
+      entity_id:
+        - binary_sensor.escalier_r_1_channel_2_input_2
+      from: "off"
+      to: "on"
   action:
     - type: toggle
       device_id: 149d51d61a6a95e06a105c487509dab8
@@ -21,13 +23,15 @@
   description: ""
   trigger:
     - platform: state
-      entity_id: binary_sensor.escalier_r_1_channel_1_input_2
-      from: off
-      to: on
+      entity_id:
+        - binary_sensor.escalier_r_1_channel_1_input_2
+      from: "on"
+      to: "off"
     - platform: state
-      entity_id: binary_sensor.escalier_r_1_channel_1_input_2
-      from: on
-      to: off
+      entity_id:
+        - binary_sensor.escalier_r_1_channel_1_input_2
+      from: "off"
+      to: "on"
   action:
     - type: toggle
       device_id: db3ae4fe2527a57e839c9cb43003dff5
@@ -39,13 +43,15 @@
   description: ""
   trigger:
     - platform: state
-      entity_id: binary_sensor.couloir_r_1_bis_input
-      from: off
-      to: on
+      entity_id:
+        - binary_sensor.couloir_r_1_bis_input
+      from: "on"
+      to: "off"
     - platform: state
-      entity_id: binary_sensor.couloir_r_1_bis_input
-      from: on
-      to: off
+      entity_id:
+        - binary_sensor.couloir_r_1_bis_input
+      from: "off"
+      to: "on"
   action:
     - type: toggle
       device_id: 66e19625d489beea671ec75d3a52ee72
@@ -189,9 +195,10 @@
   description: ""
   trigger:
     - platform: state
-      entity_id: binary_sensor.i4_1_input
-      from: off
-      to: on
+      entity_id:
+        - binary_sensor.i4_1_input
+      from: "off"
+      to: "on"
   action:
     - service: scene.turn_on
       target:
@@ -203,9 +210,10 @@
   description: ""
   trigger:
     - platform: state
-      entity_id: binary_sensor.i4_2_input
-      from: off
-      to: on
+      entity_id:
+        - binary_sensor.i4_2_input
+      from: "off"
+      to: "on"
   action:
     - service: scene.turn_on
       target:
