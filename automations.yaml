@@ -2,19 +2,14 @@
   alias: Lumière Escalier R+1 Salon -> Bibliothèque
   description: ""
   trigger:
-    - type: powered
-      platform: device
-      device_id: 1a99c8d5f989dca0344bfb71d3f46240
+    - platform: state
       entity_id: binary_sensor.escalier_r_1_channel_2_input_2
-      domain: binary_sensor
-    - type: not_powered
-      platform: device
-      device_id: 1a99c8d5f989dca0344bfb71d3f46240
+      from: off
+      to: on
+    - platform: state
       entity_id: binary_sensor.escalier_r_1_channel_2_input_2
-      domain: binary_sensor
-  condition:
-    condition: template
-    value_template: '{{ trigger.from_state.state != "unavailable" && trigger.from_state.state != "unknown" }}'
+      from: on
+      to: off
   action:
     - type: toggle
       device_id: 149d51d61a6a95e06a105c487509dab8
@@ -22,22 +17,17 @@
       domain: light
   mode: single
 - id: "1677929359357"
-  alias: Lumière Escalier R+1 Salon -> Salon
+  alias: Lumière Escalier R+1 Bibliothèque -> Salon
   description: ""
   trigger:
-    - type: powered
-      platform: device
-      device_id: 1a99c8d5f989dca0344bfb71d3f46240
+    - platform: state
       entity_id: binary_sensor.escalier_r_1_channel_1_input_2
-      domain: binary_sensor
-    - type: not_powered
-      platform: device
-      device_id: 1a99c8d5f989dca0344bfb71d3f46240
+      from: off
+      to: on
+    - platform: state
       entity_id: binary_sensor.escalier_r_1_channel_1_input_2
-      domain: binary_sensor
-  condition:
-    condition: template
-    value_template: '{{ trigger.from_state.state != "unavailable" && trigger.from_state.state != "unknown" }}'
+      from: on
+      to: off
   action:
     - type: toggle
       device_id: db3ae4fe2527a57e839c9cb43003dff5
@@ -48,14 +38,14 @@
   alias: Lumière Couloir R-1 Bis
   description: ""
   trigger:
-    - platform: device
-      type: changed_states
-      device_id: b551bc9b37a4edec00fde090c91b9cdc
-      entity_id: switch.couloir_r_1_bis
-      domain: switch
-  condition:
-    condition: template
-    value_template: '{{ trigger.from_state.state != "unavailable" && trigger.from_state.state != "unknown" }}'
+    - platform: state
+      entity_id: binary_sensor.couloir_r_1_bis_input
+      from: off
+      to: on
+    - platform: state
+      entity_id: binary_sensor.couloir_r_1_bis_input
+      from: on
+      to: off
   action:
     - type: toggle
       device_id: 66e19625d489beea671ec75d3a52ee72
@@ -198,14 +188,10 @@
   alias: I4 1 - Réveil
   description: ""
   trigger:
-    - type: powered
-      platform: device
-      device_id: 630901237a01ee2c4bd9a260a464f85e
+    - platform: state
       entity_id: binary_sensor.i4_1_input
-      domain: binary_sensor
-  condition:
-    condition: template
-    value_template: '{{ trigger.from_state.state != "unavailable" && trigger.from_state.state != "unknown" }}'
+      from: off
+      to: on
   action:
     - service: scene.turn_on
       target:
@@ -216,40 +202,13 @@
   alias: I4 2 - Soirée
   description: ""
   trigger:
-    - type: powered
-      platform: device
-      device_id: 630901237a01ee2c4bd9a260a464f85e
+    - platform: state
       entity_id: binary_sensor.i4_2_input
-      domain: binary_sensor
-  condition:
-    condition: template
-    value_template: '{{ trigger.from_state.state != "unavailable" && trigger.from_state.state != "unknown" }}'
+      from: off
+      to: on
   action:
     - service: scene.turn_on
       target:
         entity_id: scene.soiree
       metadata: {}
-  mode: single
-- id: "1679866993966"
-  alias: Lumière Escalier R+1 Bibliothèque -> Salon
-  description: ""
-  trigger:
-    - type: powered
-      platform: device
-      device_id: 149d51d61a6a95e06a105c487509dab8
-      entity_id: binary_sensor.bibliotheque_cathedrale_channel_2_input
-      domain: binary_sensor
-    - type: not_powered
-      platform: device
-      device_id: 149d51d61a6a95e06a105c487509dab8
-      entity_id: binary_sensor.bibliotheque_cathedrale_channel_2_input
-      domain: binary_sensor
-  condition:
-    condition: template
-    value_template: '{{ trigger.from_state.state != "unavailable" && trigger.from_state.state != "unknown" }}'
-  action:
-    - type: toggle
-      device_id: db3ae4fe2527a57e839c9cb43003dff5
-      entity_id: switch.salon_spots
-      domain: switch
   mode: single
