@@ -1,110 +1,243 @@
-- id: "1677929309149"
-  alias: Escalier R+1 Salon
-  description: ""
+- id: '1677929309149'
+  alias: Lumière Escalier R+1 Salon -> Bibliothèque
+  description: ''
   trigger:
-    - type: powered
-      platform: device
-      device_id: 1a99c8d5f989dca0344bfb71d3f46240
-      entity_id: binary_sensor.escalier_r_1_channel_2_input_2
-      domain: binary_sensor
-    - type: not_powered
-      platform: device
-      device_id: 1a99c8d5f989dca0344bfb71d3f46240
-      entity_id: binary_sensor.escalier_r_1_channel_2_input_2
-      domain: binary_sensor
+  - type: powered
+    platform: device
+    device_id: 1a99c8d5f989dca0344bfb71d3f46240
+    entity_id: binary_sensor.escalier_r_1_channel_2_input_2
+    domain: binary_sensor
+  - type: not_powered
+    platform: device
+    device_id: 1a99c8d5f989dca0344bfb71d3f46240
+    entity_id: binary_sensor.escalier_r_1_channel_2_input_2
+    domain: binary_sensor
   condition: []
   action:
-    - type: toggle
-      device_id: 149d51d61a6a95e06a105c487509dab8
-      entity_id: light.bibliotheque_cathedrale
-      domain: light
+  - type: toggle
+    device_id: 149d51d61a6a95e06a105c487509dab8
+    entity_id: light.bibliotheque_cathedrale
+    domain: light
   mode: single
-- id: "1677929359357"
-  alias: Escalier R+1 Bibliothèque
-  description: ""
+- id: '1677929359357'
+  alias: Lumière Escalier R+1 Salon -> Salon
+  description: ''
   trigger:
-    - type: powered
-      platform: device
-      device_id: 1a99c8d5f989dca0344bfb71d3f46240
-      entity_id: binary_sensor.escalier_r_1_channel_1_input_2
-      domain: binary_sensor
-    - type: not_powered
-      platform: device
-      device_id: 1a99c8d5f989dca0344bfb71d3f46240
-      entity_id: binary_sensor.escalier_r_1_channel_1_input_2
-      domain: binary_sensor
+  - type: powered
+    platform: device
+    device_id: 1a99c8d5f989dca0344bfb71d3f46240
+    entity_id: binary_sensor.escalier_r_1_channel_1_input_2
+    domain: binary_sensor
+  - type: not_powered
+    platform: device
+    device_id: 1a99c8d5f989dca0344bfb71d3f46240
+    entity_id: binary_sensor.escalier_r_1_channel_1_input_2
+    domain: binary_sensor
   condition: []
   action:
-    - type: toggle
-      device_id: db3ae4fe2527a57e839c9cb43003dff5
-      entity_id: switch.salon_spots
-      domain: switch
+  - type: toggle
+    device_id: db3ae4fe2527a57e839c9cb43003dff5
+    entity_id: switch.salon_spots
+    domain: switch
   mode: single
-- id: "1677929669279"
-  alias: Couloir R-1 Bis
-  description: ""
+- id: '1677929669279'
+  alias: Lumière Couloir R-1 Bis
+  description: ''
   trigger:
-    - platform: device
-      type: changed_states
-      device_id: b551bc9b37a4edec00fde090c91b9cdc
-      entity_id: switch.couloir_r_1_bis
-      domain: switch
+  - platform: device
+    type: changed_states
+    device_id: b551bc9b37a4edec00fde090c91b9cdc
+    entity_id: switch.couloir_r_1_bis
+    domain: switch
   condition: []
   action:
-    - type: toggle
-      device_id: 66e19625d489beea671ec75d3a52ee72
-      entity_id: switch.couloir_r_1_spots
-      domain: switch
+  - type: toggle
+    device_id: 66e19625d489beea671ec75d3a52ee72
+    entity_id: switch.couloir_r_1_spots
+    domain: switch
   mode: single
-- id: "1678737818325"
+- id: '1678737818325'
   alias: Thermostat Salon - too hot
-  description: ""
+  description: ''
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.ht_salon_temperature
-      for:
-        hours: 0
-        minutes: 5
-        seconds: 0
-      above: input_number.temperature_salon
+  - platform: numeric_state
+    entity_id: sensor.ht_salon_temperature
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    above: input_number.temperature_salon
   condition: []
   action:
-    - type: turn_off
-      device_id: 3f41022a06297022401187172974fd47
-      entity_id: switch.thermostat_salon
-      domain: switch
-    - type: turn_off
-      device_id: 3f41022a06297022401187172974fd47
-      entity_id: switch.thermostat_cuisine_3
-      domain: switch
-    - type: turn_off
-      device_id: 011b1032ed1708b1a37a61794758f35a
-      entity_id: switch.thermostat_entree
-      domain: switch
+  - type: turn_off
+    device_id: 3f41022a06297022401187172974fd47
+    entity_id: switch.thermostat_salon
+    domain: switch
+  - type: turn_off
+    device_id: 3f41022a06297022401187172974fd47
+    entity_id: switch.thermostat_cuisine
+    domain: switch
+  - type: turn_off
+    device_id: 011b1032ed1708b1a37a61794758f35a
+    entity_id: switch.thermostat_entree
+    domain: switch
   mode: single
-- id: "1678737940785"
+- id: '1678737940785'
   alias: Thermostat Salon - too cold
-  description: ""
+  description: ''
   trigger:
-    - platform: numeric_state
-      entity_id: sensor.ht_salon_temperature
-      for:
-        hours: 0
-        minutes: 5
-        seconds: 0
-      below: input_number.temperature_salon
+  - platform: numeric_state
+    entity_id: sensor.ht_salon_temperature
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    below: input_number.temperature_salon
   condition: []
   action:
-    - type: turn_on
-      device_id: 3f41022a06297022401187172974fd47
-      entity_id: switch.thermostat_salon
-      domain: switch
-    - type: turn_on
-      device_id: 3f41022a06297022401187172974fd47
-      entity_id: switch.thermostat_cuisine_3
-      domain: switch
-    - type: turn_on
-      device_id: 011b1032ed1708b1a37a61794758f35a
-      entity_id: switch.thermostat_entree
-      domain: switch
+  - type: turn_on
+    device_id: 3f41022a06297022401187172974fd47
+    entity_id: switch.thermostat_salon
+    domain: switch
+  - type: turn_on
+    device_id: 3f41022a06297022401187172974fd47
+    entity_id: switch.thermostat_cuisine
+    domain: switch
+  - type: turn_on
+    device_id: 011b1032ed1708b1a37a61794758f35a
+    entity_id: switch.thermostat_entree
+    domain: switch
+  mode: single
+- id: '1678997693833'
+  alias: Termostat Cabinet - too cold
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.ht_cabinet_temperature
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    below: input_number.temperature_cabinet
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 44274be303a9935e703473e58942b19d
+    entity_id: switch.thermostat_cabinet
+    domain: switch
+  mode: single
+- id: '1678997797591'
+  alias: Thermostat Cabinet - too hot
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.ht_cabinet_temperature
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    above: input_number.temperature_cabinet
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 44274be303a9935e703473e58942b19d
+    entity_id: switch.thermostat_cabinet
+    domain: switch
+  mode: single
+- id: '1678997936932'
+  alias: Thermostat Chambre R-1 - too cold
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.ht_chambre_r_1_temperature
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    below: input_number.temperature_chambre_r_1
+  condition: []
+  action:
+  - type: turn_on
+    device_id: 11eb453f4711d9f227584a495a813de2
+    entity_id: switch.thermostat_chambre_r_1_m
+    domain: switch
+  - type: turn_on
+    device_id: 11eb453f4711d9f227584a495a813de2
+    entity_id: switch.thermostat_chambre_r_1_e
+    domain: switch
+  mode: single
+- id: '1678997989687'
+  alias: Thermostat Chambre R-1 - too hot
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.ht_chambre_r_1_temperature
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    above: input_number.temperature_chambre_r_1
+  condition: []
+  action:
+  - type: turn_off
+    device_id: 11eb453f4711d9f227584a495a813de2
+    entity_id: switch.thermostat_chambre_r_1_m
+    domain: switch
+  - type: turn_off
+    device_id: 11eb453f4711d9f227584a495a813de2
+    entity_id: switch.thermostat_chambre_r_1_e
+    domain: switch
+  mode: single
+- id: '1679000159115'
+  alias: I4 1 - Réveil
+  description: ''
+  trigger:
+  - type: powered
+    platform: device
+    device_id: 630901237a01ee2c4bd9a260a464f85e
+    entity_id: binary_sensor.i4_1_input
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.reveil
+    metadata: {}
+  mode: single
+- id: '1679000187574'
+  alias: I4 2 - Soirée
+  description: ''
+  trigger:
+  - type: powered
+    platform: device
+    device_id: 630901237a01ee2c4bd9a260a464f85e
+    entity_id: binary_sensor.i4_2_input
+    domain: binary_sensor
+  condition: []
+  action:
+  - service: scene.turn_on
+    target:
+      entity_id: scene.soiree
+    metadata: {}
+  mode: single
+- id: '1679866993966'
+  alias: Lumière Escalier R+1 Bibliothèque -> Salon
+  description: ''
+  trigger:
+  - type: powered
+    platform: device
+    device_id: 149d51d61a6a95e06a105c487509dab8
+    entity_id: binary_sensor.bibliotheque_cathedrale_channel_2_input
+    domain: binary_sensor
+  - type: not_powered
+    platform: device
+    device_id: 149d51d61a6a95e06a105c487509dab8
+    entity_id: binary_sensor.bibliotheque_cathedrale_channel_2_input
+    domain: binary_sensor
+  condition: []
+  action:
+  - type: toggle
+    device_id: db3ae4fe2527a57e839c9cb43003dff5
+    entity_id: switch.salon_spots
+    domain: switch
   mode: single
