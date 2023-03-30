@@ -198,7 +198,7 @@
       device_id: 630901237a01ee2c4bd9a260a464f85e
       domain: shelly
       type: single_push
-      subtype: button1
+      subtype: button2
   action:
     - service: scene.turn_on
       target:
@@ -213,7 +213,7 @@
       device_id: 630901237a01ee2c4bd9a260a464f85e
       domain: shelly
       type: single_push
-      subtype: button2
+      subtype: button1
   action:
     - service: scene.turn_on
       target:
