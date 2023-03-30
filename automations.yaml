@@ -194,11 +194,11 @@
   alias: I4 1 - Réveil
   description: ""
   trigger:
-    - platform: state
-      entity_id:
-        - binary_sensor.i4_1_input
-      from: "off"
-      to: "on"
+    - platform: device
+      device_id: 630901237a01ee2c4bd9a260a464f85e
+      domain: shelly
+      type: single_push
+      subtype: button1
   action:
     - service: scene.turn_on
       target:
@@ -209,11 +209,11 @@
   alias: I4 2 - Soirée
   description: ""
   trigger:
-    - platform: state
-      entity_id:
-        - binary_sensor.i4_2_input
-      from: "off"
-      to: "on"
+    - platform: device
+      device_id: 630901237a01ee2c4bd9a260a464f85e
+      domain: shelly
+      type: single_push
+      subtype: button2
   action:
     - service: scene.turn_on
       target:
