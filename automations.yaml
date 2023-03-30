@@ -191,7 +191,7 @@
       domain: switch
   mode: single
 - id: "1679000159115"
-  alias: I4 1 - Réveil
+  alias: I4 2 - Réveil
   description: ""
   trigger:
     - platform: device
@@ -206,7 +206,7 @@
       metadata: {}
   mode: single
 - id: "1679000187574"
-  alias: I4 2 - Soirée
+  alias: I4 1 - Soirée
   description: ""
   trigger:
     - platform: device
