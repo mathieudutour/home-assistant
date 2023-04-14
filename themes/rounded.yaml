@@ -304,43 +304,32 @@ Rounded:
 
   card-mod-root: |
 
-    /* ___________ Bottom tabbar ___________  */
+    .: |
 
-    app-header {
-      top: auto;
-      bottom: 0;
-      transform: translate3d(0px, 0px, 0px) !important;
-      backdrop-filter: blur(50px);
-      -webkit-backdrop-filter: blur(50px);
-      -moz-backdrop-filter: blur(50px);
-      -o-backdrop-filter: blur(50px);
-      -ms-backdrop-filter: blur(50px);
-      background-color: rgba(var(--contrast1-RGB),0.6) !important;
-    }
-    app-header::before {
-      box-shadow: none;
-      height: 20px;
-      bottom: -20px;
-    }
-    app-toolbar {
-      height: 80px !important;
-      padding: 4px 8px 20px 8px;
-      background-color: rgba(0,0,0,0) !important;
-    }
-    app-header div[sticky] {
-      margin: -20px 0 20px 0 !important;
-      transform: none !important;
-    }
-    ha-tabs, ha-menu-button, ha-button-menu {
-      color: var(--contrast20);
-    }
-    ha-tabs, paper-tabs {
-      --paper-tabs-selection-bar-color: none !important;
-    }
-    paper-tab {
-      color: var(--contrast10);
-      border-radius: 16px;
-    }
-    paper-tab.iron-selected {
-      color: var(--contrast20);
-    }
+      /* ___________ Bottom tabbar ___________  */
+
+      #view {
+        margin-top: 0 !important;
+      }
+      .header {
+        top: auto !important;
+        bottom: 0;
+        background-color: rgba(var(--contrast1-RGB),0.6) !important;
+      }
+      :host([scrolled]) .header {
+        box-shadow: none !important;
+      }
+      .toolbar {
+        height: 80px !important;
+        padding: 4px 4px 16px 4px !important;
+      }
+      paper-tab {
+        color: var(--contrast10);
+        border-radius: 16px;
+      }
+      paper-tab.iron-selected {
+        color: var(--contrast20);
+      }
+      ha-menu-button, ha-button-menu {
+        color: var(--contrast10);
+      }

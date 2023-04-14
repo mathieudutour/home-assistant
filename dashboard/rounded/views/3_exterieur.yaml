@@ -33,6 +33,10 @@ cards:
     card_param: cards
     filter:
       include:
+        - entity_id: sensor.los_palmos_common_air_quality_index
+          options:
+            type: custom:button-card
+            template: caqi_card
         - entity_id: sensor.pollens_74_*
           options:
             type: custom:button-card

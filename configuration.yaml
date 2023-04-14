@@ -34,3 +34,19 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 group: !include groups.yaml
+
+panel_custom:
+  - name: panel_unifi
+    sidebar_title: Unifi
+    sidebar_icon: mdi:web
+    url_path: "config/server_control"
+    module_url: /api/hassio/app/entrypoint.js
+    embed_iframe: true
+    require_admin: true
+  - name: panel_vacuum
+    sidebar_title: Vacuum
+    sidebar_icon: mdi:robot-vacuum
+    url_path: "config/server_control"
+    module_url: /api/hassio/app/entrypoint.js
+    embed_iframe: true
+    require_admin: true

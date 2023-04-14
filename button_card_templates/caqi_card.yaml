@@ -1,0 +1,82 @@
+caqi_card:
+  name: "Air Quality"
+  label: |
+    [[[ return entity.attributes.value ]]]
+  tap_action:
+    action: "more-info"
+    haptic: "medium"
+  styles:
+    grid:
+      - grid-template-areas: "'i i' 'n l'"
+      - grid-template-columns: "1fr min-content"
+      - grid-template-rows: "1fr min-content min-content"
+    card:
+      - background: "var(--contrast2)"
+      - padding: "16px"
+      - "--mdc-ripple-press-opacity": 0
+      - height: "100px"
+    img_cell:
+      - justify-self: "start"
+      - width: "24px"
+    icon:
+      - width: "24px"
+      - height: "24px"
+      - color: "var(--contrast8)"
+    name:
+      - justify-self: "start"
+      - font-size: "14px"
+      - margin: "4px 0 12px 0"
+      - color: "var(--contrast8)"
+  state:
+    - value: unknown
+      operator: "=="
+      styles:
+        icon:
+          - color: "var(--contrast20)"
+        name:
+          - color: "var(--contrast20)"
+    - value: "25"
+      operator: "<="
+      styles:
+        card:
+          - background: "var(--green)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - value: "50"
+      operator: "<="
+      styles:
+        card:
+          - background: "var(--yellow)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - value: "75"
+      operator: "=="
+      styles:
+        card:
+          - background: "var(--orange)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - value: "100"
+      operator: "<="
+      styles:
+        card:
+          - background: "var(--red)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - value: "100"
+      operator: ">"
+      styles:
+        card:
+          - background: "var(--purple)"
+        icon:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
