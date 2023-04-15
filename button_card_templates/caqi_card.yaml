@@ -1,7 +1,7 @@
 caqi_card:
   name: "Air Quality"
   label: |
-    [[[ return entity.state ]]]
+    [[[ return parseFloat(entity.state).toFixed() ]]]
   show_label: true
   tap_action:
     action: "more-info"
@@ -28,6 +28,9 @@ caqi_card:
       - font-size: "14px"
       - margin: "4px 0 12px 0"
       - color: "var(--contrast8)"
+    label:
+      - font-size: "14px"
+      - color: "var(--contrast8)"
   state:
     - value: unknown
       operator: "=="
@@ -35,6 +38,8 @@ caqi_card:
         icon:
           - color: "var(--contrast20)"
         name:
+          - color: "var(--contrast20)"
+        label:
           - color: "var(--contrast20)"
     - value: "25"
       operator: "<="
@@ -45,6 +50,8 @@ caqi_card:
           - color: "var(--black)"
         name:
           - color: "var(--black)"
+        label:
+          - color: "var(--black)"
     - value: "50"
       operator: "<="
       styles:
@@ -53,6 +60,8 @@ caqi_card:
         icon:
           - color: "var(--black)"
         name:
+          - color: "var(--black)"
+        label:
           - color: "var(--black)"
     - value: "75"
       operator: "=="
@@ -63,6 +72,8 @@ caqi_card:
           - color: "var(--black)"
         name:
           - color: "var(--black)"
+        label:
+          - color: "var(--black)"
     - value: "100"
       operator: "<="
       styles:
@@ -72,6 +83,8 @@ caqi_card:
           - color: "var(--black)"
         name:
           - color: "var(--black)"
+        label:
+          - color: "var(--black)"
     - value: "100"
       operator: ">"
       styles:
@@ -80,4 +93,6 @@ caqi_card:
         icon:
           - color: "var(--black)"
         name:
+          - color: "var(--black)"
+        label:
           - color: "var(--black)"
