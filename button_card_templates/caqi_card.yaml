@@ -30,6 +30,7 @@ caqi_card:
       - color: "var(--contrast8)"
     label:
       - font-size: "14px"
+      - margin: "4px 0 12px 0"
       - color: "var(--contrast8)"
   state:
     - value: unknown
