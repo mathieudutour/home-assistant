@@ -230,6 +230,18 @@ cards:
         template: light_card
         name: "Cathédrale"
         entity: "light.chambre_r_1"
+      - type: custom:button-card
+        template: light_card
+        name: "Dressing"
+        entity: "light.dressing"
+      - type: custom:button-card
+        template: light_card
+        name: "Tête de lit Est"
+        entity: "light.chambre_r_1_tete_de_lit_e"
+      - type: custom:button-card
+        template: light_card
+        name: "Tête de lit Ouest"
+        entity: "light.chambre_r_1_tete_de_lit_o"
   - type: "grid"
     columns: 2
     square: false
@@ -288,7 +300,11 @@ cards:
         entity: "cover.cabane_r_1"
       - type: custom:button-card
         template: cover_card
-        name: "Panoramique  Milieu"
+        name: "Panoramique Gauche"
+        entity: "cover.translation_gauche"
+      - type: custom:button-card
+        template: cover_card
+        name: "Panoramique Milieu"
         entity: "cover.panoramique_milieu"
       - type: custom:button-card
         template: cover_card
