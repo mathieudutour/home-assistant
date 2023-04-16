@@ -39,14 +39,14 @@ panel_custom:
   - name: panel_unifi
     sidebar_title: Unifi
     sidebar_icon: mdi:web
-    url_path: "config/server_control"
+    url_path: "unifi"
     module_url: /api/hassio/app/entrypoint.js
     embed_iframe: true
     require_admin: true
   - name: panel_vacuum
     sidebar_title: Vacuum
     sidebar_icon: mdi:robot-vacuum
-    url_path: "config/server_control"
+    url_path: "vacuum"
     module_url: /api/hassio/app/entrypoint.js
     embed_iframe: true
     require_admin: true
