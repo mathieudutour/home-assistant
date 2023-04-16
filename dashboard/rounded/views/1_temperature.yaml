@@ -1,105 +1,120 @@
 icon: "mdi:thermometer"
 path: "temperature"
 title: "Température"
-type: "masonry"
+type: "custom:grid-layout"
+layout:
+  #default
+  margin: 0
+  grid-gap: 0
+  card_margin: 0 3.3vw
+  grid-template-columns: 1fr
+  grid-template-rows: 1fr
+  grid-template-areas: |
+    "content"
 badges: []
 cards:
-  - type: custom:button-card
-    template: title_card
-    name: "Température"
-  - type: "sensor"
-    name: "Salon"
-    entity: "sensor.ht_salon_temperature"
-    hours_to_show: 24
-    detail: 1
-    graph: "line"
-    icon: "none"
+  - type: vertical-stack
+    view_layout:
+      grid-area: content
     card_mod:
-      class: "graph"
-      style: |
-        {% set state = states(config.entity) | float %}
-        {% set target = states('input_number.temperature_salon') | float %}
-        ha-card {
-          border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
-          background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
-          --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
-        }
-  - type: custom:button-card
-    template: temperature_card
-    entity: "input_number.temperature_salon"
-  - type: "grid"
-    columns: 3
-    square: false
+      class: "main-content"
     cards:
       - type: custom:button-card
-        template: thermostat_card
+        template: title_card
+        name: "Température"
+      - type: "sensor"
         name: "Salon"
-        entity: "switch.thermostat_salon"
+        entity: "sensor.ht_salon_temperature"
+        hours_to_show: 24
+        detail: 1
+        graph: "line"
+        icon: "none"
+        card_mod:
+          class: "graph"
+          style: |
+            {% set state = states(config.entity) | float %}
+            {% set target = states('input_number.temperature_salon') | float %}
+            ha-card {
+              border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
+              background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
+              --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
+            }
       - type: custom:button-card
-        template: thermostat_card
-        name: "Cuisine"
-        entity: "switch.thermostat_cuisine"
+        template: temperature_card
+        entity: "input_number.temperature_salon"
+      - type: "grid"
+        columns: 3
+        square: false
+        cards:
+          - type: custom:button-card
+            template: thermostat_card
+            name: "Salon"
+            entity: "switch.thermostat_salon"
+          - type: custom:button-card
+            template: thermostat_card
+            name: "Cuisine"
+            entity: "switch.thermostat_cuisine"
+          - type: custom:button-card
+            template: thermostat_card
+            name: "Entrée"
+            entity: "switch.thermostat_entree"
+      - type: "sensor"
+        name: "Chambre R-1"
+        entity: "sensor.ht_chambre_r_1_temperature"
+        hours_to_show: 24
+        detail: 1
+        graph: "line"
+        icon: "none"
+        card_mod:
+          class: "graph"
+          style: |
+            {% set state = states(config.entity) | float %}
+            {% set target = states('input_number.temperature_chambre_r_1') | float %}
+            ha-card {
+              border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
+              background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
+              --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
+            }
       - type: custom:button-card
-        template: thermostat_card
-        name: "Entrée"
-        entity: "switch.thermostat_entree"
-  - type: "sensor"
-    name: "Chambre R-1"
-    entity: "sensor.ht_chambre_r_1_temperature"
-    hours_to_show: 24
-    detail: 1
-    graph: "line"
-    icon: "none"
-    card_mod:
-      class: "graph"
-      style: |
-        {% set state = states(config.entity) | float %}
-        {% set target = states('input_number.temperature_chambre_r_1') | float %}
-        ha-card {
-          border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
-          background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
-          --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
-        }
-  - type: custom:button-card
-    template: temperature_card
-    entity: "input_number.temperature_chambre_r_1"
-  - type: "grid"
-    columns: 3
-    square: false
-    cards:
-      - type: custom:button-card
-        template: thermostat_card
-        name: "Chambre R-1 Est"
-        entity: "switch.thermostat_chambre_r_1_e"
-      - type: custom:button-card
-        template: thermostat_card
-        name: "Chambre R-1 Milieu"
-        entity: "switch.thermostat_chambre_r_1_m"
-  - type: "sensor"
-    name: "Cabinet"
-    entity: "sensor.ht_cabinet_temperature"
-    hours_to_show: 24
-    detail: 1
-    graph: "line"
-    icon: "none"
-    card_mod:
-      class: "graph"
-      style: |
-        {% set state = states(config.entity) | float %}
-        {% set target = states('input_number.temperature_cabinet') | float %}
-        ha-card {
-          border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
-          background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
-          --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
-        }
-  - type: custom:button-card
-    template: temperature_card
-    entity: "input_number.temperature_cabinet"
-  - type: "grid"
-    columns: 3
-    square: false
-    cards:
-      - type: custom:button-card
-        template: thermostat_card
+        template: temperature_card
+        entity: "input_number.temperature_chambre_r_1"
+      - type: "grid"
+        columns: 3
+        square: false
+        cards:
+          - type: custom:button-card
+            template: thermostat_card
+            name: "Chambre R-1 Est"
+            entity: "switch.thermostat_chambre_r_1_e"
+          - type: custom:button-card
+            template: thermostat_card
+            name: "Chambre R-1 Milieu"
+            entity: "switch.thermostat_chambre_r_1_m"
+      - type: "sensor"
         name: "Cabinet"
-        entity: "switch.thermostat_cabinet"
+        entity: "sensor.ht_cabinet_temperature"
+        hours_to_show: 24
+        detail: 1
+        graph: "line"
+        icon: "none"
+        card_mod:
+          class: "graph"
+          style: |
+            {% set state = states(config.entity) | float %}
+            {% set target = states('input_number.temperature_cabinet') | float %}
+            ha-card {
+              border-radius: var(--ha-card-border-radius) var(--ha-card-border-radius) 0 0;
+              background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
+              --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
+            }
+      - type: custom:button-card
+        template: temperature_card
+        entity: "input_number.temperature_cabinet"
+      - type: "grid"
+        columns: 3
+        square: false
+        cards:
+          - type: custom:button-card
+            template: thermostat_card
+            name: "Cabinet"
+            entity: "switch.thermostat_cabinet"

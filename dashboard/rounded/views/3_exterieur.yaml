@@ -1,54 +1,69 @@
 icon: "mdi:forest"
 path: "outdoor"
 title: "Extérieur"
-type: "masonry"
+type: "custom:grid-layout"
+layout:
+  #default
+  margin: 0
+  grid-gap: 0
+  card_margin: 0 3.3vw
+  grid-template-columns: 1fr
+  grid-template-rows: 1fr
+  grid-template-areas: |
+    "content"
 badges: []
 cards:
-  - type: custom:button-card
-    template: title_card
-    name: "Extérieur"
-  - type: "weather-forecast"
-    entity: "weather.forecast_home"
-  - type: "grid"
-    columns: 2
-    square: false
+  - type: vertical-stack
+    view_layout:
+      grid-area: content
+    card_mod:
+      class: "main-content"
     cards:
       - type: custom:button-card
-        template: light_card
-        name: "Appentis"
-        entity: "light.appentis"
-      - type: custom:button-card
-        template: light_card
-        name: "Spots Sud Est"
-        entity: "light.exterieur_se"
-      - type: custom:button-card
-        template: light_card
-        name: "Terrasse"
-        entity: "light.terrasse_spots"
-  - type: custom:auto-entities
-    card:
-      type: grid
-      columns: 2
-      square: false
-    card_param: cards
-    filter:
-      include:
-        - entity_id: sensor.los_palmos_common_air_quality_index
-          options:
-            type: custom:button-card
-            template: caqi_card
-        - entity_id: sensor.pollens_74_*
-          options:
-            type: custom:button-card
-            template: pollen_card
-      exclude:
-        - entity_id: sensor.pollens_74_*
-          state: unknown
-        - entity_id: sensor.pollens_74_*
-          state: "0"
-        - entity_id: sensor.pollens_74_risklevel
-    sort:
-      method: state
-      reverse: true
-      ignore_case: true
-      numeric: true
+        template: title_card
+        name: "Extérieur"
+      - type: "weather-forecast"
+        entity: "weather.forecast_home"
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - type: custom:button-card
+            template: light_card
+            name: "Appentis"
+            entity: "light.appentis"
+          - type: custom:button-card
+            template: light_card
+            name: "Spots Sud Est"
+            entity: "light.exterieur_se"
+          - type: custom:button-card
+            template: light_card
+            name: "Terrasse"
+            entity: "light.terrasse_spots"
+      - type: custom:auto-entities
+        card:
+          type: grid
+          columns: 2
+          square: false
+        card_param: cards
+        filter:
+          include:
+            - entity_id: sensor.los_palmos_common_air_quality_index
+              options:
+                type: custom:button-card
+                template: caqi_card
+            - entity_id: sensor.pollens_74_*
+              options:
+                type: custom:button-card
+                template: pollen_card
+          exclude:
+            - entity_id: sensor.pollens_74_*
+              state: unknown
+            - entity_id: sensor.pollens_74_*
+              state: "0"
+            - entity_id: sensor.pollens_74_risklevel
+        sort:
+          method: state
+          reverse: true
+          ignore_case: true
+          numeric: true

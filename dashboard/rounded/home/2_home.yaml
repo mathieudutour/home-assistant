@@ -20,9 +20,9 @@ default_templates:
 
 type: vertical-stack
 view_layout:
-  grid-area: home
+  grid-area: content
 card_mod:
-  class: "home-content"
+  class: "main-content"
 cards:
   - type: custom:button-card
     template: title_card

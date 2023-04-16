@@ -1,190 +1,205 @@
 icon: "mdi:robot-vacuum"
 path: "vacuum"
 title: "Aspirateur"
-type: "masonry"
+type: "custom:grid-layout"
+layout:
+  #default
+  margin: 0
+  grid-gap: 0
+  card_margin: 0 3.3vw
+  grid-template-columns: 1fr
+  grid-template-rows: 1fr
+  grid-template-areas: |
+    "content"
 badges: []
 cards:
-  - type: custom:button-card
-    template: title_card
-    name: "Aspirateur"
-  - type: custom:valetudo-map-card
-    vacuum: valetudo_r2d2
-    show_locate_button: false
-    show_home_button: false
-    show_stop_button: false
-    show_pause_button: false
-    show_start_button: false
-    show_battery_level: false
-    show_status: false
-    show_no_go_areas: false
-    show_virtual_walls: false
-    segment_colors:
-      - "--blue"
-      - "--blue"
-      - "--blue"
-      - "--blue"
-      - "--blue"
-      - "--blue"
-    segment_opacity: 0.4
-    wall_color: "--blue"
-    map_scale: 2
-    floor_color: "--blue"
-    floor_opacity: 0.2
-    dock_color: "--green"
+  - type: vertical-stack
+    view_layout:
+      grid-area: content
     card_mod:
-      style: |
-        ha-card .card-header {
-          display: none !important;
-        }
-        ha-card {
-          max-width: calc(100vw - 48px) !important;
-          padding: 16px !important;
-        }
-        #lovelaceValetudoMapCard {
-          width: 100%;
-          height: auto !important;
-        }
-        #lovelaceValetudoCard {
-          width: 100%;
-        }
-        #lovelaceValetudoCard canvas {
-          max-width: 100%;
-        }
-
-  - type: "grid"
-    columns: 3
-    square: false
+      class: "main-content"
     cards:
       - type: custom:button-card
-        template: vacuum_zone_card
-        name: "Salon"
-        icon: mdi:sofa
-        entity: "input_boolean.vacuum_selected_room_salon"
-      - type: custom:button-card
-        template: vacuum_zone_card
-        name: "Cuisine"
-        icon: mdi:sofa
-        entity: "input_boolean.vacuum_selected_room_cuisine"
-      - type: custom:button-card
-        template: vacuum_zone_card
-        name: "Cellier"
-        icon: mdi:sofa
-        entity: "input_boolean.vacuum_selected_room_cellier"
-      - type: custom:button-card
-        template: vacuum_zone_card
-        name: "Entrée"
-        icon: mdi:sofa
-        entity: "input_boolean.vacuum_selected_room_entree"
-      - type: custom:button-card
-        template: vacuum_zone_card
-        name: "WC R0"
-        icon: mdi:sofa
-        entity: "input_boolean.vacuum_selected_room_wc_r0"
+        template: title_card
+        name: "Aspirateur"
+      - type: custom:valetudo-map-card
+        vacuum: valetudo_r2d2
+        show_locate_button: false
+        show_home_button: false
+        show_stop_button: false
+        show_pause_button: false
+        show_start_button: false
+        show_battery_level: false
+        show_status: false
+        show_no_go_areas: false
+        show_virtual_walls: false
+        segment_colors:
+          - "--blue"
+          - "--blue"
+          - "--blue"
+          - "--blue"
+          - "--blue"
+          - "--blue"
+        segment_opacity: 0.4
+        wall_color: "--blue"
+        map_scale: 2
+        floor_color: "--blue"
+        floor_opacity: 0.2
+        dock_color: "--green"
+        card_mod:
+          style: |
+            ha-card .card-header {
+              display: none !important;
+            }
+            ha-card {
+              max-width: calc(100vw - 48px) !important;
+              padding: 16px !important;
+            }
+            #lovelaceValetudoMapCard {
+              width: 100%;
+              height: auto !important;
+            }
+            #lovelaceValetudoCard {
+              width: 100%;
+            }
+            #lovelaceValetudoCard canvas {
+              max-width: 100%;
+            }
 
-  - type: "grid"
-    columns: 2
-    square: false
-    cards:
-      - type: custom:button-card
-        entity: group.vacuum_selected_rooms
-        icon: mdi:robot-vacuum
-        name: Commencer Nettoyage
-        label: Zones sélectionnées
-        show_label: true
-        tap_action:
-          action: call-service
-          service: >-
-            [[[ return states['group.vacuum_selected_rooms'].state !== 'on' ? 'vacuum.start' : 'script.vacuum_clean_segments' ]]]
-          service_data:
-            entity_id: "vacuum.valetudo_r2d2"
-          haptic: success
-        lock:
-          enabled: >-
-            [[[return states['vacuum.valetudo_r2d2'].state !== 'docked']]]
-          exemptions: []
-        state:
-          - value: "off"
-            label: Toutes les zones
-          - value: "on"
+      - type: "grid"
+        columns: 3
+        square: false
+        cards:
+          - type: custom:button-card
+            template: vacuum_zone_card
+            name: "Salon"
+            icon: mdi:sofa
+            entity: "input_boolean.vacuum_selected_room_salon"
+          - type: custom:button-card
+            template: vacuum_zone_card
+            name: "Cuisine"
+            icon: mdi:sofa
+            entity: "input_boolean.vacuum_selected_room_cuisine"
+          - type: custom:button-card
+            template: vacuum_zone_card
+            name: "Cellier"
+            icon: mdi:sofa
+            entity: "input_boolean.vacuum_selected_room_cellier"
+          - type: custom:button-card
+            template: vacuum_zone_card
+            name: "Entrée"
+            icon: mdi:sofa
+            entity: "input_boolean.vacuum_selected_room_entree"
+          - type: custom:button-card
+            template: vacuum_zone_card
+            name: "WC R0"
+            icon: mdi:sofa
+            entity: "input_boolean.vacuum_selected_room_wc_r0"
+
+      - type: "grid"
+        columns: 2
+        square: false
+        cards:
+          - type: custom:button-card
+            entity: group.vacuum_selected_rooms
+            icon: mdi:robot-vacuum
+            name: Commencer Nettoyage
             label: Zones sélectionnées
-        styles:
-          icon:
-            - width: 24px
-            - color: var(--black)
-          img_cell:
-            - justify-content: flex-start
-            - margin-top: "-4px"
-          name:
-            - justify-self: start
-            - color: var(--black)
-            - font-size: 12px
-            - margin-bottom: 0px
-          card:
-            - height: 84px
-            - background-color: var(--green)
-            - box-shadow: none
-            - border-radius: 24px
-            - padding: 12px 0 12px 14px
-            - z-index: 1
-          label:
-            - justify-self: start
-            - color: var(--black)
-            - font-size: 12px
-      - type: custom:button-card
-        icon: mdi:numeric-1-box
-        entity: input_number.vacuum_iterations
-        name: Repétitions
-        state:
-          - value: "1.0"
+            show_label: true
+            tap_action:
+              action: call-service
+              service: >-
+                [[[ return states['group.vacuum_selected_rooms'].state !== 'on' ? 'vacuum.start' : 'script.vacuum_clean_segments' ]]]
+              service_data:
+                entity_id: "vacuum.valetudo_r2d2"
+              haptic: success
+            lock:
+              enabled: >-
+                [[[return states['vacuum.valetudo_r2d2'].state !== 'docked']]]
+              exemptions: []
+            state:
+              - value: "off"
+                label: Toutes les zones
+              - value: "on"
+                label: Zones sélectionnées
+            styles:
+              icon:
+                - width: 24px
+                - color: var(--black)
+              img_cell:
+                - justify-content: flex-start
+                - margin-top: "-4px"
+              name:
+                - justify-self: start
+                - color: var(--black)
+                - font-size: 12px
+                - margin-bottom: 0px
+              card:
+                - height: 84px
+                - background-color: var(--green)
+                - box-shadow: none
+                - border-radius: 24px
+                - padding: 12px 0 12px 14px
+                - z-index: 1
+              label:
+                - justify-self: start
+                - color: var(--black)
+                - font-size: 12px
+          - type: custom:button-card
             icon: mdi:numeric-1-box
-          - value: "2.0"
-            icon: mdi:numeric-2-box
-          - value: "3.0"
-            icon: mdi:numeric-3-box
-        tap_action:
-          action: "call-service"
-          service: input_number.set_value
-          service_data:
-            entity_id: "[[[ return entity.entity_id ]]]"
-            value: "[[[ return (entity.state % 3) + 1 ]]]"
-          haptic: medium
-        styles:
-          icon:
-            - width: 24px
-            - color: var(--contrast1)
-          img_cell:
-            - justify-content: flex-start
-            - margin-top: "-4px"
-          name:
-            - justify-self: start
-            - color: var(--contrast1)
-            - font-size: 12px
-            - margin-bottom: 0px
-          card:
-            - height: 84px
-            - background-color: var(--contrast20)
-            - box-shadow: none
-            - border-radius: 24px
-            - padding: 12px 0 12px 14px
-            - z-index: 1
-          label:
-            - justify-self: start
-            - color: var(--contrast1)
-            - font-size: 12px
+            entity: input_number.vacuum_iterations
+            name: Repétitions
+            state:
+              - value: "1.0"
+                icon: mdi:numeric-1-box
+              - value: "2.0"
+                icon: mdi:numeric-2-box
+              - value: "3.0"
+                icon: mdi:numeric-3-box
+            tap_action:
+              action: "call-service"
+              service: input_number.set_value
+              service_data:
+                entity_id: "[[[ return entity.entity_id ]]]"
+                value: "[[[ return (entity.state % 3) + 1 ]]]"
+              haptic: medium
+            styles:
+              icon:
+                - width: 24px
+                - color: var(--contrast1)
+              img_cell:
+                - justify-content: flex-start
+                - margin-top: "-4px"
+              name:
+                - justify-self: start
+                - color: var(--contrast1)
+                - font-size: 12px
+                - margin-bottom: 0px
+              card:
+                - height: 84px
+                - background-color: var(--contrast20)
+                - box-shadow: none
+                - border-radius: 24px
+                - padding: 12px 0 12px 14px
+                - z-index: 1
+              label:
+                - justify-self: start
+                - color: var(--contrast1)
+                - font-size: 12px
 
-  - type: custom:button-card
-    name: Plus d'info
-    entity: vacuum.valetudo_r2d2
-    show_icon: false
-    styles:
-      card:
-        - background: none
-        - border-radius: 24px
-        - color: var(--contrast20)
-        - margin-top: 8px
-        - padding: 18px 0px
-        - font-size: 16px
-        - border: 2px solid var(--contrast5)
-    tap_action:
-      action: more-info
-      haptic: medium
+      - type: custom:button-card
+        name: Plus d'info
+        entity: vacuum.valetudo_r2d2
+        show_icon: false
+        styles:
+          card:
+            - background: none
+            - border-radius: 24px
+            - color: var(--contrast20)
+            - margin-top: 8px
+            - padding: 18px 0px
+            - font-size: 16px
+            - border: 2px solid var(--contrast5)
+        tap_action:
+          action: more-info
+          haptic: medium

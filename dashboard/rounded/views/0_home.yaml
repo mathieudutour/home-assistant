@@ -11,5 +11,5 @@ layout:
   grid-template-columns: 0 1fr
   grid-template-rows: 1fr
   grid-template-areas: |
-    "sidebar  home"
+    "sidebar  content"
 cards: !include_dir_list ../home
