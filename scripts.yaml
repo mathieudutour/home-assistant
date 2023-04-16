@@ -5,7 +5,14 @@ vacuum_clean_segments:
         entity_id: script.vacuum_clean_segments_message
       data:
         variables:
-          segments: "{{ state_attr('group.vacuum_selected_rooms', 'entity_id') | select('is_state', 'on') | map('state_attr', 'room_id') | list | to_json }}"
+          segments: |
+            {{ [
+              {'id': '2', 'state': states('input_boolean.vacuum_selected_room_cuisine')},
+              {'id': '4', 'state': states('input_boolean.vacuum_selected_room_salon')},
+              {'id': '1', 'state': states('input_boolean.vacuum_selected_room_cellier')},
+              {'id': '5', 'state': states('input_boolean.vacuum_selected_room_entree')},
+              {'id': '3', 'state': states('input_boolean.vacuum_selected_room_wc_r0')}
+              ] | selectattr('state', 'eq', 'on') | map(attribute='id') | list | to_json }}
   mode: single
   alias: vacuum_clean_segments
   icon: mdi:arrow-right

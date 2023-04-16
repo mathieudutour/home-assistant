@@ -1,9 +1,6 @@
 # Loads default set of integrations. Do not remove.
 default_config:
 
-homeassistant:
-  customize: !include customize.yaml
-
 # Load frontend themes from the themes folder
 # https://www.home-assistant.io/integrations/frontend/
 frontend:
