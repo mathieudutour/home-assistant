@@ -82,7 +82,7 @@ cards:
         entity: "input_boolean.vacuum_selected_room_wc_r0"
 
   - type: "grid"
-    columns: 3
+    columns: 2
     square: false
     cards:
       - type: custom:button-card
@@ -94,7 +94,7 @@ cards:
         tap_action:
           action: call-service
           service: >-
-            [[[ return states['group.vacuum_selected_rooms'].state !== 'on' ? '' : 'script.vacuum_clean_segments' ]]]
+            [[[ return states['group.vacuum_selected_rooms'].state !== 'on' ? 'vacuum.start' : 'script.vacuum_clean_segments' ]]]
           service_data:
             entity_id: "vacuum.valetudo_r2d2"
           haptic: success
@@ -104,7 +104,9 @@ cards:
           exemptions: []
         state:
           - value: "off"
-            name: Toutes les zones
+            label: Toutes les zones
+          - value: "on"
+            label: Zones sélectionnées
         styles:
           icon:
             - width: 24px
@@ -131,7 +133,7 @@ cards:
       - type: custom:button-card
         icon: mdi:numeric-1-box
         entity: input_number.vacuum_iterations
-        name: Nombre de repétitions
+        name: Repétitions
         state:
           - value: "1.0"
             icon: mdi:numeric-1-box
