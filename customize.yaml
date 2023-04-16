@@ -1,5 +1,6 @@
 input_boolean.vacuum_selected_room_cuisine:
   room_id: "2"
+  icon: "mdi:fridge"
 input_boolean.vacuum_selected_room_salon:
   room_id: "4"
 input_boolean.vacuum_selected_room_cellier:
