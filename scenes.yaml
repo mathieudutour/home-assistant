@@ -55,6 +55,12 @@
       friendly_name: Panoramique milieu
       supported_features: 15
       state: closed
+    cover.panoramique_gauche:
+      current_position: 0
+      device_class: shutter
+      friendly_name: Panoramique gauche
+      supported_features: 15
+      state: closed
     cover.translation_droite:
       current_position: 31
       current_tilt_position: 0
@@ -117,6 +123,8 @@
       entity_only: true
     cover.panoramique_milieu:
       entity_only: true
+    cover.panoramique_gauche:
+      entity_only: true
     cover.translation_droite:
       entity_only: true
     cover.velux_bibliotheque_droit:
@@ -163,6 +171,12 @@
       current_position: 100
       device_class: shutter
       friendly_name: Panoramique milieu
+      supported_features: 15
+      state: open
+    cover.panoramique_gauche:
+      current_position: 100
+      device_class: shutter
+      friendly_name: Panoramique gauche
       supported_features: 15
       state: open
     cover.salon_est:
@@ -227,6 +241,8 @@
     cover.entree_2:
       entity_only: true
     cover.panoramique_milieu:
+      entity_only: true
+    cover.panoramique_gauche:
       entity_only: true
     cover.salon_est:
       entity_only: true

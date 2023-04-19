@@ -301,7 +301,7 @@ cards:
       - type: custom:button-card
         template: cover_card
         name: "Panoramique Gauche"
-        entity: "cover.translation_gauche"
+        entity: "cover.panoramique_gauche"
       - type: custom:button-card
         template: cover_card
         name: "Panoramique Milieu"
