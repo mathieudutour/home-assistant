@@ -2,7 +2,7 @@ cover_card:
   tap_action:
     action: "toggle"
     haptic: "medium"
-  hold_action:
+  double_tap_action:
     action: "more-info"
     haptic: "medium"
   custom_fields:

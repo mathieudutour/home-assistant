@@ -4,7 +4,7 @@ room_card:
     action: nothing
     scroll_to: "[[[ querySelectorAllDeep('button-card #container.no-icon > #name').find(x => x.innerText === variables.title)?.scrollIntoView({ behavior: 'smooth', block: 'start' }) ]]]"
     haptic: "medium"
-  hold_action:
+  double_tap_action:
     action: "more-info"
     haptic: "medium"
   custom_fields:
