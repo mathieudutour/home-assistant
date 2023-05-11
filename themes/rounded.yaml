@@ -314,8 +314,13 @@ Rounded:
       .header {
         top: auto !important;
         bottom: 0;
+        transform: translate3d(0px, 0px, 0px) !important;
+        backdrop-filter: blur(50px);
+        -webkit-backdrop-filter: blur(50px);
+        -moz-backdrop-filter: blur(50px);
+        -o-backdrop-filter: blur(50px);
+        -ms-backdrop-filter: blur(50px);
         background-color: rgba(var(--contrast1-RGB),0.6) !important;
-        backdrop-filter: blur(5px);
       }
       :host([scrolled]) .header {
         box-shadow: none !important;
