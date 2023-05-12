@@ -32,6 +32,7 @@ cards:
         show_battery_level: false
         show_status: false
         show_no_go_areas: false
+        show_no_mop_areas: false
         show_virtual_walls: false
         segment_colors:
           - "--blue"
