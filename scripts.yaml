@@ -8,10 +8,11 @@ vacuum_clean_segments:
           segments: |
             {{ [
               {'id': '2', 'state': states('input_boolean.vacuum_selected_room_cuisine')},
-              {'id': '4', 'state': states('input_boolean.vacuum_selected_room_salon')},
+              {'id': '5', 'state': states('input_boolean.vacuum_selected_room_salon')},
               {'id': '1', 'state': states('input_boolean.vacuum_selected_room_cellier')},
-              {'id': '5', 'state': states('input_boolean.vacuum_selected_room_entree')},
-              {'id': '3', 'state': states('input_boolean.vacuum_selected_room_wc_r0')}
+              {'id': '4', 'state': states('input_boolean.vacuum_selected_room_entree')},
+              {'id': '3', 'state': states('input_boolean.vacuum_selected_room_wc_r0')},
+              {'id': '6', 'state': states('input_boolean.vacuum_selected_room_salle_a_manger')}
               ] | selectattr('state', 'eq', 'on') | map(attribute='id') | list | to_json }}
   mode: single
   alias: vacuum_clean_segments

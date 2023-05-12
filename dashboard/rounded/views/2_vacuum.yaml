@@ -77,6 +77,11 @@ cards:
             entity: "input_boolean.vacuum_selected_room_salon"
           - type: custom:button-card
             template: vacuum_zone_card
+            name: "Salle à manger"
+            icon: mdi:table
+            entity: "input_boolean.vacuum_selected_room_salle_a_manger"
+          - type: custom:button-card
+            template: vacuum_zone_card
             name: "Cuisine"
             icon: mdi:sofa
             entity: "input_boolean.vacuum_selected_room_cuisine"
