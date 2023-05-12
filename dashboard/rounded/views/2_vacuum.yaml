@@ -79,27 +79,27 @@ cards:
           - type: custom:button-card
             template: vacuum_zone_card
             name: "Salle à manger"
-            icon: mdi:table
+            icon: mdi:table-picnic
             entity: "input_boolean.vacuum_selected_room_salle_a_manger"
           - type: custom:button-card
             template: vacuum_zone_card
             name: "Cuisine"
-            icon: mdi:sofa
+            icon: mdi:fridge-outline
             entity: "input_boolean.vacuum_selected_room_cuisine"
           - type: custom:button-card
             template: vacuum_zone_card
             name: "Cellier"
-            icon: mdi:sofa
+            icon: mdi:food-drumstick-outline
             entity: "input_boolean.vacuum_selected_room_cellier"
           - type: custom:button-card
             template: vacuum_zone_card
             name: "Entrée"
-            icon: mdi:sofa
+            icon: mdi:door
             entity: "input_boolean.vacuum_selected_room_entree"
           - type: custom:button-card
             template: vacuum_zone_card
             name: "WC R0"
-            icon: mdi:sofa
+            icon: mdi:paper-roll-outline
             entity: "input_boolean.vacuum_selected_room_wc_r0"
 
       - type: "grid"
