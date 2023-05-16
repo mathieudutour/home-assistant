@@ -6,3 +6,4 @@ vacuum_selected_rooms:
     - input_boolean.vacuum_selected_room_cellier
     - input_boolean.vacuum_selected_room_entree
     - input_boolean.vacuum_selected_room_wc_r0
+    - input_boolean.vacuum_selected_room_salla_a_manger
