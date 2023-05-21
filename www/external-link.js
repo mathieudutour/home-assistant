@@ -1,4 +1,4 @@
-\import { LitElement } from "https://unpkg.com/lit-element@2.4.0/lit-element.js?module";
+import { LitElement } from "https://unpkg.com/lit-element@2.4.0/lit-element.js?module";
 
 class ExternalLinkRedirect extends LitElement {
   static get properties() {
