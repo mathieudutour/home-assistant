@@ -40,7 +40,7 @@ panel_custom:
   - name: panel_unifi
     sidebar_title: Unifi
     sidebar_icon: mdi:web
-    url_path: "/unifi"
+    url_path: "unifi"
     module_url: /local/external-link.js
     require_admin: true
     config:
@@ -48,7 +48,7 @@ panel_custom:
   - name: panel_vacuum
     sidebar_title: Vacuum
     sidebar_icon: mdi:robot-vacuum
-    url_path: "/vacuum"
+    url_path: "vacuum"
     module_url: /local/external-link.js
     require_admin: true
     config:
