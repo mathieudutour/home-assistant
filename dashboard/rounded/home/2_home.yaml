@@ -48,6 +48,11 @@ cards:
         entity: "scene.soiree"
         variables:
           color: "var(--red)"
+      - type: custom:button-card
+        template: scene_card
+        entity: "scene.jour_ete"
+        variables:
+          color: "var(--yellow)"
   - type: "grid"
     columns: 2
     square: false
