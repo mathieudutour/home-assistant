@@ -50,7 +50,7 @@ temperature_card:
       - "--mdc-ripple-press-opacity": 0
       - height: "70px"
       - margin-top: "-40px"
-      - margin-bottom: "-20px"
+      - margin-bottom: "-10px"
       - border-radius: "0 0 var(--ha-card-border-radius) var(--ha-card-border-radius)"
     name:
       - justify-self: "end"
