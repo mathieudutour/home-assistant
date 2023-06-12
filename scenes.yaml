@@ -545,8 +545,8 @@
       device_class: shutter
       friendly_name: Velux Salle de bain
       supported_features: 15
-      current_position: 100
-      state: open
+      current_position: 0
+      state: closed
     cover.entree_1:
       device_class: shutter
       friendly_name: Entrée 1
