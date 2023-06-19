@@ -41,15 +41,17 @@ panel_custom:
     sidebar_title: Unifi
     sidebar_icon: mdi:web
     url_path: "unifi"
-    module_url: /local/external-link.js
+    module_url: /local/panel-redirect.js
+    embed_iframe: false
     require_admin: true
     config:
-      url: https://homeassistant.local:8443/
+      target: https://homeassistant.local:8443/
   - name: panel_vacuum
     sidebar_title: Vacuum
     sidebar_icon: mdi:robot-vacuum
     url_path: "vacuum"
-    module_url: /local/external-link.js
+    module_url: /local/panel-redirect.js
+    embed_iframe: false
     require_admin: true
     config:
-      url: http://valetudo-lonelygleefulmink.local/
+      target: http://valetudo-lonelygleefulmink.local/
