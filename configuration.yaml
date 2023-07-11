@@ -56,4 +56,4 @@ panel_custom:
     config:
       target: http://valetudo-lonelygleefulmink.local/
 
-!include dantherm.yaml
+modbus: !include_dir_list modbus/
