@@ -1,0 +1,302 @@
+#################################
+# MODBUS INTERFACE
+
+modbus:
+  - name: "Dantherm VMC"
+    close_comm_on_error: true
+    delay: 5
+    timeout: 5
+    type: tcp
+    host: "192.168.1.206"
+    port: 502
+
+    sensors:
+      # mode
+      - name: Dantherm - Current unit mode
+        unique_id: dantherm_current_unit_mode
+        scan_interval: 5
+        slave: 1
+        address: 472
+        count: 2
+        swap: word
+        data_type: uint32
+      - name: Dantherm - Bypass state
+        unique_id: dantherm_bypass_state
+        scan_interval: 5
+        slave: 1
+        address: 198
+        count: 2
+        swap: word
+        data_type: uint32
+
+      - name: Dantherm - Last active alarm
+        unique_id: dantherm_last_active_alarm
+        scan_interval: 5
+        slave: 1
+        address: 516
+        count: 2
+        swap: word
+        data_type: uint32
+
+      # temp sensors
+      - name: Dantherm - Outdoor temperature
+        unique_id: dantherm_outdoor_temperature
+        unit_of_measurement: °C
+        device_class: temperature
+        scan_interval: 5
+        slave: 1
+        address: 132
+        count: 2
+        swap: word
+        data_type: float32
+        precision: 1
+      - name: Dantherm - Supply temperature
+        unique_id: dantherm_supply_temperature
+        unit_of_measurement: °C
+        device_class: temperature
+        scan_interval: 5
+        slave: 1
+        address: 134
+        count: 2
+        swap: word
+        data_type: float32
+        precision: 1
+      - name: Dantherm - Extract temperature
+        unique_id: dantherm_extract_temperature
+        unit_of_measurement: °C
+        device_class: temperature
+        scan_interval: 5
+        slave: 1
+        address: 136
+        count: 2
+        swap: word
+        data_type: float32
+        precision: 1
+      - name: Dantherm - Exhaust temperature
+        unique_id: dantherm_exhaust_temperature
+        unit_of_measurement: °C
+        device_class: temperature
+        scan_interval: 5
+        slave: 1
+        address: 138
+        count: 2
+        swap: word
+        data_type: float32
+        precision: 1
+
+      # humidity sensors
+      - name: Dantherm - RH sensor
+        unique_id: dantherm_rh_sensor
+        unit_of_measurement: "%"
+        device_class: humidity
+        scan_interval: 5
+        slave: 1
+        address: 196
+
+      # fan speed
+      - name: Dantherm - Fan speed
+        unique_id: dantherm_fan_speed
+        scan_interval: 5
+        slave: 1
+        address: 324
+        count: 2
+        swap: word
+        data_type: uint32
+        input_type: holding
+      - name: Dantherm - Fan1 (extract) rpm
+        unique_id: dantherm_fan1_rpm
+        unit_of_measurement: "rpm"
+        scan_interval: 5
+        slave: 1
+        address: 100
+        count: 2
+        swap: word
+        data_type: float32
+        precision: 0
+      - name: Dantherm - Fan2 (supply) rpm
+        unique_id: dantherm_fan2_rpm
+        unit_of_measurement: "rpm"
+        scan_interval: 5
+        slave: 1
+        address: 102
+        count: 2
+        swap: word
+        data_type: float32
+        precision: 0
+
+      # filter
+      - name: Dantherm - Total filter lifetime
+        unique_id: dantherm_total_filter_lifetime
+        scan_interval: 5
+        unit_of_measurement: dagen
+        slave: 1
+        address: 556
+        count: 2
+        swap: word
+        data_type: uint32
+      - name: Dantherm - Remaining filter lifetime
+        unique_id: dantherm_remaining_filter_lifetime
+        scan_interval: 5
+        unit_of_measurement: dagen
+        slave: 1
+        address: 554
+        count: 2
+        swap: word
+        data_type: uint32
+        input_type: holding
+
+      # night mode time
+      - name: Dantherm - Night mode start time (hour)
+        unique_id: dantherm_night_mode_start_h
+        scan_interval: 5
+        slave: 1
+        address: 332
+        count: 2
+        swap: word
+        data_type: uint32
+      - name: Dantherm - Night mode start time (minutes)
+        unique_id: dantherm_night_mode_start_m
+        scan_interval: 5
+        slave: 1
+        address: 334
+        count: 2
+        swap: word
+        data_type: uint32
+      - name: Dantherm - Night mode end time (hour)
+        unique_id: dantherm_night_mode_end_h
+        scan_interval: 5
+        slave: 1
+        address: 336
+        count: 2
+        swap: word
+        data_type: uint32
+      - name: Dantherm - Night mode end time (minutes)
+        unique_id: dantherm_night_mode_end_m
+        scan_interval: 5
+        slave: 1
+        address: 338
+        count: 2
+        swap: word
+        data_type: uint32
+
+#################################
+# Dantherm Helpers
+input_boolean:
+  dantherm_demand_mode:
+    name: Dantherm - Demand mode
+    icon: mdi:fan-auto
+  dantherm_manual_mode:
+    name: Dantherm - Manual mode
+    icon: mdi:gesture-tap
+  dantherm_week_program_mode:
+    name: Dantherm - Week program mode
+    icon: mdi:calendar-week
+
+  dantherm_alarm_active:
+    name: Dantherm - Alarm Active
+    icon: mdi:alert
+
+  dantherm_night_mode:
+    name: Dantherm - Night mode
+    icon: mdi:weather-night
+  dantherm_fireplace_mode:
+    name: Dantherm - Fireplace mode
+    icon: mdi:fireplace
+  dantherm_away_mode:
+    name: Dantherm - Away mode
+    icon: mdi:bag-checked
+  dantherm_summer_mode:
+    name: Dantherm - Summer mode
+    icon: mdi:sun-thermometer
+
+  dantherm_manual_bypass:
+    name: Dantherm - Manual bypass
+    icon: mdi:swap-horizontal-bold
+
+  dantherm_fan_speed_1:
+    name: Dantherm - Fan Speed 1
+    icon: mdi:fan-speed-1
+  dantherm_fan_speed_2:
+    name: Dantherm - Fan Speed 2
+    icon: mdi:fan-speed-2
+  dantherm_fan_speed_3:
+    name: Dantherm - Fan Speed 3
+    icon: mdi:fan-speed-3
+  dantherm_fan_speed_4:
+    name: Dantherm - Fan Speed 4
+    icon: custom:fan-speed-4
+
+input_datetime:
+  dantherm_night_mode_start:
+    name: Dantherm - Night mode start time
+    icon: mdi:fan-clock
+    has_date: false
+    has_time: true
+  dantherm_night_mode_end:
+    name: Dantherm - Night mode end time
+    icon: mdi:fan-clock
+    has_date: false
+    has_time: true
+
+#################################
+# Dantherm Templates
+template:
+  - sensor:
+      - name: "sensor.dantherm_current_unit_mode_labels"
+        state: >
+          {% set value = states('sensor.dantherm_current_unit_mode') %}
+          {% set mapper = {
+            "0": "Standby",
+            "1": "Manueel",
+            "2": "Auto",
+            "3": "Week programma",
+            "4": "Servo flow",
+            "5": "Afwezig",
+            "6": "Zomer",
+            "7": "DI Override",
+            "8": "Hygrostat override",
+            "9": "Open Haard",
+            "10": "Installer",
+            "11": "Fail Safe 1",
+            "12": "Fail Safe 2",
+            "13": "Fail Off",
+            "14": "Defrost Off",
+            "15": "Defrost",
+            "16": "Nacht"
+            } %}
+          {{ mapper[value] if value in mapper else None }}
+
+      - name: "sensor.dantherm_active_alarm_labels"
+        state: >
+          {% set value = states('sensor.dantherm_last_active_alarm') %}
+          {% set mapper = {
+            "0": "None",
+            "1": "Exhaust FAN Alarm",
+            "2": "Supply FAN Alarm",
+            "3": "Bypass Alarm",
+            "4": "T1 Alarm",
+            "5": "T2 Alarm",
+            "6": "T3 Alarm",
+            "7": "T4 Alarm",
+            "8": "T5 Alarm",
+            "9": "RH Alarm",
+            "10": "Outdoor Alarm",
+            "11": "Supply Alarm",
+            "12": "Fire Alarm",
+            "13": "Communication Alarm",
+            "14": "FireTermostat Alarm",
+            "15": "High waterlevel Alarm"
+            } %}
+          {{ mapper[value] if value in mapper else None }}
+
+      - name: "sensor.dantherm_bypass_state_labels"
+        state: >
+          {% set value = states('sensor.dantherm_bypass_state') %}
+          {% set mapper = {
+            "0": "Gesloten",
+            "1": "In Behandeling",
+            "32": "Sluiten",
+            "64": "Openen",
+            "255": "Open"
+            } %}
+          {{ mapper[value] if value in mapper else None }}
