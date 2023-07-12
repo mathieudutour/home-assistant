@@ -137,8 +137,8 @@ cards:
             entity: "switch.thermostat_cabinet"
       - type: "custom:floorplan-card"
         config:
-          image: /local/floorplan/vmc.svg
-          stylesheet: /local/floorplan/vmc.css
+          image: /local/floorplan/dantherm-vmc.svg
+          stylesheet: /local/floorplan/dantherm-vmc.css
           defaults:
             hover_action: hover-info
             tap_action: more-info
