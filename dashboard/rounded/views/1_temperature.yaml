@@ -59,6 +59,23 @@ cards:
             name: "Entrée"
             entity: "switch.thermostat_entree"
       - type: "sensor"
+        name: "Chambre R+1"
+        entity: "sensor.ht_bibliotheque_temperature"
+        hours_to_show: 24
+        detail: 1
+        graph: "line"
+        icon: "none"
+        card_mod:
+          class: "graph"
+          style: |
+            {% set state = states(config.entity) | float %}
+            {% set target = states('input_number.temperature_chambre_r_1') | float %}
+            ha-card {
+              border-radius: var(--ha-card-border-radius);
+              background: {% if state > target + 2 %}var(--red-tint){% elif state < target - 1 %}var(--blue-tint){% else %}var(--green-tint){% endif %} !important;
+              --accent-color: {% if state > target + 2 %}var(--red){% elif state < target - 1 %}var(--blue){% else %}var(--green){% endif %};
+            }
+      - type: "sensor"
         name: "Chambre R-1"
         entity: "sensor.ht_chambre_r_1_temperature"
         hours_to_show: 24
@@ -118,3 +135,22 @@ cards:
             template: thermostat_card
             name: "Cabinet"
             entity: "switch.thermostat_cabinet"
+      - type: "custom:floorplan-card"
+        config:
+          image: /local/floorplan/vmc.svg
+          stylesheet: /local/floorplan/vmc.css
+          log_level: info
+          console_log_level: info
+          defaults:
+            hover_action: hover-info
+            tap_action: more-info
+          rules:
+            - name: Temperature
+              entities:
+                - sensor.dantherm_outdoor_temperature
+                - sensor.dantherm_supply_temperature
+                - sensor.dantherm_exhaust_temperature
+                - sensor.dantherm_extract_temperature
+              state_action:
+                - service: floorplan.text_set
+                  service_data: '${(entity.state !== undefined) ? Math.round(entity.state * 10) / 10 + "°" : "unknown"}'
