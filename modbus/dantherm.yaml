@@ -7,24 +7,16 @@ sensors:
   # mode
   - name: Dantherm - Current unit mode
     unique_id: dantherm_current_unit_mode
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 472
-    count: 2
-    swap: word
-    data_type: uint32
-  - name: Dantherm - Bypass state
-    unique_id: dantherm_bypass_state
-    scan_interval: 5
-    slave: 1
-    address: 198
     count: 2
     swap: word
     data_type: uint32
 
   - name: Dantherm - Last active alarm
     unique_id: dantherm_last_active_alarm
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 516
     count: 2
@@ -36,7 +28,7 @@ sensors:
     unique_id: dantherm_outdoor_temperature
     unit_of_measurement: °C
     device_class: temperature
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 132
     count: 2
@@ -47,7 +39,7 @@ sensors:
     unique_id: dantherm_supply_temperature
     unit_of_measurement: °C
     device_class: temperature
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 134
     count: 2
@@ -58,7 +50,7 @@ sensors:
     unique_id: dantherm_extract_temperature
     unit_of_measurement: °C
     device_class: temperature
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 136
     count: 2
@@ -69,7 +61,7 @@ sensors:
     unique_id: dantherm_exhaust_temperature
     unit_of_measurement: °C
     device_class: temperature
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 138
     count: 2
@@ -82,14 +74,14 @@ sensors:
     unique_id: dantherm_rh_sensor
     unit_of_measurement: "%"
     device_class: humidity
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 196
 
-  # # fan speed
+  # fan speed
   - name: Dantherm - Fan speed
     unique_id: dantherm_fan_speed
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 324
     count: 2
@@ -99,7 +91,7 @@ sensors:
   - name: Dantherm - Fan1 (extract) rpm
     unique_id: dantherm_fan1_rpm
     unit_of_measurement: "rpm"
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 100
     count: 2
@@ -109,7 +101,7 @@ sensors:
   - name: Dantherm - Fan2 (supply) rpm
     unique_id: dantherm_fan2_rpm
     unit_of_measurement: "rpm"
-    scan_interval: 5
+    scan_interval: 60
     slave: 1
     address: 102
     count: 2
@@ -120,7 +112,7 @@ sensors:
   # # filter
   - name: Dantherm - Total filter lifetime
     unique_id: dantherm_total_filter_lifetime
-    scan_interval: 5
+    scan_interval: 60
     unit_of_measurement: dagen
     slave: 1
     address: 556
@@ -129,7 +121,7 @@ sensors:
     data_type: uint32
   - name: Dantherm - Remaining filter lifetime
     unique_id: dantherm_remaining_filter_lifetime
-    scan_interval: 5
+    scan_interval: 60
     unit_of_measurement: dagen
     slave: 1
     address: 554
@@ -138,36 +130,64 @@ sensors:
     data_type: uint32
     input_type: holding
 
-  # # night mode time
-  - name: Dantherm - Night mode start time (hour)
-    unique_id: dantherm_night_mode_start_h
-    scan_interval: 5
+  # night mode time
+  # - name: Dantherm - Night mode start time (hour)
+  #   unique_id: dantherm_night_mode_start_h
+  #   scan_interval: 60
+  #   slave: 1
+  #   address: 332
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  # - name: Dantherm - Night mode start time (minutes)
+  #   unique_id: dantherm_night_mode_start_m
+  #   scan_interval: 60
+  #   slave: 1
+  #   address: 334
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  # - name: Dantherm - Night mode end time (hour)
+  #   unique_id: dantherm_night_mode_end_h
+  #   scan_interval: 60
+  #   slave: 1
+  #   address: 336
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  # - name: Dantherm - Night mode end time (minutes)
+  #   unique_id: dantherm_night_mode_end_m
+  #   scan_interval: 60
+  #   slave: 1
+  #   address: 338
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+
+  # bypass
+  - name: Dantherm - Bypass state
+    unique_id: dantherm_bypass_state
+    scan_interval: 60
     slave: 1
-    address: 332
+    address: 198
     count: 2
     swap: word
     data_type: uint32
-  - name: Dantherm - Night mode start time (minutes)
-    unique_id: dantherm_night_mode_start_m
-    scan_interval: 5
+  - name: Dantherm - Bypass temperature min
+    unique_id: dantherm_bypass_temp_min
+    scan_interval: 60
     slave: 1
-    address: 334
+    address: 444
     count: 2
     swap: word
-    data_type: uint32
-  - name: Dantherm - Night mode end time (hour)
-    unique_id: dantherm_night_mode_end_h
-    scan_interval: 5
+    data_type: float32
+    precision: 1
+  - name: Dantherm - Bypass temperature max
+    unique_id: dantherm_bypass_temp_max
+    scan_interval: 60
     slave: 1
-    address: 336
+    address: 446
     count: 2
     swap: word
-    data_type: uint32
-  - name: Dantherm - Night mode end time (minutes)
-    unique_id: dantherm_night_mode_end_m
-    scan_interval: 5
-    slave: 1
-    address: 338
-    count: 2
-    swap: word
-    data_type: uint32
+    data_type: float32
+    precision: 1

@@ -1,10 +1,10 @@
-dantherm_night_mode_start:
-  name: Dantherm - Night mode start time
-  icon: mdi:fan-clock
-  has_date: false
-  has_time: true
-dantherm_night_mode_end:
-  name: Dantherm - Night mode end time
-  icon: mdi:fan-clock
-  has_date: false
-  has_time: true
+# dantherm_night_mode_start:
+#   name: Dantherm - Night mode start time
+#   icon: mdi:fan-clock
+#   has_date: false
+#   has_time: true
+# dantherm_night_mode_end:
+#   name: Dantherm - Night mode end time
+#   icon: mdi:fan-clock
+#   has_date: false
+#   has_time: true
