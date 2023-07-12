@@ -156,4 +156,4 @@ cards:
                 - sensor.dantherm_exhaust_temperature
               state_action:
                 - service: floorplan.text_set
-                  service_data: '${console.log(states) && entity.state !== undefined && states["sensor.dantherm_bypass_state"] !== 255 ? Math.round(entity.state * 10) / 10 + "°" : ""}'
+                  service_data: '${entity.state !== undefined && states["sensor.dantherm_bypass_state"].state !== "255" ? Math.round(entity.state * 10) / 10 + "°" : ""}'
