@@ -139,8 +139,6 @@ cards:
         config:
           image: /local/floorplan/vmc.svg
           stylesheet: /local/floorplan/vmc.css
-          log_level: info
-          console_log_level: info
           defaults:
             hover_action: hover-info
             tap_action: more-info

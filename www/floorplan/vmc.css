@@ -18,7 +18,7 @@ svg * {
 
 /* Animation */
 
-.spinning {
+#fan {
   animation-name: spin;
   animation-duration: 5s;
   animation-iteration-count: infinite;
@@ -35,4 +35,12 @@ svg * {
   to {
     transform: rotate(360deg);
   }
+}
+
+.fill {
+  fill: var(--primary-text-color);
+}
+
+.stroke {
+  stroke: var(--primary-text-color);
 }
