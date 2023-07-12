@@ -1,0 +1,59 @@
+- sensor:
+    - name: "sensor.dantherm_current_unit_mode_labels"
+      state: >
+        {% set value = states('sensor.dantherm_current_unit_mode') %}
+        {% set mapper = {
+          "0": "Standby",
+          "1": "Manual Mode",
+          "2": "Demand Mode",
+          "3": "WeekProgram Mode",
+          "4": "Servoflow",
+          "5": "Away Mode",
+          "6": "Summer Mode",
+          "7": "DI Override",
+          "8": "Hygrostat override",
+          "9": "Fireplace Boost Mode",
+          "10": "Installer",
+          "11": "Fail Safe 1",
+          "12": "Fail Safe 2",
+          "13": "Fail Off",
+          "14": "Defrost Off",
+          "15": "Defrost",
+          "16": "Night Mode"
+          } %}
+        {{ mapper[value] if value in mapper else None }}
+
+    - name: "sensor.dantherm_active_alarm_labels"
+      state: >
+        {% set value = states('sensor.dantherm_last_active_alarm') %}
+        {% set mapper = {
+          "0": "None",
+          "1": "Exhaust FAN Alarm",
+          "2": "Supply FAN Alarm",
+          "3": "Bypass Alarm",
+          "4": "T1 Alarm",
+          "5": "T2 Alarm",
+          "6": "T3 Alarm",
+          "7": "T4 Alarm",
+          "8": "T5 Alarm",
+          "9": "RH Alarm",
+          "10": "Outdoor Alarm",
+          "11": "Supply Alarm",
+          "12": "Fire Alarm",
+          "13": "Communication Alarm",
+          "14": "FireTermostat Alarm",
+          "15": "High waterlevel Alarm"
+          } %}
+        {{ mapper[value] if value in mapper else None }}
+
+    - name: "sensor.dantherm_bypass_state_labels"
+      state: >
+        {% set value = states('sensor.dantherm_bypass_state') %}
+        {% set mapper = {
+          "0": "Closed",
+          "1": "In process",
+          "32": "Closing",
+          "64": "Opening",
+          "255": "Opened"
+          } %}
+        {{ mapper[value] if value in mapper else None }}

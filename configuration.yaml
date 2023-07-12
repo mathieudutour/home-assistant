@@ -35,6 +35,10 @@ automation: !include automations.yaml
 script: !include scripts.yaml
 scene: !include scenes.yaml
 group: !include groups.yaml
+modbus: !include_dir_list modbus/
+template: !include_dir_list templates/
+input_boolean: !include helpers/input_boolean.yaml
+input_datetime: !include helpers/input_datetime.yaml
 
 panel_custom:
   - name: panel_unifi
@@ -55,8 +59,6 @@ panel_custom:
     require_admin: true
     config:
       target: http://valetudo-lonelygleefulmink.local/
-
-modbus: !include_dir_list modbus/
 
 logger:
   default: warning
