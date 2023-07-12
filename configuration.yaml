@@ -62,6 +62,6 @@ panel_custom:
 
 logger:
   default: warning
-  logs:
-    homeassistant.components.modbus: debug
-    pymodbus: debug
+  # logs:
+  #   homeassistant.components.modbus: debug
+  #   pymodbus: debug
