@@ -5,31 +5,31 @@ port: 502
 
 sensors:
   # mode
-  - name: Dantherm - Current unit mode
-    unique_id: dantherm_current_unit_mode
-    scan_interval: 5
-    slave: 1
-    address: 472
-    count: 2
-    swap: word
-    data_type: uint32
-  - name: Dantherm - Bypass state
-    unique_id: dantherm_bypass_state
-    scan_interval: 5
-    slave: 1
-    address: 198
-    count: 2
-    swap: word
-    data_type: uint32
+  # - name: Dantherm - Current unit mode
+  #   unique_id: dantherm_current_unit_mode
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 472
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  # - name: Dantherm - Bypass state
+  #   unique_id: dantherm_bypass_state
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 198
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
 
-  - name: Dantherm - Last active alarm
-    unique_id: dantherm_last_active_alarm
-    scan_interval: 5
-    slave: 1
-    address: 516
-    count: 2
-    swap: word
-    data_type: uint32
+  # - name: Dantherm - Last active alarm
+  #   unique_id: dantherm_last_active_alarm
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 516
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
 
   # temp sensors
   - name: Dantherm - Outdoor temperature
@@ -78,99 +78,99 @@ sensors:
     precision: 1
 
   # humidity sensors
-  - name: Dantherm - RH sensor
-    unique_id: dantherm_rh_sensor
-    unit_of_measurement: "%"
-    device_class: humidity
-    scan_interval: 5
-    slave: 1
-    address: 196
+  # - name: Dantherm - RH sensor
+  #   unique_id: dantherm_rh_sensor
+  #   unit_of_measurement: "%"
+  #   device_class: humidity
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 196
 
-  # fan speed
-  - name: Dantherm - Fan speed
-    unique_id: dantherm_fan_speed
-    scan_interval: 5
-    slave: 1
-    address: 324
-    count: 2
-    swap: word
-    data_type: uint32
-    input_type: holding
-  - name: Dantherm - Fan1 (extract) rpm
-    unique_id: dantherm_fan1_rpm
-    unit_of_measurement: "rpm"
-    scan_interval: 5
-    slave: 1
-    address: 100
-    count: 2
-    swap: word
-    data_type: float32
-    precision: 0
-  - name: Dantherm - Fan2 (supply) rpm
-    unique_id: dantherm_fan2_rpm
-    unit_of_measurement: "rpm"
-    scan_interval: 5
-    slave: 1
-    address: 102
-    count: 2
-    swap: word
-    data_type: float32
-    precision: 0
+  # # fan speed
+  # - name: Dantherm - Fan speed
+  #   unique_id: dantherm_fan_speed
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 324
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  #   input_type: holding
+  # - name: Dantherm - Fan1 (extract) rpm
+  #   unique_id: dantherm_fan1_rpm
+  #   unit_of_measurement: "rpm"
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 100
+  #   count: 2
+  #   swap: word
+  #   data_type: float32
+  #   precision: 0
+  # - name: Dantherm - Fan2 (supply) rpm
+  #   unique_id: dantherm_fan2_rpm
+  #   unit_of_measurement: "rpm"
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 102
+  #   count: 2
+  #   swap: word
+  #   data_type: float32
+  #   precision: 0
 
-  # filter
-  - name: Dantherm - Total filter lifetime
-    unique_id: dantherm_total_filter_lifetime
-    scan_interval: 5
-    unit_of_measurement: dagen
-    slave: 1
-    address: 556
-    count: 2
-    swap: word
-    data_type: uint32
-  - name: Dantherm - Remaining filter lifetime
-    unique_id: dantherm_remaining_filter_lifetime
-    scan_interval: 5
-    unit_of_measurement: dagen
-    slave: 1
-    address: 554
-    count: 2
-    swap: word
-    data_type: uint32
-    input_type: holding
+  # # filter
+  # - name: Dantherm - Total filter lifetime
+  #   unique_id: dantherm_total_filter_lifetime
+  #   scan_interval: 5
+  #   unit_of_measurement: dagen
+  #   slave: 1
+  #   address: 556
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  # - name: Dantherm - Remaining filter lifetime
+  #   unique_id: dantherm_remaining_filter_lifetime
+  #   scan_interval: 5
+  #   unit_of_measurement: dagen
+  #   slave: 1
+  #   address: 554
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  #   input_type: holding
 
-  # night mode time
-  - name: Dantherm - Night mode start time (hour)
-    unique_id: dantherm_night_mode_start_h
-    scan_interval: 5
-    slave: 1
-    address: 332
-    count: 2
-    swap: word
-    data_type: uint32
-  - name: Dantherm - Night mode start time (minutes)
-    unique_id: dantherm_night_mode_start_m
-    scan_interval: 5
-    slave: 1
-    address: 334
-    count: 2
-    swap: word
-    data_type: uint32
-  - name: Dantherm - Night mode end time (hour)
-    unique_id: dantherm_night_mode_end_h
-    scan_interval: 5
-    slave: 1
-    address: 336
-    count: 2
-    swap: word
-    data_type: uint32
-  - name: Dantherm - Night mode end time (minutes)
-    unique_id: dantherm_night_mode_end_m
-    scan_interval: 5
-    slave: 1
-    address: 338
-    count: 2
-    swap: word
-    data_type: uint32
+  # # night mode time
+  # - name: Dantherm - Night mode start time (hour)
+  #   unique_id: dantherm_night_mode_start_h
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 332
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  # - name: Dantherm - Night mode start time (minutes)
+  #   unique_id: dantherm_night_mode_start_m
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 334
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  # - name: Dantherm - Night mode end time (hour)
+  #   unique_id: dantherm_night_mode_end_h
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 336
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
+  # - name: Dantherm - Night mode end time (minutes)
+  #   unique_id: dantherm_night_mode_end_m
+  #   scan_interval: 5
+  #   slave: 1
+  #   address: 338
+  #   count: 2
+  #   swap: word
+  #   data_type: uint32
 # #################################
 # # Dantherm Helpers
 # input_boolean:
