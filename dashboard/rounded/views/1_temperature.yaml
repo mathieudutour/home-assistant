@@ -22,6 +22,28 @@ cards:
       - type: custom:button-card
         template: title_card
         name: "Température"
+      - type: "custom:floorplan-card"
+        config:
+          image: /local/floorplan/dantherm-vmc.svg
+          stylesheet: /local/floorplan/dantherm-vmc.css
+          defaults:
+            hover_action: hover-info
+            tap_action: more-info
+          rules:
+            - name: Temperature
+              entities:
+                - sensor.dantherm_outdoor_temperature
+                - sensor.dantherm_extract_temperature
+              state_action:
+                - service: floorplan.text_set
+                  service_data: '${entity.state !== undefined ? Math.round(entity.state * 10) / 10 + "°" : "unknown"}'
+            - name: Temperature, bypass
+              entities:
+                - sensor.dantherm_supply_temperature
+                - sensor.dantherm_exhaust_temperature
+              state_action:
+                - service: floorplan.text_set
+                  service_data: '${entity.state !== undefined && states["sensor.dantherm_bypass_state"].state !== "255" ? Math.round(entity.state * 10) / 10 + "°" : ""}'
       - type: "sensor"
         name: "Salon"
         entity: "sensor.ht_salon_temperature"
@@ -135,25 +157,3 @@ cards:
             template: thermostat_card
             name: "Cabinet"
             entity: "switch.thermostat_cabinet"
-      - type: "custom:floorplan-card"
-        config:
-          image: /local/floorplan/dantherm-vmc.svg
-          stylesheet: /local/floorplan/dantherm-vmc.css
-          defaults:
-            hover_action: hover-info
-            tap_action: more-info
-          rules:
-            - name: Temperature
-              entities:
-                - sensor.dantherm_outdoor_temperature
-                - sensor.dantherm_extract_temperature
-              state_action:
-                - service: floorplan.text_set
-                  service_data: '${entity.state !== undefined ? Math.round(entity.state * 10) / 10 + "°" : "unknown"}'
-            - name: Temperature, bypass
-              entities:
-                - sensor.dantherm_supply_temperature
-                - sensor.dantherm_exhaust_temperature
-              state_action:
-                - service: floorplan.text_set
-                  service_data: '${entity.state !== undefined && states["sensor.dantherm_bypass_state"].state !== "255" ? Math.round(entity.state * 10) / 10 + "°" : ""}'
