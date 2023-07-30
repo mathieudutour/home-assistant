@@ -25,8 +25,7 @@ cards:
       - type: custom:auto-entities
         card:
           type: grid
-          columns: 2
-          square: false
+          columns: 4
         card_param: cards
         filter:
           include:

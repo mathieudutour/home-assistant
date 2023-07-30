@@ -1,8 +1,6 @@
 scene_card:
   show_name: false
   aspect_ratio: 1/1
-  variables:
-    color: "var(--green)"
   tap_action:
     action: call-service
     service: scene.turn_on
@@ -11,6 +9,15 @@ scene_card:
       entity_id: "[[[ return entity.entity_id ]]]"
   styles:
     card:
-      - background-color: "[[[ return variables.color ]]]"
+      - background-color: >
+        [[[
+          if (variables.color) {
+            return 'var(--'+variables.color+')';
+          }
+
+          const colors = ['purple', 'red', 'blue', 'green', 'yellow', 'orange'];
+          const colorCount = parseInt(entity.entity_id) % colors.length;
+          return 'var(--'+colors[colorCount]+')';
+        ]]]
     icon:
       - color: var(--black)

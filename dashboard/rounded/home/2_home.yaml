@@ -42,22 +42,22 @@ cards:
         template: scene_card
         entity: "scene.reveil"
         variables:
-          color: "var(--green)"
+          color: "green"
       - type: custom:button-card
         template: scene_card
         entity: "scene.soiree"
         variables:
-          color: "var(--red)"
+          color: "red"
       - type: custom:button-card
         template: script_card
         entity: "script.jour_ete"
         variables:
-          color: "var(--yellow)"
+          color: "yellow"
       - type: custom:button-card
         template: scene_card
         entity: "scene.nuit_ete"
         variables:
-          color: "var(--blue)"
+          color: "blue"
   - type: "grid"
     columns: 2
     square: false
