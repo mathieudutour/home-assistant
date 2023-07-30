@@ -9,13 +9,13 @@ script_card:
     card:
       - background-color: >
           [[[
+            console.log(entity.entity_id, variables)
             if (variables && variables.color) {
               return 'var(--'+variables.color+')';
             }
 
             const colors = ['purple', 'red', 'blue', 'green', 'yellow', 'orange'];
             const colorCount = parseInt(entity.entity_id) % colors.length;
-            console.log(entity.entity_id, colors, colorCount)
             return 'var(--'+colors[colorCount]+')';
           ]]]
     icon:
