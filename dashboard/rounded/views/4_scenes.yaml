@@ -33,3 +33,4 @@ cards:
               options:
                 type: custom:button-card
                 template: scene_card
+                show_name: true
