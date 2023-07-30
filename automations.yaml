@@ -231,10 +231,8 @@
     subtype: button4
   condition: []
   action:
-  - service: scene.turn_on
-    target:
-      entity_id: scene.jour_ete
-    metadata: {}
+  - service: script.jour_ete
+    data: {}
   mode: single
 - id: '1684869068331'
   alias: I4 3 - Nuit été
