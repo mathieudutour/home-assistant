@@ -35,8 +35,8 @@
   action:
   - type: toggle
     device_id: db3ae4fe2527a57e839c9cb43003dff5
-    entity_id: switch.salon_spots
-    domain: switch
+    entity_id: 3ce8f89cb7bc1e3aa3e5ea62996ebc5b
+    domain: light
   mode: single
 - id: '1677929669279'
   alias: Lumière Couloir R-1 Bis
