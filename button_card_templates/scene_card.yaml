@@ -11,13 +11,13 @@ scene_card:
     card:
       - background-color: >
           [[[
-            console.log(entity, variables)
+            console.log(entity.attributes.id, variables)
             if (variables && variables.color) {
               return 'var(--'+variables.color+')';
             }
 
             const colors = ['purple', 'red', 'blue', 'green', 'yellow', 'orange'];
-            const colorCount = parseInt(entity.entity_id) % colors.length;
+            const colorCount = parseInt(entity.attributes.id) % colors.length;
             return 'var(--'+colors[colorCount]+')';
           ]]]
     icon:
