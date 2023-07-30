@@ -10,14 +10,14 @@ scene_card:
   styles:
     card:
       - background-color: >
-        [[[
-          if (variables.color) {
-            return 'var(--'+variables.color+')';
-          }
+          [[[
+            if (variables.color) {
+              return 'var(--'+variables.color+')';
+            }
 
-          const colors = ['purple', 'red', 'blue', 'green', 'yellow', 'orange'];
-          const colorCount = parseInt(entity.entity_id) % colors.length;
-          return 'var(--'+colors[colorCount]+')';
-        ]]]
+            const colors = ['purple', 'red', 'blue', 'green', 'yellow', 'orange'];
+            const colorCount = parseInt(entity.entity_id) % colors.length;
+            return 'var(--'+colors[colorCount]+')';
+          ]]]
     icon:
       - color: var(--black)
