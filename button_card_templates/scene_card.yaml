@@ -11,7 +11,7 @@ scene_card:
     card:
       - background-color: >
           [[[
-            if (variables.color) {
+            if (variables && variables.color) {
               return 'var(--'+variables.color+')';
             }
 
