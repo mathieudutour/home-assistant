@@ -1,4 +1,4 @@
-- id: '1678565651924'
+- id: "1678565651924"
   name: Soirée
   entities:
     cover.bibliotheque_est:
@@ -89,7 +89,7 @@
     cover.velux_chambre_gauche:
       current_position: 0
       device_class: shutter
-      friendly_name: 'Velux Chambre gauche '
+      friendly_name: "Velux Chambre gauche "
       supported_features: 15
       state: closed
     cover.velux_salle_de_bain:
@@ -140,7 +140,7 @@
     cover.wc_r0:
       entity_only: true
   icon: mdi:weather-sunset-down
-- id: '1678602114047'
+- id: "1678602114047"
   name: Réveil
   entities:
     cover.bibliotheque_est:
@@ -220,7 +220,7 @@
       supported_features: 15
       state: open
     cover.velux_salle_de_bain:
-      current_position: 75
+      current_position: 100
       device_class: shutter
       friendly_name: Velux Salle de bain
       supported_features: 15
@@ -261,7 +261,7 @@
       entity_only: true
     cover.wc_r0:
       entity_only: true
-- id: '1683353835219'
+- id: "1683353835219"
   name: Jour été
   entities:
     cover.translation_droite:
@@ -306,7 +306,7 @@
     cover.velux_chambre_gauche:
       current_position: 0
       device_class: shutter
-      friendly_name: 'Velux Chambre gauche '
+      friendly_name: "Velux Chambre gauche "
       supported_features: 15
       state: closed
     cover.cuisine:
@@ -365,7 +365,7 @@
       entity_only: true
     cover.entree_2:
       entity_only: true
-- id: '1683354063710'
+- id: "1683354063710"
   name: Soirée été
   entities:
     cover.bibliotheque_est:
@@ -456,7 +456,7 @@
       state: closed
     cover.velux_chambre_gauche:
       device_class: shutter
-      friendly_name: 'Velux Chambre gauche '
+      friendly_name: "Velux Chambre gauche "
       supported_features: 15
       current_position: 0
       state: closed
@@ -508,7 +508,7 @@
     cover.wc_r0:
       entity_only: true
   icon: mdi:weather-sunset-down
-- id: '1684868952584'
+- id: "1684868952584"
   name: Nuit été
   entities:
     cover.bibliotheque_est:
@@ -562,7 +562,7 @@
       state: closed
     cover.velux_chambre_gauche:
       device_class: shutter
-      friendly_name: 'Velux Chambre gauche '
+      friendly_name: "Velux Chambre gauche "
       supported_features: 15
       current_position: 0
       state: closed
