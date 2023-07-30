@@ -49,8 +49,8 @@ cards:
         variables:
           color: "var(--red)"
       - type: custom:button-card
-        template: scene_card
-        entity: "scene.jour_ete"
+        template: script_card
+        entity: "script.jour_ete"
         variables:
           color: "var(--yellow)"
       - type: custom:button-card

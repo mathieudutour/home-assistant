@@ -1,0 +1,36 @@
+icon: "mdi:robot-industrial-outline"
+path: "scenes"
+title: "Scènes"
+type: "custom:grid-layout"
+layout:
+  #default
+  margin: 0
+  grid-gap: 0
+  card_margin: 0 3.3vw
+  grid-template-columns: 1fr
+  grid-template-rows: 1fr
+  grid-template-areas: |
+    "content"
+badges: []
+cards:
+  - type: vertical-stack
+    view_layout:
+      grid-area: content
+    card_mod:
+      class: "main-content"
+    cards:
+      - type: custom:button-card
+        template: title_card
+        name: "Scènes"
+      - type: custom:auto-entities
+        card:
+          type: grid
+          columns: 2
+          square: false
+        card_param: cards
+        filter:
+          include:
+            - entity_id: scene.*
+              options:
+                type: custom:button-card
+                template: scene_card

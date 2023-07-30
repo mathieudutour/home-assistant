@@ -1,0 +1,14 @@
+script_card:
+  show_name: false
+  aspect_ratio: 1/1
+  variables:
+    color: "var(--green)"
+  tap_action:
+    action: call-service
+    service: "[[[ return entity.entity_id ]]]"
+    haptic: medium
+  styles:
+    card:
+      - background-color: "[[[ return variables.color ]]]"
+    icon:
+      - color: var(--black)
