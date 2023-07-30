@@ -11,7 +11,6 @@ scene_card:
     card:
       - background-color: >
           [[[
-            console.log(entity.attributes.id, variables)
             if (variables && variables.color) {
               return 'var(--'+variables.color+')';
             }
