@@ -9,7 +9,6 @@ script_card:
     card:
       - background-color: >
           [[[
-            console.log(entity.entity_id, variables)
             if (variables && variables.color) {
               return 'var(--'+variables.color+')';
             }
