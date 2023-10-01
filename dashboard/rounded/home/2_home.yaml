@@ -376,6 +376,22 @@ cards:
         template: light_card
         name: "Cabane"
         entity: "light.cabane_r_1_spot"
+  - type: "grid"
+    columns: 2
+    square: false
+    cards:
+      - type: custom:button-card
+        template: cover_card
+        name: "Fenêtre"
+        entity: "cover.fenetre_r_1_est"
+      - type: custom:button-card
+        template: cover_card
+        name: "Porte-Fenêtre Gauche"
+        entity: "cover.porte_fenetre_r_1_gauche"
+      - type: custom:button-card
+        template: cover_card
+        name: "Porte-Fenêtre Milieu"
+        entity: "cover.porte_fenetre_r_1_milieu"
 
   - type: custom:button-card
     template: title_card
@@ -396,3 +412,15 @@ cards:
         template: light_card
         name: "Spots"
         entity: "light.cabinet_emilie_spots"
+  - type: "grid"
+    columns: 2
+    square: false
+    cards:
+      - type: custom:button-card
+        template: cover_card
+        name: "Fenêtre"
+        entity: "cover.fenetre_r_1_ouest"
+      - type: custom:button-card
+        template: cover_card
+        name: "Porte-Fenêtre"
+        entity: "cover.porte_fenetre_r_1_droite"
