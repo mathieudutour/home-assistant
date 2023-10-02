@@ -180,6 +180,10 @@ cards:
         template: cover_card
         name: "Entrée 2"
         entity: "cover.entree_2"
+      - type: custom:button-card
+        template: cover_card
+        name: "WC"
+        entity: "cover.wc_r0"
 
   - type: custom:button-card
     template: title_card
@@ -328,6 +332,10 @@ cards:
         template: cover_card
         name: "Velux Droit"
         entity: "cover.velux_bibliotheque_droit"
+      - type: custom:button-card
+        template: cover_card
+        name: "Velux Salle de Bain"
+        entity: "cover.velux_salle_de_bain"
 
   - type: custom:button-card
     template: title_card
