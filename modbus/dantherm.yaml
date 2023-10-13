@@ -10,7 +10,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 472
-    count: 2
     swap: word
     data_type: uint32
 
@@ -19,7 +18,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 516
-    count: 2
     swap: word
     data_type: uint32
 
@@ -31,7 +29,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 132
-    count: 2
     swap: word
     data_type: float32
     precision: 1
@@ -42,7 +39,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 134
-    count: 2
     swap: word
     data_type: float32
     precision: 1
@@ -53,7 +49,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 136
-    count: 2
     swap: word
     data_type: float32
     precision: 1
@@ -64,7 +59,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 138
-    count: 2
     swap: word
     data_type: float32
     precision: 1
@@ -84,7 +78,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 324
-    count: 2
     swap: word
     data_type: uint32
     input_type: holding
@@ -94,7 +87,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 100
-    count: 2
     swap: word
     data_type: float32
     precision: 0
@@ -104,7 +96,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 102
-    count: 2
     swap: word
     data_type: float32
     precision: 0
@@ -116,7 +107,6 @@ sensors:
     unit_of_measurement: dagen
     slave: 1
     address: 556
-    count: 2
     swap: word
     data_type: uint32
   - name: Dantherm - Remaining filter lifetime
@@ -125,7 +115,6 @@ sensors:
     unit_of_measurement: dagen
     slave: 1
     address: 554
-    count: 2
     swap: word
     data_type: uint32
     input_type: holding
@@ -170,7 +159,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 198
-    count: 2
     swap: word
     data_type: uint32
   - name: Dantherm - Bypass temperature min
@@ -178,7 +166,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 444
-    count: 2
     swap: word
     data_type: float32
     precision: 1
@@ -187,7 +174,6 @@ sensors:
     scan_interval: 60
     slave: 1
     address: 446
-    count: 2
     swap: word
     data_type: float32
     precision: 1
