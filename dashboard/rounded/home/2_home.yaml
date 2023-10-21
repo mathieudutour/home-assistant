@@ -70,6 +70,7 @@ cards:
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
         variables:
           title: "Salon"
+          entity: "salon"
       - type: custom:button-card
         template: room_card
         name: "Cuisine"
@@ -78,6 +79,7 @@ cards:
         label: "[[[ return states['sensor.ht_salon_temperature'].state + ' °C' ]]]"
         variables:
           title: "Cuisine"
+          entity: "cuisine"
       - type: custom:button-card
         template: room_card
         name: "Chambre R+1"
@@ -86,6 +88,7 @@ cards:
         label: "[[[ return states['sensor.ht_bibliotheque_temperature'].state + ' °C' ]]]"
         variables:
           title: "Chambre R+1"
+          entity: "chambre_r_1"
       - type: custom:button-card
         template: room_card
         name: "Bibliothèque"
@@ -94,6 +97,7 @@ cards:
         label: "[[[ return states['sensor.ht_bibliotheque_temperature'].state + ' °C' ]]]"
         variables:
           title: "Bibliothèque"
+          entity: "bibliotheque"
       - type: custom:button-card
         template: room_card
         name: "Couloir R-1"
@@ -102,6 +106,7 @@ cards:
         label: "[[[ return states['sensor.ht_chambre_r_1_temperature'].state + ' °C' ]]]"
         variables:
           title: "Couloir R-1"
+          entity: "couloir_r_1"
       - type: custom:button-card
         template: room_card
         name: "Chambre R-1"
@@ -110,6 +115,7 @@ cards:
         label: "[[[ return states['sensor.ht_chambre_r_1_temperature'].state + ' °C' ]]]"
         variables:
           title: "Chambre R-1"
+          entity: "chambre_r_1_2"
       - type: custom:button-card
         template: room_card
         name: "Cabinet"
@@ -118,12 +124,15 @@ cards:
         label: "[[[ return states['sensor.ht_cabinet_temperature'].state + ' °C' ]]]"
         variables:
           title: "Cabinet"
+          entity: "cabinet"
       - type: custom:button-card
         template: room_card
         name: "Extérieur"
         entity: "light.exterieur"
         icon: "mdi:forest"
         label: "[[[ return states['weather.forecast_home'].attributes.temperature + ' °C' ]]]"
+        variables:
+          entity: "exterieur"
         tap_action:
           action: "navigate"
           navigation_path: "/lovelace-rounded/outdoor"
@@ -223,7 +232,7 @@ cards:
       - type: custom:button-card
         template: cover_card
         name: "Fenêtre"
-        entity: "cover.cuisine"
+        entity: "cover.cuisine_fenetre"
 
   - type: custom:button-card
     template: title_card
@@ -243,7 +252,7 @@ cards:
       - type: custom:button-card
         template: light_card
         name: "Cathédrale"
-        entity: "light.chambre_r_1"
+        entity: "light.chambre_r_1_cathedrale"
       - type: custom:button-card
         template: light_card
         name: "Dressing"

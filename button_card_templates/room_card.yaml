@@ -11,7 +11,7 @@ room_card:
     light:
       card:
         type: "custom:button-card"
-        entity: "[[[ return entity.entity_id ]]]"
+        entity: "[[[ return 'light.' + variables.entity ]]]"
         show_name: false
         show_label: false
         state:
@@ -33,9 +33,32 @@ room_card:
           icon:
             - width: "24px"
             - height: "24px"
+    cover:
+      card:
+        type: "custom:button-card"
+        entity: "[[[ return 'cover.' + variables.entity ]]]"
+        show_name: false
+        show_label: false
+        state:
+          - value: "open"
+            icon: "mdi:window-shutter-open"
+          - value: "opening"
+            icon: "mdi:window-shutter-open"
+          - value: "closing"
+            icon: "mdi:window-shutter-open"
+          - value: "closed"
+            icon: "mdi:window-shutter"
+          - value: "unavailable"
+            icon: undefined
+          - value: "unknown"
+            icon: undefined
+        styles:
+          icon:
+            - width: "24px"
+            - height: "24px"
   styles:
     grid:
-      - grid-template-areas: "'i light' 'n n' 'l l'"
+      - grid-template-areas: "'i light' 'n n' 'l cover'"
       - grid-template-columns: "1fr 1fr"
       - grid-template-rows: "min-content"
     card:
@@ -64,7 +87,33 @@ room_card:
       - margin: "4px 0 12px 0"
       - color: "var(--contrast8)"
   state:
-    - value: "on"
+    - operator: template
+      value: >
+        [[[ return states['light.' + variables.entity].state === 'on' && (states['cover.' + variables.entity].state === 'opening' || states['cover.' + variables.entity].state === 'open' || states['cover.' + variables.entity].state === 'closing') ]]]
+      styles:
+        card:
+          - background: "var(--green)"
+        icon:
+          - color: "var(--black)"
+        label:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - operator: template
+      value: >
+        [[[ return states['light.' + variables.entity].state === 'off' && (states['cover.' + variables.entity].state === 'opening' || states['cover.' + variables.entity].state === 'open' || states['cover.' + variables.entity].state === 'closing') ]]]
+      styles:
+        card:
+          - background: "var(--blue)"
+        icon:
+          - color: "var(--black)"
+        label:
+          - color: "var(--black)"
+        name:
+          - color: "var(--black)"
+    - operator: template
+      value: >
+        [[[ return states['light.' + variables.entity].state === 'on' && !(states['cover.' + variables.entity].state === 'opening' || states['cover.' + variables.entity].state === 'open' || states['cover.' + variables.entity].state === 'closing') ]]]
       styles:
         card:
           - background: "var(--yellow)"
@@ -74,7 +123,9 @@ room_card:
           - color: "var(--black)"
         name:
           - color: "var(--black)"
-    - value: "off"
+    - operator: template
+      value: >
+        [[[ return states['light.' + variables.entity].state === 'off' && !(states['cover.' + variables.entity].state === 'opening' || states['cover.' + variables.entity].state === 'open' || states['cover.' + variables.entity].state === 'closing') ]]]
       styles:
         icon:
           - color: "var(--contrast20)"

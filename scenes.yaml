@@ -7,7 +7,7 @@
       friendly_name: Bibliothèque Est
       supported_features: 15
       state: closed
-    cover.cuisine:
+    cover.cuisine_fenetre:
       current_position: 0
       device_class: shutter
       friendly_name: Cuisine
@@ -107,7 +107,7 @@
   metadata:
     cover.bibliotheque_est:
       entity_only: true
-    cover.cuisine:
+    cover.cuisine_fenetre:
       entity_only: true
     cover.entree_1:
       entity_only: true
@@ -149,7 +149,7 @@
       friendly_name: Bibliothèque Est
       supported_features: 15
       state: open
-    cover.cuisine:
+    cover.cuisine_fenetre:
       current_position: 100
       device_class: shutter
       friendly_name: Cuisine
@@ -235,7 +235,7 @@
   metadata:
     cover.bibliotheque_est:
       entity_only: true
-    cover.cuisine:
+    cover.cuisine_fenetre:
       entity_only: true
     cover.entree_1:
       entity_only: true
@@ -309,7 +309,7 @@
       friendly_name: "Velux Chambre gauche "
       supported_features: 15
       state: closed
-    cover.cuisine:
+    cover.cuisine_fenetre:
       current_position: 100
       device_class: shutter
       friendly_name: Cuisine
@@ -355,7 +355,7 @@
       entity_only: true
     cover.velux_chambre_gauche:
       entity_only: true
-    cover.cuisine:
+    cover.cuisine_fenetre:
       entity_only: true
     cover.salon_est:
       entity_only: true
@@ -374,7 +374,7 @@
       supported_features: 15
       current_position: 100
       state: open
-    cover.cuisine:
+    cover.cuisine_fenetre:
       device_class: shutter
       friendly_name: Cuisine
       supported_features: 15
@@ -475,7 +475,7 @@
   metadata:
     cover.bibliotheque_est:
       entity_only: true
-    cover.cuisine:
+    cover.cuisine_fenetre:
       entity_only: true
     cover.entree_1:
       entity_only: true
@@ -596,7 +596,7 @@
       supported_features: 15
       current_position: 15
       state: open
-    cover.cuisine:
+    cover.cuisine_fenetre:
       device_class: shutter
       friendly_name: Cuisine
       supported_features: 15
@@ -679,7 +679,7 @@
       friendly_name: "Velux Chambre gauche "
       supported_features: 15
       state: closed
-    cover.cuisine:
+    cover.cuisine_fenetre:
       current_position: 30
       device_class: shutter
       friendly_name: Cuisine
@@ -725,7 +725,7 @@
       entity_only: true
     cover.velux_chambre_gauche:
       entity_only: true
-    cover.cuisine:
+    cover.cuisine_fenetre:
       entity_only: true
     cover.salon_est:
       entity_only: true
