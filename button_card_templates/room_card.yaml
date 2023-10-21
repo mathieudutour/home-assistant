@@ -42,10 +42,19 @@ room_card:
         state:
           - value: "open"
             icon: "mdi:window-shutter-open"
+            styles:
+              icon:
+                - color: "var(--blue)"
           - value: "opening"
             icon: "mdi:window-shutter-open"
+            styles:
+              icon:
+                - color: "var(--blue)"
           - value: "closing"
             icon: "mdi:window-shutter-open"
+            styles:
+              icon:
+                - color: "var(--blue)"
           - value: "closed"
             icon: "mdi:window-shutter"
           - value: "unavailable"
@@ -56,6 +65,9 @@ room_card:
           icon:
             - width: "24px"
             - height: "24px"
+        tap_action:
+          action: "toggle"
+          haptic: "medium"
   styles:
     grid:
       - grid-template-areas: "'i i light' 'n n n' 'l l cover'"
