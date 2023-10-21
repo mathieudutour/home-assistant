@@ -58,8 +58,8 @@ room_card:
             - height: "24px"
   styles:
     grid:
-      - grid-template-areas: "'i light' 'n n' 'l cover'"
-      - grid-template-columns: "1fr 1fr"
+      - grid-template-areas: "'i i light' 'n n n' 'l l cover'"
+      - grid-template-columns: "1fr 1fr 1fr"
       - grid-template-rows: "min-content"
     card:
       - background: "var(--contrast2)"
