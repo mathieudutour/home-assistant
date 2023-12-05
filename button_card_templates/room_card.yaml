@@ -7,6 +7,9 @@ room_card:
   double_tap_action:
     action: "more-info"
     haptic: "medium"
+  triggers_update:
+    - "[[[ return 'light.' + variables.entity ]]]"
+    - "[[[ return 'cover.' + variables.entity ]]]"
   custom_fields:
     light:
       card:
