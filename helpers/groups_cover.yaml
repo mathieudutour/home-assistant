@@ -1,0 +1,10 @@
+- platform: group
+  name: "Salon"
+  unique_id: cover.salon
+  entities:
+    - cover.translation_gauche
+    - cover.translation_milieu
+    - cover.salon_est
+    - cover.entree_1
+    - cover.entree_2
+    - cover.wc_r0

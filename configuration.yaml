@@ -41,6 +41,8 @@ modbus: !include_dir_list modbus/
 template: !include_dir_list templates/
 input_boolean: !include helpers/input_boolean.yaml
 input_datetime: !include helpers/input_datetime.yaml
+light: !include helpers/groups_light.yaml
+cover: !include helpers/groups_cover.yaml
 
 panel_custom:
   - name: panel_unifi

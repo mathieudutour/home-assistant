@@ -1,0 +1,7 @@
+- platform: group
+  name: "Salon"
+  unique_id: light.salon
+  entities:
+    - light.salon_spots
+    - light.salon_applique
+    - light.entree

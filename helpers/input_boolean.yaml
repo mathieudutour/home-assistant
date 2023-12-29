@@ -1,43 +1,64 @@
-# dantherm_demand_mode:
-#   name: Dantherm - Demand mode
-#   icon: mdi:fan-auto
-# dantherm_manual_mode:
-#   name: Dantherm - Manual mode
-#   icon: mdi:gesture-tap
-# dantherm_week_program_mode:
-#   name: Dantherm - Week program mode
-#   icon: mdi:calendar-week
+# Vacuum Selected Rooms
+vacuum_selected_room_salon:
+  name: Salon
+  icon: mdi:sofa
+vacuum_selected_room_salle_a_manger:
+  name: Salle à manger
+  icon: mdi:table-picnic
+vacuum_selected_room_cuisine:
+  name: Cuisine
+  icon: mdi:fridge-outline
+vacuum_selected_room_cellier:
+  name: Cellier
+  icon: mdi:food-drumstick-outline
+vacuum_selected_room_entree:
+  name: Entrée
+  icon: mdi:door
+vacuum_selected_room_wc_r0:
+  name: WC R0
+  icon: mdi:paper-roll-outline
 
-# dantherm_alarm_active:
-#   name: Dantherm - Alarm Active
-#   icon: mdi:alert
+# Dantherm VMC Double Flux
+dantherm_demand_mode:
+  name: Dantherm - Demand mode
+  icon: mdi:fan-auto
+dantherm_manual_mode:
+  name: Dantherm - Manual mode
+  icon: mdi:gesture-tap
+dantherm_week_program_mode:
+  name: Dantherm - Week program mode
+  icon: mdi:calendar-week
 
-# dantherm_night_mode:
-#   name: Dantherm - Night mode
-#   icon: mdi:weather-night
-# dantherm_fireplace_mode:
-#   name: Dantherm - Fireplace mode
-#   icon: mdi:fireplace
-# dantherm_away_mode:
-#   name: Dantherm - Away mode
-#   icon: mdi:bag-checked
-# dantherm_summer_mode:
-#   name: Dantherm - Summer mode
-#   icon: mdi:sun-thermometer
+dantherm_alarm_active:
+  name: Dantherm - Alarm Active
+  icon: mdi:alert
 
-# dantherm_manual_bypass:
-#   name: Dantherm - Manual bypass
-#   icon: mdi:swap-horizontal-bold
+dantherm_night_mode:
+  name: Dantherm - Night mode
+  icon: mdi:weather-night
+dantherm_fireplace_mode:
+  name: Dantherm - Fireplace mode
+  icon: mdi:fireplace
+dantherm_away_mode:
+  name: Dantherm - Away mode
+  icon: mdi:bag-checked
+dantherm_summer_mode:
+  name: Dantherm - Summer mode
+  icon: mdi:sun-thermometer
 
-# dantherm_fan_speed_1:
-#   name: Dantherm - Fan Speed 1
-#   icon: mdi:fan-speed-1
-# dantherm_fan_speed_2:
-#   name: Dantherm - Fan Speed 2
-#   icon: mdi:fan-speed-2
-# dantherm_fan_speed_3:
-#   name: Dantherm - Fan Speed 3
-#   icon: mdi:fan-speed-3
-# dantherm_fan_speed_4:
-#   name: Dantherm - Fan Speed 4
-#   icon: custom:fan-speed-4
+dantherm_manual_bypass:
+  name: Dantherm - Manual bypass
+  icon: mdi:swap-horizontal-bold
+
+dantherm_fan_speed_1:
+  name: Dantherm - Fan Speed 1
+  icon: mdi:fan-speed-1
+dantherm_fan_speed_2:
+  name: Dantherm - Fan Speed 2
+  icon: mdi:fan-speed-2
+dantherm_fan_speed_3:
+  name: Dantherm - Fan Speed 3
+  icon: mdi:fan-speed-3
+dantherm_fan_speed_4:
+  name: Dantherm - Fan Speed 4
+  icon: custom:fan-speed-4
